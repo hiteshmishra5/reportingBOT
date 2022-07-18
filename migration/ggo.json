@@ -1,0 +1,257 @@
+[
+    {
+        "rul": true,
+        "rml": true,
+        "rll": true,
+        "lul": true,
+        "lll": true,
+        "text": "both lungs in all lobes"
+    },
+    {
+        "rul": true,
+        "rml": true,
+        "rll": true,
+        "lul": true,
+        "lll": false,
+        "text": "right lung and left upper lobe"
+    },
+    {
+        "rul": true,
+        "rml": true,
+        "rll": true,
+        "lul": false,
+        "lll": true,
+        "text": "right lung and left lower lobes"
+    },
+    {
+        "rul": true,
+        "rml": true,
+        "rll": true,
+        "lul": false,
+        "lll": false,
+        "text": "right lung"
+    },
+    {
+        "rul": true,
+        "rml": true,
+        "rll": false,
+        "lul": true,
+        "lll": true,
+        "text": "B/L upper, right middle and left lower lobes "
+    },
+    {
+        "rul": true,
+        "rml": true,
+        "rll": false,
+        "lul": true,
+        "lll": false,
+        "text": "B/L upper and right middle lobes"
+    },
+    {
+        "rul": true,
+        "rml": true,
+        "rll": false,
+        "lul": false,
+        "lll": true,
+        "text": "right upper, right middle and left lower lobes"
+    },
+    {
+        "rul": true,
+        "rml": true,
+        "rll": false,
+        "lul": false,
+        "lll": false,
+        "text": "right upper and right middle lobes"
+    },
+    {
+        "rul": true,
+        "rml": false,
+        "rll": true,
+        "lul": true,
+        "lll": true,
+        "text": "B/L upper and left lower lobes"
+    },
+    {
+        "rul": true,
+        "rml": false,
+        "rll": true,
+        "lul": true,
+        "lll": false,
+        "text": "B/L upper and right left lobes"
+    },
+    {
+        "rul": true,
+        "rml": false,
+        "rll": true,
+        "lul": false,
+        "lll": true,
+        "text": "B/L lower and right middle lobes"
+    },
+    {
+        "rul": true,
+        "rml": false,
+        "rll": true,
+        "lul": false,
+        "lll": false,
+        "text": "right upper and right lower lobes"
+    },
+    {
+        "rul": true,
+        "rml": false,
+        "rll": false,
+        "lul": true,
+        "lll": true,
+        "text": "B/L upper and Left lower lobe"
+    },
+    {
+        "rul": true,
+        "rml": false,
+        "rll": false,
+        "lul": true,
+        "lll": false,
+        "text": "B/L upper lobes"
+    },
+    {
+        "rul": true,
+        "rml": false,
+        "rll": false,
+        "lul": false,
+        "lll": true,
+        "text": "right upper and Left lower lobes"
+    },
+    {
+        "rul": true,
+        "rml": false,
+        "rll": false,
+        "lul": false,
+        "lll": false,
+        "text": "right upper lobe"
+    },
+    {
+        "rul": false,
+        "rml": true,
+        "rll": true,
+        "lul": true,
+        "lll": true,
+        "text": "left lung, right middle and right lower lobes"
+    },
+    {
+        "rul": false,
+        "rml": true,
+        "rll": true,
+        "lul": true,
+        "lll": false,
+        "text":"right middle, right lower and left upper lobes"
+    },
+    {
+        "rul": false,
+        "rml": true,
+        "rll": true,
+        "lul": false,
+        "lll": true,
+        "text": "B/L lower and right middle lobes"
+    },
+    {
+        "rul": false,
+        "rml": true,
+        "rll": true,
+        "lul": false,
+        "lll": false,
+        "text": "right middle and right lower lobes"
+    },
+    {
+        "rul": false,
+        "rml": true,
+        "rll": false,
+        "lul": true,
+        "lll": true,
+        "text": "left lung and right midde lobe"
+    },
+    {
+        "rul": false,
+        "rml": true,
+        "rll": false,
+        "lul": true,
+        "lll": false,
+        "text": "right middle and left upper lobes"
+    },
+    {
+        "rul": false,
+        "rml": true,
+        "rll": false,
+        "lul": false,
+        "lll": true,
+        "text": "right middle and left lower lobes"
+    },
+    {
+        "rul": false,
+        "rml": true,
+        "rll": false,
+        "lul": false,
+        "lll": false,
+        "text": "right middle lobe"
+    },
+    {
+        "rul": false,
+        "rml": false,
+        "rll": true,
+        "lul": true,
+        "lll": true,
+        "text": "left lung and right lower lobes"
+    },
+    {
+        "rul": false,
+        "rml": false,
+        "rll": true,
+        "lul": true,
+        "lll": false,
+        "text": "right lower lobe and Left upper lobes"
+    },
+    {
+        "rul": false,
+        "rml": false,
+        "rll": true,
+        "lul": false,
+        "lll": true,
+        "text": "B/L lower lobe"
+    },
+    {
+        "rul": false,
+        "rml": false,
+        "rll": true,
+        "lul": false,
+        "lll": false,
+        "text":"right lower lobe"
+    },
+    {
+        "rul": false,
+        "rml": false,
+        "rll": false,
+        "lul": true,
+        "lll": true,
+        "text": "left lung"
+    },
+    {
+        "rul": false,
+        "rml": false,
+        "rll": false,
+        "lul": true,
+        "lll": false,
+        "text": "left upper lobe"
+    },
+    {
+        "rul": false,
+        "rml": false,
+        "rll": false,
+        "lul": false,
+        "lll": true,
+        "text": "left lower lobe"
+    },
+    {
+        "rul": false,
+        "rml": false,
+        "rll": false,
+        "lul": false,
+        "lll": false
+    }
+]

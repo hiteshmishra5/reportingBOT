@@ -1,0 +1,228 @@
+[
+ 
+        {
+            "pretracheal": "true",
+            "paratracheal": "true",
+            "precarinal": "true",
+            "subcarinal": "true",
+            "prevascular": "true"
+        },
+        {
+            "pretracheal": "true",
+            "paratracheal": "true",
+            "precarinal": "true",
+            "subcarinal": "true",
+            "prevascular": "false"
+        },
+        {
+            "pretracheal": "true",
+            "paratracheal": "true",
+            "precarinal": "true",
+            "subcarinal": "false",
+            "prevascular": "true"
+        },
+        {
+            "pretracheal": "true",
+            "paratracheal": "true",
+            "precarinal": "true",
+            "subcarinal": "false",
+            "prevascular": "false"
+        },
+        {
+            "pretracheal": "true",
+            "paratracheal": "true",
+            "precarinal": "false",
+            "subcarinal": "true",
+            "prevascular": "true"
+        },
+        {
+            "pretracheal": "true",
+            "paratracheal": "true",
+            "precarinal": "false",
+            "subcarinal": "true",
+            "prevascular": "false"
+        },
+        {
+            "pretracheal": "true",
+            "paratracheal": "true",
+            "precarinal": "false",
+            "subcarinal": "false",
+            "prevascular": "true"
+        },
+        {
+            "pretracheal": "true",
+            "paratracheal": "true",
+            "precarinal": "false",
+            "subcarinal": "false",
+            "prevascular": "false"
+        },
+        {
+            "pretracheal": "true",
+            "paratracheal": "false",
+            "precarinal": "true",
+            "subcarinal": "true",
+            "prevascular": "true"
+        },
+        {
+            "pretracheal": "true",
+            "paratracheal": "false",
+            "precarinal": "true",
+            "subcarinal": "true",
+            "prevascular": "false"
+        },
+        {
+            "pretracheal": "true",
+            "paratracheal": "false",
+            "precarinal": "true",
+            "subcarinal": "false",
+            "prevascular": "true"
+        },
+        {
+            "pretracheal": "true",
+            "paratracheal": "false",
+            "precarinal": "true",
+            "subcarinal": "false",
+            "prevascular": "false"
+        },
+        {
+            "pretracheal": "true",
+            "paratracheal": "false",
+            "precarinal": "false",
+            "subcarinal": "true",
+            "prevascular": "true"
+        },
+        {
+            "pretracheal": "true",
+            "paratracheal": "false",
+            "precarinal": "false",
+            "subcarinal": "true",
+            "prevascular": "false"
+        },
+        {
+            "pretracheal": "true",
+            "paratracheal": "false",
+            "precarinal": "false",
+            "subcarinal": "false",
+            "prevascular": "true"
+        },
+        {
+            "pretracheal": "true",
+            "paratracheal": "false",
+            "precarinal": "false",
+            "subcarinal": "false",
+            "prevascular": "false"
+        },
+        {
+            "pretracheal": "false",
+            "paratracheal": "true",
+            "precarinal": "true",
+            "subcarinal": "true",
+            "prevascular": "true"
+        },
+        {
+            "pretracheal": "false",
+            "paratracheal": "true",
+            "precarinal": "true",
+            "subcarinal": "true",
+            "prevascular": "false"
+        },
+        {
+            "pretracheal": "false",
+            "paratracheal": "true",
+            "precarinal": "true",
+            "subcarinal": "false",
+            "prevascular": "true"
+        },
+        {
+            "pretracheal": "false",
+            "paratracheal": "true",
+            "precarinal": "true",
+            "subcarinal": "false",
+            "prevascular": "false"
+        },
+        {
+            "pretracheal": "false",
+            "paratracheal": "true",
+            "precarinal": "false",
+            "subcarinal": "true",
+            "prevascular": "true"
+        },
+        {
+            "pretracheal": "false",
+            "paratracheal": "true",
+            "precarinal": "false",
+            "subcarinal": "true",
+            "prevascular": "false"
+        },
+        {
+            "pretracheal": "false",
+            "paratracheal": "true",
+            "precarinal": "false",
+            "subcarinal": "false",
+            "prevascular": "true"
+        },
+        {
+            "pretracheal": "false",
+            "paratracheal": "true",
+            "precarinal": "false",
+            "subcarinal": "false",
+            "prevascular": "false"
+        },
+        {
+            "pretracheal": "false",
+            "paratracheal": "false",
+            "precarinal": "true",
+            "subcarinal": "true",
+            "prevascular": "true"
+        },
+        {
+            "pretracheal": "false",
+            "paratracheal": "false",
+            "precarinal": "true",
+            "subcarinal": "true",
+            "prevascular": "false"
+        },
+        {
+            "pretracheal": "false",
+            "paratracheal": "false",
+            "precarinal": "true",
+            "subcarinal": "false",
+            "prevascular": "true"
+        },
+        {
+            "pretracheal": "false",
+            "paratracheal": "false",
+            "precarinal": "true",
+            "subcarinal": "false",
+            "prevascular": "false"
+        },
+        {
+            "pretracheal": "false",
+            "paratracheal": "false",
+            "precarinal": "false",
+            "subcarinal": "true",
+            "prevascular": "true"
+        },
+        {
+            "pretracheal": "false",
+            "paratracheal": "false",
+            "precarinal": "false",
+            "subcarinal": "true",
+            "prevascular": "false"
+        },
+        {
+            "pretracheal": "false",
+            "paratracheal": "false",
+            "precarinal": "false",
+            "subcarinal": "false",
+            "prevascular": "true"
+        },
+        {
+            "pretracheal": "false",
+            "paratracheal": "false",
+            "precarinal": "false",
+            "subcarinal": "false",
+            "prevascular": "false"
+        }
+
+    ]
