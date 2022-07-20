@@ -104,7 +104,7 @@ class CtHead extends Component {
             arr.push('centrum semiovale')
           }
           if (frmData.Cerebellum) {
-            arr.push('cerebellm')
+            arr.push('cerebellum')
           }
           if (frmData.Pons) {
             arr.push('pons')

@@ -179,8 +179,8 @@ class PnsAbnormal extends Component {
             }
           }
           if (frmData.PnsFrontalRightAirFluid) {
-            report += "<p>" + "<b>" + "Air fluid level seen in right frontal sinus" + "</b>" + "</p>";
-            impression.push("<p>" + "<b>" + "Air fluid level seen in right frontal sinus" + "</b>" + "</p>");
+            report += "<p>" + "<b>" + "Air fluid levels seen in right frontal sinus." + "</b>" + "</p>";
+            impression.push("<p>" + "<b>" + "Air fluids level seen in right frontal sinus." + "</b>" + "</p>");
           }
           if (frmData.PnsFrontalRightFrontoEthmoid) {
             if (frmData.PnsFrontalRightFrontoEthmoidType === 'patent') {
@@ -222,8 +222,8 @@ class PnsAbnormal extends Component {
             }
           }
           if (frmData.PnsFrontalLeftAirFluid) {
-            report += "<p>" + "<b>" + "Air fluid level seen in left frontal sinus" + "</b>" + "</p>";
-            impression.push("<p>" + "<b>" + "Air fluid level seen in left frontal sinus" + "</b>" + "</p>");
+            report += "<p>" + "<b>" + "Air fluid levels seen in left frontal sinus." + "</b>" + "</p>";
+            impression.push("<p>" + "<b>" + "Air fluid levels seen in left frontal sinus." + "</b>" + "</p>");
           }
           if (frmData.PnsFrontalLeftFrontoEthmoid) {
             if (frmData.PnsFrontalLeftFrontoEthmoidType === 'patent') {
@@ -269,8 +269,8 @@ class PnsAbnormal extends Component {
             }
           }
           if (frmData.PnsMaxillaryRightAirFluid) {
-            report += "<p>" + "<b>" + "Air fluid level seen in right maxillary sinus" + "</b>" + "</p>";
-            impression.push("<p>" + "<b>" + "Air fluid level seen in right maxillary sinus" + "</b>" + "</p>");
+            report += "<p>" + "<b>" + "Air fluid levels seen in right maxillary sinus." + "</b>" + "</p>";
+            impression.push("<p>" + "<b>" + "Air fluid levels seen in right maxillary sinus." + "</b>" + "</p>");
           }
           if (frmData.PnsMaxillaryRightOsteomeatalUnit) {
             if (frmData.PnsMaxillaryRightOsteomeatalUnitType) {
@@ -309,8 +309,8 @@ class PnsAbnormal extends Component {
 
           }
           if (frmData.PnsMaxillaryLeftAirFluid) {
-            report += "<p>" + "<b>" + "Air fluid level seen in left maxillary sinus" + "</b>" + "</p>";
-            impression.push("<p>" + "<b>" + "Air fluid level seen in left maxillary sinus" + "</b>" + "</p>");
+            report += "<p>" + "<b>" + "Air fluid levels seen in left maxillary sinus." + "</b>" + "</p>";
+            impression.push("<p>" + "<b>" + "Air fluid levels seen in left maxillary sinus." + "</b>" + "</p>");
           }
           if (frmData.PnsMaxillaryLeftOsteomeatalUnit) {
             if (frmData.PnsMaxillaryLeftOsteomeatalUnitType) {
@@ -353,8 +353,8 @@ class PnsAbnormal extends Component {
             }
           }
           if (frmData.PnsEhtmoidalRightAirFluid) {
-            report += "<p>" + "<b>" + "Air fluid level seen in right ethmoidal sinus" + "</b>" + "</p>";
-            impression.push("<p>" + "<b>" + "Air fluid level seen in right ethmoidal sinus" + "</b>" + "</p>");
+            report += "<p>" + "<b>" + "Air fluid levels seen in right ethmoidal sinus." + "</b>" + "</p>";
+            impression.push("<p>" + "<b>" + "Air fluids level seen in right ethmoidal sinus." + "</b>" + "</p>");
           }
           if (frmData.PnsEthmoidalRightBonyErosions) {
             report += "<p>" + "<b>" + "Erosions seen in bony walls of right ethmoidal sinus." + "</b>" + "</p>";
@@ -402,8 +402,8 @@ class PnsAbnormal extends Component {
             }
           }
           if (frmData.PnsEhtmoidalLeftAirFluid) {
-            report += "<p>" + "<b>" + "Air fluid level seen in left ethmoidal sinus" + "</b>" + "</p>";
-            impression.push("<p>" + "<b>" + "Air fluid level seen in left ethmoidal sinus" + "</b>" + "</p>");
+            report += "<p>" + "<b>" + "Air fluid level seen in left ethmoidal sinus." + "</b>" + "</p>";
+            impression.push("<p>" + "<b>" + "Air fluid level seen in left ethmoidal sinus." + "</b>" + "</p>");
           }
           if (frmData.PnsEthmoidalLeftBonyErosions) {
             report += "<p>" + "<b>" + "Erosions seen in bony walls of left ethmoidal sinus." + "</b>" + "</p>";
@@ -451,21 +451,21 @@ class PnsAbnormal extends Component {
             }
           }
           if (frmData.PnsSphenoidRightAirFluid) {
-            report += "<p>" + "<b>" + "Air fluid level seen in right sphenoid sinus" + "</b>" + "</p>";
-            impression.push("<p>" + "<b>" + "Air fluid level seen in right sphenoid sinus" + "</b>" + "</p>");
+            report += "<p>" + "<b>" + "Air fluid level seen in right sphenoid sinus." + "</b>" + "</p>";
+            impression.push("<p>" + "<b>" + "Air fluid level seen in right sphenoid sinus." + "</b>" + "</p>");
           }
           if (frmData.PnsSphenoidRightEthmoid) {
             if (frmData.PnsSphenoidRightEthmoidType === 'patent') {
-              report += "<p>" + "<b>" + "fronto-ethmoid recess is patent in right sphenoid sinus. " + "</b>" + "</p>";
-              impression.push("<p>" + "<b>" + "fronto-ethmoid recess is patent in right sphenoid sinus." + "</b>" + "</p>");
+              report += "<p>" + "<b>" + "Sphenoid-ethmoid recess is patent in right frontal sinus." + "</b>" + "</p>";
+              impression.push("<p>" + "<b>" + "sphenoid-ethmoid recess is patent in right frontal sinus." + "</b>" + "</p>");
             }
             if (frmData.PnsSphenoidRightEthmoidType === 'partial narrowing') {
-              report += "<p>" + "<b>" + "There is partial narrowing of right fronto-ethmoid recess." + "</b>" + "</p>";
-              impression.push("<p>" + "<b>" + "There is partial narrowing of right fronto-ethmoid recess." + "</b>" + "</p>");
+              report += "<p>" + "<b>" + "There is partial narrowing of right sphenoid-ethmoid recess." + "</b>" + "</p>";
+              impression.push("<p>" + "<b>" + "There is partial narrowing of right Sphenoid-ethmoid recess." + "</b>" + "</p>");
             }
             if (frmData.PnsSphenoidRightEthmoidType === 'complete occlusion') {
-              report += "<p>" + "<b>" + "Complete occlusion of right fronto-ethmoid recess seen." + "</b>" + "</p>";
-              impression.push("<p>" + "<b>" + "Complete occlusion of right fronto-ethmoid recess seen." + "</b>" + "</p>");
+              report += "<p>" + "<b>" + "Complete occlusion of right sphenoid-ethmoid recess seen. " + "</b>" + "</p>";
+              impression.push("<p>" + "<b>" + "Complete occlusion of right sphenoid-ethmoid recess seen." + "</b>" + "</p>");
             }
           }
           if (frmData.PnsSphenoidRightBonyErosions) {
@@ -495,21 +495,21 @@ class PnsAbnormal extends Component {
 
           }
           if (frmData.PnsSphenoidLeftAirFluid) {
-            report += "<p>" + "<b>" + "Air fluid level seen in left sphenoid sinus" + "</b>" + "</p>";
-            impression.push("<p>" + "<b>" + "Air fluid level seen in left sphenoid sinus" + "</b>" + "</p>");
+            report += "<p>" + "<b>" + "Air fluid level seen in left sphenoid sinus." + "</b>" + "</p>";
+            impression.push("<p>" + "<b>" + "Air fluid level seen in left sphenoid sinus." + "</b>" + "</p>");
           }
           if (frmData.PnsSphenoidLeftEthmoid) {
             if (frmData.PnsSphenoidLeftEthmoidType === 'patent') {
-              report += "<p>" + "<b>" + "fronto-ethmoid recess is patent in left sphenoid sinus. " + "</b>" + "</p>";
-              impression.push("<p>" + "<b>" + "fronto-ethmoid recess is patent in left sphenoid sinus." + "</b>" + "</p>");
+              report += "<p>" + "<b>" + "Sphenoid-ethmoid recess is patent in left frontal sinus." + "</b>" + "</p>";
+              impression.push("<p>" + "<b>" + "Sphenoid-ethmoid recess is patent in left frontal sinus.." + "</b>" + "</p>");
             }
             if (frmData.PnsSphenoidLeftEthmoidType === 'partial narrowing') {
-              report += "<p>" + "<b>" + "fronto-ethmoid recess is partial narrowing in left sphenoid sinus. " + "</b>" + "</p>";
-              impression.push("<p>" + "<b>" + "fronto-ethmoid recess is partial narrowing in left sphenoid sinus." + "</b>" + "</p>");
+              report += "<p>" + "<b>" + "There is partial narrowing of left sphenoid-ethmoid recess." + "</b>" + "</p>";
+              impression.push("<p>" + "<b>" + "There is partial narrowing of left sphenoid-ethmoid recess." + "</b>" + "</p>");
             }
             if (frmData.PnsSphenoidLeftEthmoidType === 'complete occlusion') {
-              report += "<p>" + "<b>" + "fronto-ethmoid recess is complete occlusion in left sphenoid sinus. " + "</b>" + "</p>";
-              impression.push("<p>" + "<b>" + "fronto-ethmoid recess is complete occlusion in left sphenoid sinus." + "</b>" + "</p>");
+              report += "<p>" + "<b>" + "Complete occlusion of left sphenoid-ethmoid recess seen." + "</b>" + "</p>";
+              impression.push("<p>" + "<b>" + "Complete occlusion of left sphenoid-ethmoid recess seen." + "</b>" + "</p>");
             }
           }
           if (frmData.PnsSphenoidLeftBonyErosions) {
@@ -621,12 +621,12 @@ class PnsAbnormal extends Component {
       // Musocal Thicking
       if (frmData.NasalMusocalThicking) {
         if (frmData.NasalMusocalThickingRight) {
-          report += "<p>" + "<b>" + "mucosal thickening seen in right nasal cavity." + "</b>" + "</p>";
-          impression.push("<p>" + "<b>" + "mucosal thickening seen in right nasal cavity." + "</b>" + "</p>");
+          report += "<p>" + "<b>" + "Mucosal thickening seen in right nasal cavity." + "</b>" + "</p>";
+          impression.push("<p>" + "<b>" + "Mucosal thickening seen in right nasal cavity." + "</b>" + "</p>");
         }
         if (frmData.NasalMusocalThickingLeft) {
-          report += "<p>" + "<b>" + "mucosal thickening seen in left nasal cavity." + "</b>" + "</p>";
-          impression.push("<p>" + "<b>" + "mucosal thickening seen in left nasal cavity." + "</b>" + "</p>");
+          report += "<p>" + "<b>" + "Mucosal thickening seen in left nasal cavity." + "</b>" + "</p>";
+          impression.push("<p>" + "<b>" + "Mucosal thickening seen in left nasal cavity." + "</b>" + "</p>");
         }
       }
     }

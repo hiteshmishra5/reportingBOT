@@ -65,7 +65,7 @@ const _schema = {
 		},
 		PnsFrontalLeftPneumatizationtype: {
 			type: "string",
-			enum: ['Normal', 'Increased', 'Reduced'],
+			enum: ['normal', 'increased', 'reduced'],
 		},
 		PnsFrontalLeftMusocalThicking: {
 			type: 'boolean',
@@ -104,7 +104,7 @@ const _schema = {
 		},
 		PnsmaxillaryRightPneumatizationtype: {
 			type: "string",
-			enum: ['Normal', 'Increased', 'Reduced'],
+			enum: ['normal', 'increased', 'reduced'],
 		},
 		PnsMaxillaryRightMusocalThicking: {
 			type: 'boolean',
@@ -143,7 +143,7 @@ const _schema = {
 		},
 		PnsmaxillaryLeftPneumatizationtype: {
 			type: "string",
-			enum: ['Normal', 'Increased', 'Reduced'],
+			enum: ['normal', 'increased', 'reduced'],
 		},
 		PnsMaxillaryLeftMusocalThicking: {
 			type: 'boolean',
@@ -185,7 +185,7 @@ const _schema = {
 		},
 		PnsEthmoidalRightPneumatizationtype: {
 			type: "string",
-			enum: ['Normal', 'Increased', 'Reduced'],
+			enum: ['normal', 'increased', 'reduced'],
 		},
 		PnsEthmoidalRightMusocalThicking: {
 			type: 'boolean',
@@ -208,7 +208,7 @@ const _schema = {
 		},
 		PnsEthmoidalRightSeptaeType: {
 			type: "string",
-			enum: ['normal', 'Erosion'],
+			enum: ['Normal', 'Erosion'],
 		},
 		PnsEhtmoidalRightVarient: {
 			type: "boolean",
@@ -228,7 +228,7 @@ const _schema = {
 		},
 		PnsEthmoidalLeftPneumatizationtype: {
 			type: "string",
-			enum: ['Normal', 'Increased', 'Reduced'],
+			enum: ['normal', 'increased', 'reduced'],
 		},
 		PnsEthmoidalLeftMusocalThicking: {
 			type: 'boolean',
@@ -251,7 +251,7 @@ const _schema = {
 		},
 		PnsEthmoidalLeftSeptaeType: {
 			type: "string",
-			enum: ['normal', 'erosion'],
+			enum: ['Normal', 'Erosion'],
 		},
 		PnsEhtmoidalLeftVarient: {
 			type: "boolean",
@@ -278,7 +278,7 @@ const _schema = {
 		},
 		PnsSphenoidRightPneumatizationtype: {
 			type: "string",
-			enum: ['Normal', 'Increased', 'Reduced'],
+			enum: ['normal', 'increased', 'reduced'],
 		},
 		PnsSphenoidRightMusocalThicking: {
 			type: 'boolean',
@@ -312,7 +312,7 @@ const _schema = {
 		},
 		PnsSphenoidLeftPneumatizationtype: {
 			type: "string",
-			enum: ['Normal', 'Increaesd', 'Reduced'],
+			enum: ['normal', 'increaesd', 'reduced'],
 		},
 		PnsSphenoidLeftMusocalThicking: {
 			type: 'boolean',
@@ -662,7 +662,6 @@ const uischema = {
 							type: "VerticalLayout",
 							label: "",
 							elements: [
-
 								// frontal
 								{
 									type: "Control",
@@ -1544,19 +1543,29 @@ const uischema = {
 																					label: "",
 																					elements: [
 																						{
-																							type: "Control",
-																							label: "Haller cells",
-																							scope: "#/properties/PnsEhtmoidalRightVarientHaller",
-																						},
-																						{
-																							type: "Control",
-																							label: "Onodi cells",
-																							scope: "#/properties/PnsEhtmoidalRightVarientOnodi",
+																							type: "VerticalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "Haller cells",
+																									scope: "#/properties/PnsEhtmoidalRightVarientHaller",
+																								},
+																								{
+																									type: "Control",
+																									label: "Onodi cells",
+																									scope: "#/properties/PnsEhtmoidalRightVarientOnodi",
+																								},
+																							],
 																						},
 																					],
 																				},
 																			],
 																		},
+
+
+
+
 																	],
 																},
 															],
@@ -1736,14 +1745,20 @@ const uischema = {
 																					label: "",
 																					elements: [
 																						{
-																							type: "Control",
-																							label: "Haller cells",
-																							scope: "#/properties/PnsEhtmoidalLeftVarientHaller",
-																						},
-																						{
-																							type: "Control",
-																							label: "Onodi cells",
-																							scope: "#/properties/PnsEhtmoidalLeftVarientOnodi",
+																							type: "VerticalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "Haller cells",
+																									scope: "#/properties/PnsEhtmoidalLeftVarientHaller",
+																								},
+																								{
+																									type: "Control",
+																									label: "Onodi cells",
+																									scope: "#/properties/PnsEhtmoidalLeftVarientOnodi",
+																								},
+																							],
 																						},
 																					],
 																				},

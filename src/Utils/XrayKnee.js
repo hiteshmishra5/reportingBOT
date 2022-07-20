@@ -501,22 +501,19 @@ class XrayKnee extends Component {
         }
       }
     }
-    if (frmData.RightDegenerative || frmData.LeftDegenerative) {
-      report += "<p>" + "No obvious fracture is seen.<br><br>No obvious dislocation is seen." + "</p>";
-
+    if (frmData.RightDegenerative || frmData.LeftDegenerative || frmData.Fracture) {
+      report += "<p>" + "No obvious dislocation is seen." + "</p>";
+    }
+    if(!frmData.LeftFracture && !frmData.RightFracture){
+      report += "<p>" + "No obvious fracture is seen." + "</p>";
     }
     if (frmData.LeftFracture || frmData.RightFracture) {
       report += "<p>" + "Rest of the bones under view are normal.<br><br>Soft issues are normal." + "</p>";
     }
 
-    if (frmData.KneeNormalL || frmData.KneeNormalR) {
+    if (frmData.KneeNormalL || frmData.KneeNormalR) { 
       report += "<p>" + "Knee joint appears normal.<br><br>Lower end of the Femur, Patella and Upper ends of the Tibia and Fibula appear normal.<br><br>Alignment is normal.<br><br>No obvious abnormality is seen in the soft tissues." + "</p>";
     }
-
-
-
-
-
 
 
     report +=

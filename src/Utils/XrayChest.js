@@ -111,7 +111,7 @@ class XrayChest extends Component {
       || frmData.pneumothorax || frmData.cardiacSilhouette || frmData.bonyThoracicCage
       || frmData.tracheaAndMediastinalStructures || frmData.DomesOfDiaphragm || frmData.etLine || frmData.cvpLine
       || frmData.tracheostomy || frmData.NGtube || frmData.info || frmData.SoftTissue) && !(frmData.XrayTypes === 'PA' || frmData.XrayTypes === 'LATERAL' || frmData.XrayTypes === 'AP/PA')) {
-      report += "<h5>" + "<strong style='color: blue;'>" + "<u>" + "X-RAY - CHEST AP VIEW" + "</u>" + "</strong>" + "</h5>";
+      report += "<p class='text-center'>" + "<strong style='color: blue;'>" + "<u>" + "X-RAY - CHEST AP VIEW" + "</u>" + "</strong>" + "</p>";
       report += "<h5>" + "<strong>" + "<u>" + "OBSERVATIONS:" + "</u>" + "</strong>" + "</h5>";
     }
 
@@ -159,206 +159,206 @@ class XrayChest extends Component {
       let arr = []
       // ********************Single OpacitiesType*****************Date: 05/03/22 Hitesh Mishra******
       if (frmData.opacitiesRUL && !frmData.opacitiesRML && !frmData.opacitiesRLL && !frmData.opacitiesLUL && !frmData.opacitiesLLL && !frmData.opacitiesLML) {
-        arr.push("Right upper zone")
+        arr.push("right upper zone")
       }
       if (frmData.opacitiesRML && !frmData.opacitiesRUL && !frmData.opacitiesRLL && !frmData.opacitiesLUL && !frmData.opacitiesLLL && !frmData.opacitiesLML) {
-        arr.push("Right middle zone");
+        arr.push("right middle zone");
       }
       if (frmData.opacitiesRLL && !frmData.opacitiesRML && !frmData.opacitiesRUL && !frmData.opacitiesLUL && !frmData.opacitiesLLL && !frmData.opacitiesLML) {
-        arr.push("Right lower zone");
+        arr.push("right lower zone");
       }
       if (frmData.opacitiesLUL && !frmData.opacitiesRUL && !frmData.opacitiesRML && !frmData.opacitiesRLL && !frmData.opacitiesLLL && !frmData.opacitiesLML) {
-        arr.push("Left upper zone");
+        arr.push("left upper zone");
       }
       if (frmData.opacitiesLML && !frmData.opacitiesRUL && !frmData.opacitiesRLL && !frmData.opacitiesRML && !frmData.opacitiesLUL && !frmData.opacitiesLLL) {
-        arr.push('Left middle zone');
+        arr.push('left middle zone');
       }
       if (frmData.opacitiesLLL && !frmData.opacitiesRUL && !frmData.opacitiesRML && !frmData.opacitiesRLL && !frmData.opacitiesLUL && !frmData.opacitiesLML) {
-        arr.push("Left lower zone");
+        arr.push("left lower zone");
       }
 
       // **************************2 Combinations*************************
       if (frmData.opacitiesRUL && frmData.opacitiesLUL && !frmData.opacitiesRML && !frmData.opacitiesRLL && !frmData.opacitiesLLL && !frmData.opacitiesLML) {
-        arr.push("Bilateral upper zone");
+        arr.push("bilateral upper zone");
       }
       if (frmData.opacitiesRLL && frmData.opacitiesLLL && !frmData.opacitiesRUL && !frmData.opacitiesLUL && !frmData.opacitiesRML && !frmData.opacitiesLML) {
-        arr.push("Bilateral lower zone");
+        arr.push("bilateral lower zone");
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRML && !frmData.opacitiesLML && !frmData.opacitiesLLL && !frmData.opacitiesLUL && !frmData.opacitiesRLL) {
-        arr.push('Right upper zone, Right middle zone');
+        arr.push('right upper zone, right middle zone');
       }
       if (frmData.opacitiesLUL && frmData.opacitiesLLL && !frmData.opacitiesRLL && !frmData.opacitiesRML && !frmData.opacitiesRUL && !frmData.opacitiesLML) {
-        arr.push("Left upper zone, Left lower zone");
+        arr.push("left upper zone, left lower zone");
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRLL && !frmData.opacitiesRML && !frmData.opacitiesLUL && !frmData.opacitiesLLL && !frmData.opacitiesLML) {
-        arr.push('Right upper zone, Right lower zone');
+        arr.push('right upper zone, right lower zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesLML && !frmData.opacitiesLUL && !frmData.opacitiesRLL && !frmData.opacitiesRML && !frmData.opacitiesLLL) {
-        arr.push('right upper zone, Left middle zone');
+        arr.push('right upper zone, left middle zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesLLL && !frmData.opacitiesRML && !frmData.opacitiesLUL && !frmData.opacitiesRLL && !frmData.opacitiesLML) {
-        arr.push('Right upper zone, Left lower zone');
+        arr.push('right upper zone, left lower zone');
       }
       if (frmData.opacitiesRML && frmData.opacitiesRLL && !frmData.opacitiesRUL && !frmData.opacitiesLUL && !frmData.opacitiesLLL && !frmData.opacitiesLML) {
-        arr.push('Right middle zone, Right lower zone');
+        arr.push('right middle zone, right lower zone');
       }
       if (frmData.opacitiesRML && frmData.opacitiesLML && !frmData.opacitiesRUL && !frmData.opacitiesLUL && !frmData.opacitiesLLL && !frmData.opacitiesRLL) {
-        arr.push('Bilateral middle zone');
+        arr.push('bilateral middle zone');
       }
       if (frmData.opacitiesRLL && frmData.opacitiesLML && !frmData.opacitiesRML && !frmData.opacitiesRUL && !frmData.opacitiesLUL && !frmData.opacitiesLLL) {
-        arr.push('Right lower zone, Left middle zone');
+        arr.push('right lower zone, left middle zone');
       }
       if (frmData.opacitiesLUL && frmData.opacitiesLML && !frmData.opacitiesRLL && !frmData.opacitiesRML && !frmData.opacitiesRUL && !frmData.opacitiesLLL) {
-        arr.push('Left upper zone, Left middle zone');
+        arr.push('left upper zone, left middle zone');
       }
       if (frmData.opacitiesRML && frmData.opacitiesLUL && !frmData.opacitiesRUL && !frmData.opacitiesRLL && !frmData.opacitiesLLL && !frmData.opacitiesLML) {
-        arr.push('Right middle zone, Left upper zone');
+        arr.push('right middle zone, left upper zone');
       }
       if (frmData.opacitiesRML && frmData.opacitiesLLL && !frmData.opacitiesRUL && !frmData.opacitiesRLL && !frmData.opacitiesLUL && !frmData.opacitiesLML) {
-        arr.push('Right middle zone, Left lower zone');
+        arr.push('right middle zone, left lower zone');
       }
       if (frmData.opacitiesRLL && frmData.opacitiesLUL && !frmData.opacitiesRUL && !frmData.opacitiesRML && !frmData.opacitiesLLL && !frmData.opacitiesLML) {
-        arr.push('Right lower zone, Left upper zone');
+        arr.push('right lower zone, left upper zone');
       }
       if (frmData.opacitiesLML && frmData.opacitiesLLL && !frmData.opacitiesRUL && !frmData.opacitiesRML && !frmData.opacitiesRLL && !frmData.opacitiesLUL) {
-        arr.push('Left middle zone, Left lower zone')
+        arr.push('left middle zone, left lower zone')
       }
 
       // ************************ 3 Combinations******************************
       if (frmData.opacitiesRUL && frmData.opacitiesRML && frmData.opacitiesRLL && !frmData.opacitiesLUL && !frmData.opacitiesLLL && !frmData.opacitiesLML) {
-        arr.push('Right lung');
+        arr.push('right lung');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRML && frmData.opacitiesLUL && !frmData.opacitiesRLL && !frmData.opacitiesLLL && !frmData.opacitiesLML) {
-        arr.push('Bilateral upper zone, Right middle zone');
+        arr.push('bilateral upper zone, right middle zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRML && frmData.opacitiesLML && !frmData.opacitiesRLL && !frmData.opacitiesLUL && !frmData.opacitiesLLL) {
-        arr.push('Bilateral middle zone, Right upper zone');
+        arr.push('bilateral middle zone, right upper zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRML && frmData.opacitiesLLL && !frmData.opacitiesLML && !frmData.opacitiesLUL && !frmData.opacitiesRLL) {
-        arr.push('Right upper zone, Right middle zone, Left lower zone');
+        arr.push('right upper zone, right middle zone, left lower zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRLL && frmData.opacitiesLUL && !frmData.opacitiesRML && !frmData.opacitiesLLL && !frmData.opacitiesLML) {
-        arr.push('Bilateral upper zone, Right lower zone');
+        arr.push('bilateral upper zone, right lower zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRLL && frmData.opacitiesLML && !frmData.opacitiesLUL && !frmData.opacitiesLLL && !frmData.opacitiesRML) {
-        arr.push('Right upper zone, Right lower zone, Left middle zone');
+        arr.push('right upper zone, right lower zone, left middle zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRLL && frmData.opacitiesLLL && !frmData.opacitiesLUL && !frmData.opacitiesRML && !frmData.opacitiesLML) {
-        arr.push('Bilateral lower zone, Right upper zone');
+        arr.push('bilateral lower zone, right upper zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesLUL && frmData.opacitiesLML && !frmData.opacitiesRML && !frmData.opacitiesRLL && !frmData.opacitiesLLL) {
-        arr.push('Bilateral upper zone, Left middle zone');
+        arr.push('bilateral upper zone, left middle zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesLUL && frmData.opacitiesLLL && !frmData.opacitiesRML && !frmData.opacitiesRLL && !frmData.opacitiesLML) {
-        arr.push('Bilateral upper zone, Left lower zone');
+        arr.push('bilateral upper zone, left lower zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesLML && frmData.opacitiesLLL && !frmData.opacitiesLUL && !frmData.opacitiesRLL && !frmData.opacitiesRML) {
-        arr.push('Right upper zone, Left middle zone, Left lower zone');
+        arr.push('right upper zone, left middle zone, left lower zone');
       }
       if (frmData.opacitiesRML && frmData.opacitiesRLL && frmData.opacitiesLUL && !frmData.opacitiesLLL && !frmData.opacitiesLML && !frmData.opacitiesRUL) {
-        arr.push('Right middle zone, Right lower zone, Left upper zone');
+        arr.push('right middle zone, right lower zone, left upper zone');
       }
       if (frmData.opacitiesRML && frmData.opacitiesLUL && frmData.opacitiesLLL && !frmData.opacitiesLML && !frmData.opacitiesRUL && !frmData.opacitiesRLL) {
-        arr.push('Right middle zone, Left upper zone, Left lower zone');
+        arr.push('right middle zone, left upper zone, left lower zone');
       }
       if (frmData.opacitiesRLL && frmData.opacitiesLUL && frmData.opacitiesLLL && !frmData.opacitiesLML && !frmData.opacitiesRML && !frmData.opacitiesRUL) {
-        arr.push('Right lower zone, Left upper zone, Left lower zone');
+        arr.push('right lower zone, left upper zone, left lower zone');
       }
       if (frmData.opacitiesRLL && frmData.opacitiesLML && frmData.opacitiesLLL && !frmData.opacitiesLUL && !frmData.opacitiesRML && !frmData.opacitiesRUL) {
-        arr.push('Bilateral lower zone, Left middle zone');
+        arr.push('bilateral lower zone, left middle zone');
       }
       if (frmData.opacitiesRML && frmData.opacitiesRLL && frmData.opacitiesLML && !frmData.opacitiesLLL && !frmData.opacitiesLUL && !frmData.opacitiesRUL) {
-        arr.push('Bilateral middle zone, Right lower zone');
+        arr.push('bilateral middle zone, right lower zone');
       }
       if (frmData.opacitiesLLL && frmData.opacitiesLML && frmData.opacitiesLUL && !frmData.opacitiesRLL && !frmData.opacitiesRML && !frmData.opacitiesRUL) {
-        arr.push('Left lung');
+        arr.push('left lung');
       }
       if (frmData.opacitiesRML && frmData.opacitiesRLL && frmData.opacitiesLLL && !frmData.opacitiesRUL && !frmData.opacitiesLUL && !frmData.opacitiesLML) {
-        arr.push('Bilateral lower zone, Right middle zone');
+        arr.push('bilateral lower zone, right middle zone');
       }
       if (frmData.opacitiesRML && frmData.opacitiesLUL && frmData.opacitiesLML && !frmData.opacitiesRUL && !frmData.opacitiesRLL && !frmData.opacitiesLLL) {
-        arr.push("Bilateral middle zone, Left upper zone");
+        arr.push("bilateral middle zone, left upper zone");
       }
 
       if (frmData.opacitiesRML && frmData.opacitiesLML && frmData.opacitiesLLL && !frmData.opacitiesRUL && !frmData.opacitiesRLL && !frmData.opacitiesLUL) {
-        arr.push('Bilateral middle zone, Left lower zone');
+        arr.push('bilateral middle zone, left lower zone');
       }
       if (frmData.opacitiesRLL && frmData.opacitiesLUL && frmData.opacitiesLML && !frmData.opacitiesRUL && !frmData.opacitiesRML && !frmData.opacitiesLLL) {
-        arr.push("Right lower zone, Left upper zone, Left middle zone");
+        arr.push("right lower zone, left upper zone, left middle zone");
       }
 
 
       // ***************************4 Combination.************************************
       if (frmData.opacitiesRUL && frmData.opacitiesRML && frmData.opacitiesRLL && frmData.opacitiesLUL && !frmData.opacitiesLLL && !frmData.opacitiesLML) {
-        arr.push('Right lung, Left upper zone');
+        arr.push('right lung, left upper zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRML && frmData.opacitiesRLL && frmData.opacitiesLML && !frmData.opacitiesLLL && !frmData.opacitiesLUL) {
-        arr.push('Right lung, Left middle zone');
+        arr.push('right lung, left middle zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRML && frmData.opacitiesRLL && frmData.opacitiesLLL && !frmData.opacitiesLUL && !frmData.opacitiesLML) {
-        arr.push('Right lung, Left lower zone');
+        arr.push('right lung, left lower zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRML && frmData.opacitiesLUL && frmData.opacitiesLML && !frmData.opacitiesLLL && !frmData.opacitiesRLL) {
-        arr.push('Bilateral middle zone, Bilateral upper zone');
+        arr.push('bilateral middle zone, bilateral upper zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRML && frmData.opacitiesLUL && frmData.opacitiesLLL && !frmData.opacitiesRLL && !frmData.opacitiesLML) {
-        arr.push('Bilateral upper zone, Right middle zone, Left lower zone');
+        arr.push('bilateral upper zone, right middle zone, left lower zone');
       }
 
       if (frmData.opacitiesRUL && frmData.opacitiesRLL && frmData.opacitiesLUL && frmData.opacitiesLML && !frmData.opacitiesLLL && !frmData.opacitiesRML) {
-        arr.push('Bilateral upper zone, Right lower zone, Left middle zone');
+        arr.push('bilateral upper zone, right lower zone, left middle zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRLL && frmData.opacitiesLUL && frmData.opacitiesLLL && !frmData.opacitiesRML && !frmData.opacitiesLML) {
-        arr.push('Bilateral upper zone, Bilateral lower zone');
+        arr.push('bilateral upper zone, bilateral lower zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRLL && frmData.opacitiesLML && frmData.opacitiesLLL && !frmData.opacitiesRML && !frmData.opacitiesLUL) {
-        arr.push('Bilateral lower zone, Right upper zone, Left middle zone');
+        arr.push('bilateral lower zone, right upper zone, left middle zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesLUL && frmData.opacitiesLML && frmData.opacitiesLLL && !frmData.opacitiesRLL && !frmData.opacitiesRML) {
-        arr.push('Left lung, Right upper zone');
+        arr.push('left lung, right upper zone');
       }
       if (frmData.opacitiesRML && frmData.opacitiesRLL && frmData.opacitiesLUL && frmData.opacitiesLML && !frmData.opacitiesLLL && !frmData.opacitiesRUL) {
-        arr.push('Bilateral middle zone, Left upper zone, Right lower zone');
+        arr.push('bilateral middle zone, left upper zone, right lower zone');
       }
       if (frmData.opacitiesRML && frmData.opacitiesRLL && frmData.opacitiesLUL && frmData.opacitiesLLL && !frmData.opacitiesRUL && !frmData.opacitiesLML) {
-        arr.push('Bilateral lower zone, Right middle zone, Left upper zone');
+        arr.push('bilateral lower zone, right middle zone, left upper zone');
       }
       if (frmData.opacitiesRML && frmData.opacitiesRLL && frmData.opacitiesLML && frmData.opacitiesLLL && !frmData.opacitiesRUL && !frmData.opacitiesLUL) {
-        arr.push('Bilateral middle zone, Bilateral lower zone');
+        arr.push('bilateral middle zone, bilateral lower zone');
       }
       if (frmData.opacitiesRML && frmData.opacitiesLUL && frmData.opacitiesLML && frmData.opacitiesLLL && !frmData.opacitiesRLL && !frmData.opacitiesRUL) {
-        arr.push('Left lung, Right middle zone');
+        arr.push('left lung, right middle zone');
       }
       if (frmData.opacitiesRLL && frmData.opacitiesLUL && frmData.opacitiesLML && frmData.opacitiesLLL && !frmData.opacitiesRML && !frmData.opacitiesRUL) {
-        arr.push('Left lung, Right lower zone');
+        arr.push('left lung, right lower zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRML && frmData.opacitiesLML && frmData.opacitiesLLL && !frmData.opacitiesLUL && !frmData.opacitiesRLL) {
-        arr.push('Bilateral middle zone, Right upper zone, Left lower zone');
+        arr.push('bilateral middle zone, right upper zone, left lower zone');
       }
 
       // ****************************************5 Combination*************************************
       if (frmData.opacitiesRUL && frmData.opacitiesRML && frmData.opacitiesRLL && frmData.opacitiesLUL && frmData.opacitiesLLL && !frmData.opacitiesLML) {
-        arr.push("Bilateral upper zone, Bilateral lower zone, Right middle zone");
+        arr.push("bilateral upper zone, bilateral lower zone, right middle zone");
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRML && frmData.opacitiesRLL && frmData.opacitiesLUL && frmData.opacitiesLML && !frmData.opacitiesLLL) {
-        arr.push('Bilateral upper zone, Bilateral middle zone, Right lower zone');
+        arr.push('bilateral upper zone, bilateral middle zone, right lower zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRML && frmData.opacitiesRLL && frmData.opacitiesLML && frmData.opacitiesLLL && !frmData.opacitiesLUL) {
-        arr.push('Bilateral middle zone, Bilateral lower zone, Right upper zone');
+        arr.push('bilateral middle zone, bilateral lower zone, right upper zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRML && frmData.opacitiesLUL && frmData.opacitiesLML && frmData.opacitiesLLL && !frmData.opacitiesRLL) {
-        arr.push('Bilateral upper zone, Bilateral middle zone, Left lower zone');
+        arr.push('bilateral upper zone, bilateral middle zone, left lower zone');
       }
       if (frmData.opacitiesRUL && frmData.opacitiesRLL && frmData.opacitiesLUL && frmData.opacitiesLML && frmData.opacitiesLLL && !frmData.opacitiesRML) {
-        arr.push('Bilateral upper zone, Bilateral lower zone, Left middle zone');
+        arr.push('bilateral upper zone, bilateral lower zone, left middle zone');
       }
       if (frmData.opacitiesRML && frmData.opacitiesRLL && frmData.opacitiesLUL && frmData.opacitiesLML && frmData.opacitiesLLL && !frmData.opacitiesRUL) {
-        arr.push('Bilateral middle zone, Bilateral lower zone, Left upper zone');
+        arr.push('bilateral middle zone, bilateral lower zone, left upper zone');
       }
 
       // **************************6 Combination. ***************************************
       if (frmData.opacitiesRUL && frmData.opacitiesRML && frmData.opacitiesRLL && frmData.opacitiesLUL && frmData.opacitiesLLL && frmData.opacitiesLML) {
-        arr.push('Both lungs');
+        arr.push('both lungs');
       }
 
       if (!(frmData.RuzAirBronchogram || frmData.RuzFibrosis || frmData.RuzConsolidation || frmData.RuzCavitation
@@ -751,179 +751,179 @@ class XrayChest extends Component {
       let arr = []
       // ********************Single OpacitiesType*****************Date: 05/03/22 Hitesh Mishra******
       if (frmData.mildHazinessRUL && !frmData.mildHazinessRML && !frmData.mildHazinessRLL && !frmData.mildHazinessLUL && !frmData.mildHazinessLLL && !frmData.mildHazinessLML) {
-        arr.push("Right upper zone")
+        arr.push("right upper zone")
       }
       if (frmData.mildHazinessRML && !frmData.mildHazinessRUL && !frmData.mildHazinessRLL && !frmData.mildHazinessLUL && !frmData.mildHazinessLLL && !frmData.mildHazinessLML) {
-        arr.push("Right middle zone");
+        arr.push("right middle zone");
       }
       if (frmData.mildHazinessRLL && !frmData.mildHazinessRML && !frmData.mildHazinessRUL && !frmData.mildHazinessLUL && !frmData.mildHazinessLLL && !frmData.mildHazinessLML) {
-        arr.push("Right lower zone");
+        arr.push("right lower zone");
       }
       if (frmData.mildHazinessLUL && !frmData.mildHazinessRUL && !frmData.mildHazinessRML && !frmData.mildHazinessRLL && !frmData.mildHazinessLLL && !frmData.mildHazinessLML) {
-        arr.push("Left upper zone");
+        arr.push("left upper zone");
       }
       if (frmData.mildHazinessLML && !frmData.mildHazinessRUL && !frmData.mildHazinessRLL && !frmData.mildHazinessRML && !frmData.mildHazinessLUL && !frmData.mildHazinessLLL) {
-        arr.push('Left middle zone');
+        arr.push('left middle zone');
       }
       if (frmData.mildHazinessLLL && !frmData.mildHazinessRUL && !frmData.mildHazinessRML && !frmData.mildHazinessRLL && !frmData.mildHazinessLUL && !frmData.mildHazinessLML) {
-        arr.push("Left lower zone");
+        arr.push("left lower zone");
       }
 
       // **************************2 Combinations*************************
       if (frmData.mildHazinessRUL && frmData.mildHazinessLUL && !frmData.mildHazinessRML && !frmData.mildHazinessRLL && !frmData.mildHazinessLLL && !frmData.mildHazinessLML) {
-        arr.push("Bilateral upper zone");
+        arr.push("bilateral upper zone");
       }
       if (frmData.mildHazinessRLL && frmData.mildHazinessLLL && !frmData.mildHazinessRUL && !frmData.mildHazinessLUL && !frmData.mildHazinessRML && !frmData.mildHazinessLML) {
-        arr.push("Bilateral lower zone");
+        arr.push("bilateral lower zone");
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRML && !frmData.mildHazinessLML && !frmData.mildHazinessLLL && !frmData.mildHazinessLUL && !frmData.mildHazinessRLL) {
-        arr.push('Right upper zone, Right middle zone');
+        arr.push('right upper zone, right middle zone');
       }
       if (frmData.mildHazinessLUL && frmData.mildHazinessLLL && !frmData.mildHazinessRLL && !frmData.mildHazinessRML && !frmData.mildHazinessRUL && !frmData.mildHazinessLML) {
-        arr.push("Left upper zone, Left lower zone");
+        arr.push("left upper zone, left lower zone");
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRLL && !frmData.mildHazinessRML && !frmData.mildHazinessLUL && !frmData.mildHazinessLLL && !frmData.mildHazinessLML) {
-        arr.push('Right upper zone, Right lower zone');
+        arr.push('right upper zone, right lower zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessLML && !frmData.mildHazinessLUL && !frmData.mildHazinessRLL && !frmData.mildHazinessRML && !frmData.mildHazinessLLL) {
-        arr.push('Right upper zone, Left middle zone');
+        arr.push('right upper zone, left middle zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessLLL && !frmData.mildHazinessRML && !frmData.mildHazinessLUL && !frmData.mildHazinessRLL && !frmData.mildHazinessLML) {
-        arr.push('Right upper zone, Left lower zone');
+        arr.push('right upper zone, left lower zone');
       }
       if (frmData.mildHazinessRML && frmData.mildHazinessRLL && !frmData.mildHazinessRUL && !frmData.mildHazinessLUL && !frmData.mildHazinessLLL && !frmData.mildHazinessLML) {
-        arr.push('Right middle zone, Right lower zone');
+        arr.push('right middle zone, right lower zone');
       }
       if (frmData.mildHazinessRML && frmData.mildHazinessLML && !frmData.mildHazinessRUL && !frmData.mildHazinessLUL && !frmData.mildHazinessLLL && !frmData.mildHazinessRLL) {
-        arr.push('Bilateral middle zone');
+        arr.push('bilateral middle zone');
       }
       if (frmData.mildHazinessRLL && frmData.mildHazinessLML && !frmData.mildHazinessRML && !frmData.mildHazinessRUL && !frmData.mildHazinessLUL && !frmData.mildHazinessLLL) {
-        arr.push('Right lower zone, Left middle zone');
+        arr.push('right lower zone, left middle zone');
       }
       if (frmData.mildHazinessLUL && frmData.mildHazinessLML && !frmData.mildHazinessRLL && !frmData.mildHazinessRML && !frmData.mildHazinessRUL && !frmData.mildHazinessLLL) {
-        arr.push('Left upper zone, Left middle zone');
+        arr.push('left upper zone, left middle zone');
       }
       if (frmData.mildHazinessRML && frmData.mildHazinessLUL && !frmData.mildHazinessRUL && !frmData.mildHazinessRLL && !frmData.mildHazinessLLL && !frmData.mildHazinessLML) {
-        arr.push('Right middle zone, Left upper zone');
+        arr.push('right middle zone, left upper zone');
       }
       if (frmData.mildHazinessRML && frmData.mildHazinessLLL && !frmData.mildHazinessRUL && !frmData.mildHazinessRLL && !frmData.mildHazinessLUL && !frmData.mildHazinessLML) {
-        arr.push('Right middle zone, Left lower zone');
+        arr.push('right middle zone, left lower zone');
       }
       if (frmData.mildHazinessRLL && frmData.mildHazinessLUL && !frmData.mildHazinessRUL && !frmData.mildHazinessRML && !frmData.mildHazinessLLL && !frmData.mildHazinessLML) {
-        arr.push('Right lower zone, Left upper zone');
+        arr.push('right lower zone, left upper zone');
       }
       if (frmData.mildHazinessLML && frmData.mildHazinessLLL && !frmData.mildHazinessRUL && !frmData.mildHazinessRML && !frmData.mildHazinessRLL && !frmData.mildHazinessLUL) {
-        arr.push('Left middle zone, Left lower zone')
+        arr.push('left middle zone, left lower zone')
       }
 
       // ************************ 3 Combinations******************************
       if (frmData.mildHazinessRUL && frmData.mildHazinessRML && frmData.mildHazinessRLL && !frmData.mildHazinessLUL && !frmData.mildHazinessLLL && !frmData.mildHazinessLML) {
-        arr.push('Right lung');
+        arr.push('right lung');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRML && frmData.mildHazinessLUL && !frmData.mildHazinessRLL && !frmData.mildHazinessLLL && !frmData.mildHazinessLML) {
-        arr.push('Bilateral upper zone, Right middle zone');
+        arr.push('bilateral upper zone, right middle zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRML && frmData.mildHazinessLML && !frmData.mildHazinessRLL && !frmData.mildHazinessLUL && !frmData.mildHazinessLLL) {
-        arr.push('Bilateral middle zone, Right upper zone');
+        arr.push('bilateral middle zone, right upper zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRML && frmData.mildHazinessLLL && !frmData.mildHazinessLML && !frmData.mildHazinessLUL && !frmData.mildHazinessRLL) {
-        arr.push('Right upper zone, Right middle zone, Left lower zone');
+        arr.push('right upper zone, right middle zone, left lower zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRLL && frmData.mildHazinessLUL && !frmData.mildHazinessRML && !frmData.mildHazinessLLL && !frmData.mildHazinessLML) {
-        arr.push('Bilateral upper zone, Right lower zone');
+        arr.push('bilateral upper zone, right lower zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRLL && frmData.mildHazinessLML && !frmData.mildHazinessLUL && !frmData.mildHazinessLLL && !frmData.mildHazinessRML) {
-        arr.push('Right upper zone, Right lower zone, Left middle zone');
+        arr.push('right upper zone, right lower zone, left middle zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRLL && frmData.mildHazinessLLL && !frmData.mildHazinessLUL && !frmData.mildHazinessRML && !frmData.mildHazinessLML) {
-        arr.push('Bilateral lower zone, Right upper zone');
+        arr.push('bilateral lower zone, right upper zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessLUL && frmData.mildHazinessLML && !frmData.mildHazinessRML && !frmData.mildHazinessRLL && !frmData.mildHazinessLLL) {
-        arr.push('Bilateral upper zone, Left middle zone');
+        arr.push('bilateral upper zone, left middle zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessLUL && frmData.mildHazinessLLL && !frmData.mildHazinessRML && !frmData.mildHazinessRLL && !frmData.mildHazinessLML) {
-        arr.push('Bilateral upper zone, Left lower zone');
+        arr.push('bilateral upper zone, left lower zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessLML && frmData.mildHazinessLLL && !frmData.mildHazinessLUL && !frmData.mildHazinessRLL && !frmData.mildHazinessRML) {
-        arr.push('Right upper zone, Left middle zone, Left lower zone');
+        arr.push('right upper zone, left middle zone, left lower zone');
       }
       if (frmData.mildHazinessRML && frmData.mildHazinessRLL && frmData.mildHazinessLUL && !frmData.mildHazinessLLL && !frmData.mildHazinessLML && !frmData.mildHazinessRUL) {
-        arr.push('Right middle zone, Right lower zone, Left upper zone');
+        arr.push('right middle zone, right lower zone, left upper zone');
       }
       if (frmData.mildHazinessRML && frmData.mildHazinessLUL && frmData.mildHazinessLLL && !frmData.mildHazinessLML && !frmData.mildHazinessRUL && !frmData.mildHazinessRLL) {
-        arr.push('Right middle zone, Left upper zone, Left lower zone');
+        arr.push('right middle zone, left upper zone, left lower zone');
       }
       if (frmData.mildHazinessRLL && frmData.mildHazinessLUL && frmData.mildHazinessLLL && !frmData.mildHazinessLML && !frmData.mildHazinessRML && !frmData.mildHazinessRUL) {
-        arr.push('Right lower zone, Left upper zone, Left lower zone');
+        arr.push('right lower zone, left upper zone, left lower zone');
       }
       if (frmData.mildHazinessRLL && frmData.mildHazinessLML && frmData.mildHazinessLLL && !frmData.mildHazinessLUL && !frmData.mildHazinessRML && !frmData.mildHazinessRUL) {
-        arr.push('Bilateral lower zone, Left middle zone');
+        arr.push('bilateral lower zone, left middle zone');
       }
       if (frmData.mildHazinessRML && frmData.mildHazinessRLL && frmData.mildHazinessLML && !frmData.mildHazinessLLL && !frmData.mildHazinessLUL && !frmData.mildHazinessRUL) {
-        arr.push('Bilateral middle zone, Right lower zone');
+        arr.push('bilateral middle zone, right lower zone');
       }
       if (frmData.mildHazinessLLL && frmData.mildHazinessLML && frmData.mildHazinessLUL && !frmData.mildHazinessRLL && !frmData.mildHazinessRML && !frmData.mildHazinessRUL) {
-        arr.push('Left lung');
+        arr.push('left lung');
       }
       if (frmData.mildHazinessRML && frmData.mildHazinessRLL && frmData.mildHazinessLLL && !frmData.mildHazinessRUL && !frmData.mildHazinessLUL && !frmData.mildHazinessLML) {
-        arr.push('Bilateral lower zone, Right middle zone');
+        arr.push('bilateral lower zone, right middle zone');
       }
       if (frmData.mildHazinessRML && frmData.mildHazinessLUL && frmData.mildHazinessLML && !frmData.mildHazinessRUL && !frmData.mildHazinessRLL && !frmData.mildHazinessLLL) {
-        arr.push("Bilateral middle zone, Left upper zone");
+        arr.push("bilateral middle zone, left upper zone");
       }
       if (frmData.mildHazinessRML && frmData.mildHazinessLML && frmData.mildHazinessLLL && !frmData.mildHazinessRUL && !frmData.mildHazinessRLL && !frmData.mildHazinessLUL) {
-        arr.push('Bilateral middle zone, Left lower zone');
+        arr.push('bilateral middle zone, left lower zone');
       }
       if (frmData.mildHazinessRLL && frmData.mildHazinessLUL && frmData.mildHazinessLML && !frmData.mildHazinessRUL && !frmData.mildHazinessRML && !frmData.mildHazinessLLL) {
-        arr.push("Right lower zone, Left upper zone, Left middle zone");
+        arr.push("right lower zone, left upper zone, left middle zone");
       }
 
 
       // ***************************4 Combination.************************************
       if (frmData.mildHazinessRUL && frmData.mildHazinessRML && frmData.mildHazinessRLL && frmData.mildHazinessLUL && !frmData.mildHazinessLLL && !frmData.mildHazinessLML) {
-        arr.push('Right lung, Left upper zone');
+        arr.push('right lung, left upper zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRML && frmData.mildHazinessRLL && frmData.mildHazinessLML && !frmData.mildHazinessLLL && !frmData.mildHazinessLUL) {
-        arr.push('Right lung, Left middle zone');
+        arr.push('right lung, left middle zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRML && frmData.mildHazinessRLL && frmData.mildHazinessLLL && !frmData.mildHazinessLUL && !frmData.mildHazinessLML) {
-        arr.push('Right lung, Left lower zone');
+        arr.push('right lung, left lower zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRML && frmData.mildHazinessLUL && frmData.mildHazinessLML && !frmData.mildHazinessLLL && !frmData.mildHazinessRLL) {
-        arr.push('Bilateral middle zone, Bilateral upper zone');
+        arr.push('bilateral middle zone, bilateral upper zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRML && frmData.mildHazinessLUL && frmData.mildHazinessLLL && !frmData.mildHazinessRLL && !frmData.mildHazinessLML) {
-        arr.push('Bilateral upper zone, Right middle zone, Left lower zone');
+        arr.push('bilateral upper zone, right middle zone, left lower zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRLL && frmData.mildHazinessLUL && frmData.mildHazinessLML && !frmData.mildHazinessLLL && !frmData.mildHazinessRML) {
-        arr.push('Bilateral upper zone, Right lower zone, Left middle zone');
+        arr.push('bilateral upper zone, right lower zone, left middle zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRLL && frmData.mildHazinessLUL && frmData.mildHazinessLLL && !frmData.mildHazinessRML && !frmData.mildHazinessLML) {
-        arr.push('Bilateral upper zone, Bilateral lower zone');
+        arr.push('bilateral upper zone, bilateral lower zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRLL && frmData.mildHazinessLML && frmData.mildHazinessLLL && !frmData.mildHazinessRML && !frmData.mildHazinessLUL) {
-        arr.push('Bilateral lower zone, Right upper zone, Left middle zone');
+        arr.push('bilateral lower zone, right upper zone, left middle zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessLUL && frmData.mildHazinessLML && frmData.mildHazinessLLL && !frmData.mildHazinessRLL && !frmData.mildHazinessRML) {
-        arr.push('Left lung, Right upper zone');
+        arr.push('left lung, right upper zone');
       }
       if (frmData.mildHazinessRML && frmData.mildHazinessRLL && frmData.mildHazinessLUL && frmData.mildHazinessLML && !frmData.mildHazinessLLL && !frmData.mildHazinessRUL) {
-        arr.push('Bilateral middle zone, Left upper zone, Right lower zone');
+        arr.push('bilateral middle zone, left upper zone, right lower zone');
       }
       if (frmData.mildHazinessRML && frmData.mildHazinessRLL && frmData.mildHazinessLUL && frmData.mildHazinessLLL && !frmData.mildHazinessRUL && !frmData.mildHazinessLML) {
-        arr.push('Bilateral lower zone, Right middle zone, Left upper zone');
+        arr.push('bilateral lower zone, right middle zone, left upper zone');
       }
       if (frmData.mildHazinessRML && frmData.mildHazinessRLL && frmData.mildHazinessLML && frmData.mildHazinessLLL && !frmData.mildHazinessRUL && !frmData.mildHazinessLUL) {
-        arr.push('Bilateral middle zone, Bilateral lower zone');
+        arr.push('bilateral middle zone, bilateral lower zone');
       }
       if (frmData.mildHazinessRML && frmData.mildHazinessLUL && frmData.mildHazinessLML && frmData.mildHazinessLLL && !frmData.mildHazinessRLL && !frmData.mildHazinessRUL) {
-        arr.push('Left lung, Right middle zone');
+        arr.push('left lung, right middle zone');
       }
       if (frmData.mildHazinessRLL && frmData.mildHazinessLUL && frmData.mildHazinessLML && frmData.mildHazinessLLL && !frmData.mildHazinessRML && !frmData.mildHazinessRUL) {
-        arr.push('Left lung, Right lower zone');
+        arr.push('left lung, right lower zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRML && frmData.mildHazinessLML && frmData.mildHazinessLLL && !frmData.mildHazinessLUL && !frmData.mildHazinessRLL) {
-        arr.push('Bilateral middle zone, Right upper zone, Left lower zone');
+        arr.push('bilateral middle zone, right upper zone, left lower zone');
       }
 
 
@@ -932,31 +932,30 @@ class XrayChest extends Component {
       //   arr.push("bilateral upper zone & bilateral lower zone & right middle zone");
       // }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRML && frmData.mildHazinessRLL && frmData.mildHazinessLUL && frmData.mildHazinessLML && !frmData.mildHazinessLLL) {
-        arr.push('Bilateral upper zone, Bilateral middle zone, Right lower zone');
+        arr.push('bilateral upper zone, bilateral middle zone, right lower zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRML && frmData.mildHazinessRLL && frmData.mildHazinessLML && frmData.mildHazinessLLL && !frmData.mildHazinessLUL) {
-        arr.push('Bilateral middle zone, Bilateral lower zone, Right upper zone');
+        arr.push('bilateral middle zone, bilateral lower zone, right upper zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRML && frmData.mildHazinessLUL && frmData.mildHazinessLML && frmData.mildHazinessLLL && !frmData.mildHazinessRLL) {
-        arr.push('Bilateral upper zone, Bilateral middle zone, Left lower zone');
+        arr.push('bilateral upper zone, bilateral middle zone, left lower zone');
       }
       if (frmData.mildHazinessRUL && frmData.mildHazinessRLL && frmData.mildHazinessLUL && frmData.mildHazinessLML && frmData.mildHazinessLLL && !frmData.mildHazinessRML) {
-        arr.push('Bilateral upper zone, Bilateral lower zone, Left middle zone');
+        arr.push('bilateral upper zone, bilateral lower zone, left middle zone');
       }
       if (frmData.mildHazinessRML && frmData.mildHazinessRLL && frmData.mildHazinessLUL && frmData.mildHazinessLML && frmData.mildHazinessLLL && !frmData.mildHazinessRUL) {
-        arr.push('Bilateral middle zone, Bilateral lower zone, Left upper zone');
+        arr.push('bilateral middle zone, bilateral lower zone, left upper zone');
       }
 
       // **************************6 Combination. ***************************************
       if (frmData.mildHazinessRUL && frmData.mildHazinessRML && frmData.mildHazinessRLL && frmData.mildHazinessLUL && frmData.mildHazinessLLL && frmData.mildHazinessLML) {
-        arr.push('Both lungs');
+        arr.push('both lungs');
       }
       report += "<p>" + "<b>" + text.mildHaziness.replace("{1}", arr.join(', ')) + "</b>" + "</p>";
 
 
       if (frmData.mildHazinessText) {
         report += "<p>" + "<b>" + frmData.mildHazinessText + "</b>" + "</p>";
-        impression.push("<p>" + "<b>" + frmData.mildHazinessText + "</b>" + "</p>");
       }
     }
 
@@ -980,7 +979,7 @@ class XrayChest extends Component {
       if (frmData.opacitiesLLL || frmData.mildHazinessLLL) {
         arr.push("left lower zone")
       }
-      impression.push("<p>" + "<b>" + text.opacitiesImpression.replace("{1}", arr.join('& ')) + "</b>" + "</p>");
+      impression.push("<p>" + "<b>" + text.opacitiesImpression.replace("{1}", arr.join(' & ')) + "</b>" + "</p>");
 
     }
 
@@ -992,7 +991,7 @@ class XrayChest extends Component {
         report += "<p>" + "<b>" + text.bothCalcification + "</b>" + "</p>";
       }
       else {
-        if (frmData.rightHilarShadow === 'Prominent' && frmData.ProminentImpressionLHS &&
+        if (frmData.rightHilarShadow === 'prominent' && frmData.ProminentImpressionLHS &&
           frmData.ProminentImpressionRHS) {
           report += "<p>" + "<b>" + text.bothhilarshadow.replace("{1}", frmData.rightHilarShadow) + "</b>" + "</p>";
         }
@@ -1010,12 +1009,12 @@ class XrayChest extends Component {
     else {
       if (frmData.rightHilarShadow !== undefined || frmData.leftHilarShadow !== undefined) {
         if (frmData.rightHilarShadow) {
-          if (frmData.rightHilarShadow === 'Calcifications' && frmData.CalcificationImpressionRHS) {
+          if (frmData.rightHilarShadow === 'calcifications' && frmData.CalcificationImpressionRHS) {
             report += "<p>" + "<b>" + text.righthilarshadowCalcification + "</b>" + "</p>";
             impression.push("<p>" + "<b>" + frmData.CalcificationImpressionRHS + "</b>" + "</p>");
           }
           else {
-            if (frmData.rightHilarShadow === 'Prominent' && frmData.ProminentImpressionRHS) {
+            if (frmData.rightHilarShadow === 'prominent' && frmData.ProminentImpressionRHS) {
               report += "<p>" + "<b>" + text.righthilarshadow.replace("{1}", frmData.rightHilarShadow) + "</b>" + "</p>";
               impression.push("<p>" + "<b>" + frmData.ProminentImpressionRHS + "</b>" + "</p>");
             }
@@ -1034,12 +1033,12 @@ class XrayChest extends Component {
         }
         // *************************************LEFT HILAR SHADOW 05/03/22(Hitesh Mishra)***********************************************
         if (frmData.leftHilarShadow) {
-          if (frmData.leftHilarShadow === 'Calcifications' && frmData.CalcificationImpressionLHS) {
+          if (frmData.leftHilarShadow === 'calcifications' && frmData.CalcificationImpressionLHS) {
             report += "<p>" + "<b>" + text.lefthilarshadowCalcification + "</b>" + "</p>";
             impression.push("<p>" + "<b>" + frmData.CalcificationImpressionLHS + "</b>" + "</p>");
           }
           else {
-            if (frmData.leftHilarShadow === 'Prominent' && frmData.ProminentImpressionLHS) {
+            if (frmData.leftHilarShadow === 'prominent' && frmData.ProminentImpressionLHS) {
               report += "<p>" + "<b>" + text.lefthilarshadow.replace("{1}", frmData.leftHilarShadow) + "</b>" + "</p>";
               impression.push("<p>" + "<b>" + frmData.ProminentImpressionLHS + "</b>" + "</p>");
             }
@@ -1064,14 +1063,14 @@ class XrayChest extends Component {
     // *****************************************Both CP********************************************************
 
     if (frmData.rightCostophrenicAngle === frmData.leftCostophrenicAngle && frmData.rightCostophrenicAngle !== undefined) {
-      if (frmData.rightCostophrenicAngle === 'Obliterated' && frmData.rightObliteratedType) {
+      if (frmData.rightCostophrenicAngle === 'obliterated' && frmData.rightObliteratedType) {
         report += "<p>" + "<b>" + text.bothCPAngle.replace("{1}", frmData.rightCostophrenicAngle) + "</p>" + "</b>";
         impression.push("<p>" + "<b>" + text.bothCPAngleImpression.replace("{1}", frmData.rightCostophrenicAngle) + "</p>" + "</b>");
       }
     }
 
     if (frmData.rightCostophrenicAngle === frmData.leftCostophrenicAngle && frmData.rightCostophrenicAngle !== undefined) {
-      if (frmData.rightCostophrenicAngle === 'Obliterated' && !frmData.rightObliteratedType) {
+      if (frmData.rightCostophrenicAngle === 'obliterated' && !frmData.rightObliteratedType) {
         report += "<p>" + "<b>" + text.bothCPAngle.replace("{1}", frmData.rightCostophrenicAngle) + "</b>" + "</p>";
         impression.push("<p>" + "<b>" + text.bothCPAngle.replace("{1}", frmData.rightCostophrenicAngle) + "</b>" + "</p>");
       }
@@ -1082,26 +1081,26 @@ class XrayChest extends Component {
     else {
       if (frmData.rightCostophrenicAngle !== undefined || frmData.leftCostophrenicAngle !== undefined) {
         if (frmData.rightCostophrenicAngle) {
-          if (frmData.rightCostophrenicAngle === 'Obliterated' && !frmData.rightObliteratedType) {
+          if (frmData.rightCostophrenicAngle === 'obliterated' && !frmData.rightObliteratedType) {
             report += "<p>" + "<b>" + text.rightCPAngle.replace("{1}", frmData.rightCostophrenicAngle) + "</b>" + "</p>";
             impression.push("<p>" + "<b>" + text.rightCPAngle.replace("{1}", frmData.rightCostophrenicAngle) + "</b>" + "</p>")
           }
         }
         if (frmData.rightCostophrenicAngle) {
-          if (frmData.rightCostophrenicAngle === 'Obliterated' && frmData.rightObliteratedType) {
+          if (frmData.rightCostophrenicAngle === 'obliterated' && frmData.rightObliteratedType) {
             report += "<p>" + "<b>" + text.rightCPAngle.replace("{1}", frmData.rightCostophrenicAngle) + "</b>" + "</p>";
             impression.push("<p>" + "<b>" + text.rightCPAngleImpression.replace("{1}", frmData.rightCostophrenicAngle) + "</b>" + "</p>");
           }
         }
 
         if (frmData.leftCostophrenicAngle) {
-          if (frmData.leftCostophrenicAngle === 'Obliterated' && !frmData.leftObliteratedType) {
+          if (frmData.leftCostophrenicAngle === 'obliterated' && !frmData.leftObliteratedType) {
             report += "<p>" + "<b>" + text.leftCPAngle.replace("{1}", frmData.leftCostophrenicAngle) + "</b>" + "</p>";
             impression.push("<p>" + "<b>" + text.leftCPAngle.replace("{1}", frmData.leftCostophrenicAngle) + "</b>" + "</p>");
           }
         }
         if (frmData.leftCostophrenicAngle) {
-          if (frmData.leftCostophrenicAngle === 'Obliterated' && frmData.leftObliteratedType) {
+          if (frmData.leftCostophrenicAngle === 'obliterated' && frmData.leftObliteratedType) {
             report += "<p>" + "<b>" + text.leftCPAngle.replace("{1}", frmData.leftCostophrenicAngle) + "</b>" + "</p>";
             impression.push("<p>" + "<b>" + text.leftCPAngleImpression.replace("{1}", frmData.leftCostophrenicAngle) + "</b>" + "</p>");
           }
@@ -1207,21 +1206,21 @@ class XrayChest extends Component {
         impression.push("<p>" + "<b>" + "Sternal Sutures present." + "</b>" + "</p>");
       }
       if (frmData.Clavicle) {
-        if (frmData.ClavicleL && (frmData.ClavicleLRType === "Proximal One Third" || frmData.ClavicleLRType === "Middle One Third" || frmData.ClavicleLRType === "Distal One Third")) {
+        if (frmData.ClavicleL && (frmData.ClavicleLRType === "proximal one third" || frmData.ClavicleLRType === "middle one third" || frmData.ClavicleLRType === "distal one third")) {
           report += "<p>" + "<b>" + text.clavicleLeftType.replace("{1}", frmData.ClavicleLRType) + "</b>" + "</p>";
           if (!frmData.ClavicleR) {
             impression.push("<p>" + "<b>" + "Left clavicle fracture." + "</b>" + "</p>");
           }
         }
-        if (frmData.ClavicleR && (frmData.ClavicleLRType1 === "Proximal One Third" || frmData.ClavicleLRType1 === "Middle One Third" || frmData.ClavicleLRType1 === "Distal One Third")) {
+        if (frmData.ClavicleR && (frmData.ClavicleLRType1 === "proximal one third" || frmData.ClavicleLRType1 === "middle one third" || frmData.ClavicleLRType1 === "distal one third")) {
           report += "<p>" + "<b>" + text.clavicleRightType.replace("{1}", frmData.ClavicleLRType1) + "</b>" + "</p>";
           if (!frmData.ClavicleL) {
             impression.push("<p>" + "<b>" + "Right clavicle fracture." + "</b>" + "</p>");
           }
         }
         if (frmData.ClavicleL && frmData.ClavicleR
-          && (frmData.ClavicleLRType === "Proximal One Third" || frmData.ClavicleLRType === "Middle One Third" || frmData.ClavicleLRType === "Distal One Third")
-          && (frmData.ClavicleLRType1 === "Proximal One Third" || frmData.ClavicleLRType1 === "Middle One Third" || frmData.ClavicleLRType1 === "Distal One Third")) {
+          && (frmData.ClavicleLRType === "proximal one third" || frmData.ClavicleLRType === "middle one third" || frmData.ClavicleLRType === "distal one third")
+          && (frmData.ClavicleLRType1 === "proximal one third" || frmData.ClavicleLRType1 === "middle one third" || frmData.ClavicleLRType1 === "distal one third")) {
           impression.push("<p>" + "<b>" + " Bilateral clavicle fractures." + "</b>" + "</p>");
         }
       }
@@ -1279,8 +1278,8 @@ class XrayChest extends Component {
         }
 
         if (frmData.DomesLeftType === 'Flattened' && !frmData.DomesRightType) {
-          report += "<p>" + "<b>" + "Left Dome of diaphragm is flattened." + "</p>" + "</b>";
-          impression.push("<p>" + "<b>" + "Left Dome of diaphragm is flattened." + "</p>" + "</b>")
+          report += "<p>" + "<b>" + "Left dome of diaphragm is flattened." + "</p>" + "</b>";
+          impression.push("<p>" + "<b>" + "Left dome of diaphragm is flattened." + "</p>" + "</b>")
         }
 
         if (frmData.DomesRightType === 'Elevated') {
@@ -1295,28 +1294,28 @@ class XrayChest extends Component {
         }
 
         if (frmData.DomesRightType === 'Flattened' && !frmData.DomesLeftType) {
-          report += "<p>" + "<b>" + "Right Dome of diaphragm is flattened." + "</p>" + "</b>";
-          impression.push("<p>" + "<b>" + "Right Dome of diaphragm is flattened." + "</p>" + "</b>")
+          report += "<p>" + "<b>" + "Right dome of diaphragm is flattened." + "</p>" + "</b>";
+          impression.push("<p>" + "<b>" + "Right dome of diaphragm is flattened." + "</p>" + "</b>")
         }
 
         if (frmData.DomesLeftType === 'Elevated' && !frmData.DomesLeftElevatedType && !frmData.DomesRightType) {
-          report += "<p>" + "<b>" + "Left Dome of diaphragm is elevated." + "</b>" + "</p>";
-          impression.push("<p>" + "<b>" + "Left Dome of diaphragm is elevated." + "</b>" + "</p>")
+          report += "<p>" + "<b>" + "Left dome of diaphragm is elevated." + "</b>" + "</p>";
+          impression.push("<p>" + "<b>" + "Left dome of diaphragm is elevated." + "</b>" + "</p>")
         }
         if (frmData.DomesRightType === 'Elevated' && !frmData.DomesRightElevatedType && !frmData.DomesLeftType) {
-          report += "<p>" + "<b>" + "Right Dome of diaphragm is elevated." + "</b>" + "</p>";
-          impression.push("<p>" + "<b>" + "Right Dome of diaphragm is elevated." + "</b>" + "</p>");
+          report += "<p>" + "<b>" + "Right dome of diaphragm is elevated." + "</b>" + "</p>";
+          impression.push("<p>" + "<b>" + "Right dome of diaphragm is elevated." + "</b>" + "</p>");
         }
       }
 
       if (frmData.DomesLeftType && frmData.DomesRightType) {
         if (frmData.DomesLeftType === 'Flattened' && frmData.DomesRightType === 'Flattened') {
-          report += "<p>" + "<b>" + "Both Domes of diaphragm are flattened." + "</p>" + "</b>";
-          impression.push("<p>" + "<b>" + "Both Domes of diaphragm are flattened." + "</p>" + "</b>")
+          report += "<p>" + "<b>" + "Both domes of diaphragm are flattened." + "</p>" + "</b>";
+          impression.push("<p>" + "<b>" + "Both domes of diaphragm are flattened." + "</p>" + "</b>")
         }
         if (frmData.DomesLeftType === 'Elevated' && frmData.DomesRightType === 'Elevated' && !(frmData.DomesLeftElevatedType || frmData.DomesRightElevatedType)) {
-          report += "<p>" + "<b>" + "Both Domes of diaphragm are elevated." + "</b>" + "</p>";
-          impression.push("<p>" + "<b>" + "Both Domes of diaphragm are elevated." + "</b>" + "</p>");
+          report += "<p>" + "<b>" + "Both domes of diaphragm are elevated." + "</b>" + "</p>";
+          impression.push("<p>" + "<b>" + "Both domes of diaphragm are elevated." + "</b>" + "</p>");
         }
         if (frmData.DomesLeftElevatedType === 'Eventration' && frmData.DomesRightElevatedType === 'Eventration') {
           report += "<p>" + "<b>" + "Both domes of diaphragm are elevated." + "</b>" + "</p>";
@@ -1399,11 +1398,11 @@ class XrayChest extends Component {
     // ***********************************ET LINE AND CVP LINE******************************************
     if (frmData.etLine) {
       report += "<p>" + "<b>" + text.present.replace("{1}", "ET Line") + "</b>" + "</p>";
-      impression.push("<p>" + "<b>" + "ET Line in situ." + "</b>" + "</p>")
+      impression.push("<p>" + "<b>" + "ET line in situ." + "</b>" + "</p>")
     }
     if (frmData.cvpLine) {
       report += "<p>" + "<b>" + text.present.replace("{1}", "CVP Line") + "</b>" + "</p>";
-      impression.push("<p>" + "<b>" + "CVP Line in situ." + "</b>" + "</p>")
+      impression.push("<p>" + "<b>" + "CVP line in situ." + "</b>" + "</p>")
     }
     if (frmData.tracheostomy) {
       report += "<p>" + "<b>" + text.tracheostomyinfo.replace("{1}", "Tracheostomy") + "</b>" + "</p>";
@@ -1411,7 +1410,7 @@ class XrayChest extends Component {
     }
     if (frmData.NGtube) {
       report += "<p>" + "<b>" + text.ngtube.replace("{1}", "Ng Tube") + "</b>" + "</p>";
-      impression.push("<p>" + "<b>" + "Ng Tube in situ." + "</b>" + "</p>")
+      impression.push("<p>" + "<b>" + "Ng tube in situ." + "</b>" + "</p>")
     }
 
 
@@ -1510,7 +1509,7 @@ class XrayChest extends Component {
 
     if (!(frmData.leftCostophrenicAngle === 'Obliterated' || frmData.rightObliteratedType || frmData.BothNormal) && !(frmData.rightCostophrenicAngle
       === 'Obliterated' || frmData.leftObliteratedType || frmData.BothNormal)) {
-      report += "<p>" + "Both Costophrenic angles are clear." + "</p>";
+      report += "<p>" + "Both costophrenic angles are clear." + "</p>";
     }
 
     if (!(frmData.cardiacSilhouette || frmData.BothNormal)) {
@@ -1518,7 +1517,7 @@ class XrayChest extends Component {
     }
 
     if (!(frmData.SoftTissue || frmData.BothNormal)) {
-      report += "<p>" + "Soft Tissues are normal." + "</p>";
+      report += "<p>" + "Soft tissues are normal." + "</p>";
     }
 
     if (!(frmData.bonyThoracicCage || frmData.BothNormal)) {
@@ -1526,7 +1525,7 @@ class XrayChest extends Component {
     }
 
     if (!(frmData.tracheaAndMediastinalStructures || frmData.BothNormal)) {
-      report += "<p>" + "Trachea And Mediastinal structures are normal." + "</p>";
+      report += "<p>" + "Trachea and mediastinal structures are normal." + "</p>";
     }
 
     // *************************************Can't be commented**************************************
@@ -1542,12 +1541,15 @@ class XrayChest extends Component {
 
     report +=
       this.pageBreak() +
+
       this.getImpression(impression, totalCovidPoints) +
       this.getCorads();
     this.setState({ reportFrmData: report }, () => {
       this.props.generateReport(report);
     });
   }
+
+
 
   pageBreak() {
     return '<div class="page-break ck-widget ck-widget_selected" contenteditable="false" draggable="true"></div>';

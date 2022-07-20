@@ -28,7 +28,7 @@
     "opacitieslul": "{1} opacities are seen in the left upper zone {2} ",
     "opacitieslml": "{1} opacities are seen in the left middle zone {2} ",
     "opacitieslll": "{1} opacities are seen in the left lower zone {2} ",
-    "opacitiesImpression": "Infective Etiology in {1}.",
+    "opacitiesImpression": "Infective etiology in {1}.",
     "mildHaziness": "Mild haziness is seen in the {1}.",
      
     "bothCalcification": "Calcification is in noted in both hilar shadows.",
@@ -70,8 +70,8 @@
     "vertebralType1": "{1} is noted",
     "clavicleLeftType": "Left clavicle- Fracture is noted in {1}.",
     "clavicleRightType": "Right clavicle- Fracture is noted in {1}.",
-    "tracheaAndMediastinalStructuresNormal": "Trachea And Mediastinal structure are {1}.",
-    "tracheaAndMediastinalStructures": "Trachea And Mediastinal structure are shifted towards {1}.",
+    "tracheaAndMediastinalStructuresNormal": "Trachea and mediastinal structure are {1}.",
+    "tracheaAndMediastinalStructures": "Trachea and mediastinal structure are shifted towards {1}.",
     "present": "{1} in situ.",
     "tracheostomyinfo": "{1} tube in situ.",
     "ngtube": "{1} in situ.",
@@ -239,7 +239,7 @@
     "DegenerativeText":"Facet Joint Dislocation are seen in {1}.",
     "LeftLinearUndisplacedFractureText":" Linear undisplaced fracture of medial plateau of tibia is seen. {1}.",
     
-    "BothDegenerative": "Degenerative changes seen in {1}.",
+    "BothDegenerative": "Degenerative changes seen in {1}",
     "RightDegenerativeRText": "Degenerative changes seen in right knee joint in the form of {1}.",
     "LeftDegenerativeDeformityText1":"Degenerative changes seen in left knee joint in the form of {1}.",
     "LeftDegenerativeDeformityText2":"Degenerative changes seen in left knee joint in the form of {1}.",
@@ -294,7 +294,7 @@
     
 
     "PnsmaxillaryPeumatizationR": "Pneumatization of right maxillary sinus is {1}.",
-    "PnsmaxillaryMusocalthickingR": "{1} mucosal thickening seen in right maxillary sinus",
+    "PnsmaxillaryMusocalthickingR": "{1} mucosal thickening seen in right maxillary sinus.",
     "PnsMaxillaryRightOsteomeatalUnitText": "Osteomeatal unit is {1} on right side.",
 
     "PnsmaxillaryPeumatizationL": "Pneumatization of left maxillary sinus is {1}.",

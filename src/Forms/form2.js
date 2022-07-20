@@ -26,7 +26,7 @@ const _schema = {
     },
     opacitiesType: {
       type: "string",
-      enum: ["Homogenous", "Ill-Defined", "Non Homogenous"],
+      enum: ["Homogenous", "Ill-defined", "Non homogenous"],
     },
     opacitiesRUL: {
       type: "boolean",
@@ -153,12 +153,12 @@ const _schema = {
 
     rightHilarShadow: {
       type: "string",
-      enum: ["Prominent", "Calcifications"],
+      enum: ["prominent", "calcifications"],
     },
 
     leftHilarShadow: {
       type: "string",
-      enum: ["Prominent", "Calcifications"],
+      enum: ["prominent", "calcifications"],
     },
     ProminentImpressionLHS: {
       type: "string",
@@ -174,14 +174,14 @@ const _schema = {
     },
     rightCostophrenicAngle: {
       type: "string",
-      enum: ["Obliterated"],
+      enum: ["obliterated"],
     },
     rightObliteratedType: {
       type: "boolean",
     },
     leftCostophrenicAngle: {
       type: "string",
-      enum: ["Obliterated"],
+      enum: ["obliterated"],
     },
     leftObliteratedType: {
       type: "boolean",
@@ -240,17 +240,11 @@ const _schema = {
     },
     RibsR: {
       "type": "string",
-      "minimum": 1,
-      "maximum": 50,
-
       "description": "Type between 1-12 Ribs.",
     },
 
     RibsL: {
       "type": "string",
-      "minimum": 1,
-      "maximum": 50,
-
       "description": "Type between 1-12 Ribs.",
     },
 
@@ -265,17 +259,18 @@ const _schema = {
     },
     ClavicleLRType: {
       type: "string",
-      enum: ["Proximal One Third", "Middle One Third", "Distal One Third"],
+      enum: ["proximal one third", "middle one third", "distal one third"],
     },
     ClavicleLRType1: {
       type: "string",
-      enum: ["Proximal One Third", "Middle One Third", "Distal One Third"],
+      enum: ["proximal one third", "middle one third", "distal one third"],
     },
     sternalSutures: {
       type: "boolean",
     },
     bonyinfo: {
       type: "string",
+      description: "Use Windows + H for voice."
     },
     tracheaAndMediastinalStructures: {
       type: "string",
@@ -341,7 +336,8 @@ const _schema = {
   },
   required: ['XrayTypes', 'opacitiesType', 'ProminentImpressionLHS', 'ProminentImpressionRHS',
     'CalcificationImpressionLHS', 'CalcificationImpressionRHS', 'pneumothoraxRType',
-    'pneumothoraxLType', 'SoftText', 'tracheaAndMediastinalLeftImpression', 'tracheaAndMediastinalRightImpression', 'RibsL', 'RibsR'],
+    'pneumothoraxLType', 'SoftText', 'tracheaAndMediastinalLeftImpression', 'tracheaAndMediastinalRightImpression', 'RibsL', 'RibsR'
+  ,'DomesLeftType', 'DomesRightType'],
 };
 
 
@@ -838,7 +834,7 @@ const uischema = {
             condition: {
               scope: "#/properties/rightHilarShadow",
               schema: {
-                const: "Prominent",
+                const: "prominent",
               },
             },
           },
@@ -852,7 +848,7 @@ const uischema = {
             condition: {
               scope: "#/properties/rightHilarShadow",
               schema: {
-                const: "Calcifications",
+                const: "calcifications",
               },
             },
           },
@@ -875,7 +871,7 @@ const uischema = {
             condition: {
               scope: "#/properties/leftHilarShadow",
               schema: {
-                const: "Prominent",
+                const: "prominent",
               },
             },
           },
@@ -889,11 +885,13 @@ const uischema = {
             condition: {
               scope: "#/properties/leftHilarShadow",
               schema: {
-                const: "Calcifications",
+                const: "calcifications",
               },
             },
           },
         },
+
+        // costophrenic angle right/ left
         {
           type: "Control",
           label: "Right Costophrenic Angle",
