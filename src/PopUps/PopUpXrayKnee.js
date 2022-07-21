@@ -122,6 +122,7 @@ export default class PopUpXrayKnee extends React.Component {
         return;
       }
     }
+ 
 
 
 
@@ -147,17 +148,16 @@ export default class PopUpXrayKnee extends React.Component {
         <div className="modal-header">
           <h5 className="modal-title">{name}</h5>
           <div>
-            <button type="button" className="btn btn-primary" onClick={this.handleDone}>Done</button>
             <button type="button" className="btn btn-secondary" onClick={() => window.location.reload()}>Back</button>
+            <button type="button" className="btn btn-primary" style={{ margin: '9px' }} onClick={this.handleDone}>Done</button>
           </div>
         </div>
         <div className="modal-body">
           <Form2 data={data} handleChange={this.handleChange} />
         </div>
         <div className="modal-footer">
-          <button type="button" className="btn btn-primary" onClick={this.handleDone}>Done</button>
-
-
+          <button type="button" className="btn btn-secondary" onClick={() => window.location.reload()}>Back</button>
+          <button type="button" className="btn btn-primary" style={{ margin: '9px' }} onClick={this.handleDone}>Done</button>
         </div>
       </Modal>
     );

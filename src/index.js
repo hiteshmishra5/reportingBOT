@@ -154,8 +154,8 @@ class App extends Component {
 
 render(<App />, document.getElementById("root"));
 
-window.addEventListener('contextmenu', function(e){
-  e.preventDefault();
-}, false);
+// window.addEventListener('contextmenu', function(e){
+//   e.preventDefault();
+// }, false);
 
  

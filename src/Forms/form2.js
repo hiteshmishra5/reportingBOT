@@ -337,7 +337,7 @@ const _schema = {
   required: ['XrayTypes', 'opacitiesType', 'ProminentImpressionLHS', 'ProminentImpressionRHS',
     'CalcificationImpressionLHS', 'CalcificationImpressionRHS', 'pneumothoraxRType',
     'pneumothoraxLType', 'SoftText', 'tracheaAndMediastinalLeftImpression', 'tracheaAndMediastinalRightImpression', 'RibsL', 'RibsR'
-  ,'DomesLeftType', 'DomesRightType'],
+    , 'DomesLeftType', 'DomesRightType'],
 };
 
 
@@ -348,10 +348,6 @@ const uischema = {
       type: "Group",
       elements: [
         // ***************************Opacities****************************
-
-
-
-
         {
           type: "Control",
           label: "X-Ray Type",
@@ -369,6 +365,7 @@ const uischema = {
 
 
         // Opacities**********************************************************
+
         {
           type: "Control",
           label: "Opacities?",
@@ -418,9 +415,10 @@ const uischema = {
                   label: "",
                   elements: [
                     {
-                      type: "HorizontalLayout",
+                      type: "VerticalLayout",
                       label: "",
                       elements: [
+
                         {
                           type: "Control",
                           label: "RUZ",
@@ -471,7 +469,7 @@ const uischema = {
                     },
 
                     {
-                      type: "HorizontalLayout",
+                      type: "VerticalLayout",
                       label: "",
                       elements: [
                         {
@@ -492,8 +490,9 @@ const uischema = {
                             },
                           },
                           elements: [
+
                             {
-                              type: "HorizontalLayout",
+                              type: "VerticalLayout",
                               label: "",
                               elements: [
                                 {
@@ -524,7 +523,7 @@ const uischema = {
                     },
 
                     {
-                      type: "HorizontalLayout",
+                      type: "VerticalLayout",
                       label: "",
                       elements: [
                         {
@@ -546,7 +545,7 @@ const uischema = {
                           },
                           elements: [
                             {
-                              type: "HorizontalLayout",
+                              type: "VerticalLayout",
                               label: "",
                               elements: [
                                 {
@@ -554,6 +553,7 @@ const uischema = {
                                   label: "Air Bronchogram?",
                                   scope: "#/properties/RlzAirBronchogram",
                                 },
+
                                 {
                                   type: "Control",
                                   label: "Fibrosis?",
@@ -569,7 +569,6 @@ const uischema = {
                                   label: "Cavitation?",
                                   scope: "#/properties/RlzCavitation",
                                 },
-
                               ],
                             },
                           ],
@@ -578,7 +577,7 @@ const uischema = {
                     },
 
                     {
-                      type: "HorizontalLayout",
+                      type: "VerticalLayout",
                       label: "",
                       elements: [
                         {
@@ -624,6 +623,7 @@ const uischema = {
                                   scope: "#/properties/LuzCavitation",
                                 },
                               ],
+
                             },
                           ],
                         },
@@ -631,7 +631,7 @@ const uischema = {
                     },
 
                     {
-                      type: "HorizontalLayout",
+                      type: "VerticalLayout",
                       label: "",
                       elements: [
                         {
@@ -676,6 +676,7 @@ const uischema = {
                                   label: "Cavitation?",
                                   scope: "#/properties/LmzCavitation",
                                 },
+
                               ],
                             },
                           ],
@@ -684,7 +685,7 @@ const uischema = {
                     },
 
                     {
-                      type: "HorizontalLayout",
+                      type: "VerticalLayout",
                       label: "",
                       elements: [
                         {
@@ -731,6 +732,7 @@ const uischema = {
                                 },
                               ],
                             },
+
                           ],
                         },
                       ],

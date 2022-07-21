@@ -103,7 +103,7 @@ const _schema = {
 
 
   },
-  required: ['typeofInfarct', 'LocationType'],
+  required: ['typeofInfarct', 'LocationType', 'Atrophytype'],
 };
 const uischema = {
   type: "VerticalLayout",
@@ -184,7 +184,7 @@ const uischema = {
               elements: [
                 {
                   type: "Control",
-                  label: "Type of Infarct",
+                  label: "Type of Infarct*",
                   scope: "#/properties/TypeofInfarct",
                 },
                 {
@@ -219,7 +219,7 @@ const uischema = {
 
                 {
                   type: "Control",
-                  label: "Location",
+                  label: "Location*",
                   scope: "#/properties/Location",
                 },
                 {

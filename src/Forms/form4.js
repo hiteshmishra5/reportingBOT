@@ -622,7 +622,9 @@ const _schema = {
 		// (4) Final diagnosis** 
 
 	},
-	required: ['MiscellaneousOsteomaRightText', 'MiscellaneousOsteomaLeftText', 'MiscellaneousMucoceleRightText', 'MiscellaneousMucoceleLeftText'],
+	required: ['MiscellaneousOsteomaRightText', 'MiscellaneousOsteomaLeftText', 'MiscellaneousMucoceleRightText', 'MiscellaneousMucoceleLeftText',
+	'DNSNasalCavityType', 'DNSNasalCavityWithWithoutType', 'TurbinatesNasalLeftConchaType', 'TurbinatesNasalRightConchaType'
+	, 'MiscellaneousTypeKerosType', 'MiscellaneousTypeOpticNerveType', 'MiscellaneousAdenoidyesType'],
 };
 const uischema = {
 	type: "VerticalLayout",
@@ -639,357 +641,362 @@ const uischema = {
 				},
 
 				// Sinus***
-
 				{
-					type: "Control",
-					label: "sinuses?",
-					scope: "#/properties/PnsSinuses",
-				},
-				{
-					type: "Group",
+					type: "VerticalLayout",
 					label: "",
-					rule: {
-						effect: "HIDE",
-						condition: {
-							scope: "#/properties/PnsSinuses",
-							schema: {
-								const: false,
-							},
-						},
-					},
 					elements: [
 						{
-							type: "VerticalLayout",
+							type: "Control",
+							label: "sinuses",
+							scope: "#/properties/PnsSinuses",
+						},
+						{
+							type: "Group",
 							label: "",
+							rule: {
+								effect: "HIDE",
+								condition: {
+									scope: "#/properties/PnsSinuses",
+									schema: {
+										const: false,
+									},
+								},
+							},
 							elements: [
-								// frontal
 								{
-									type: "Control",
-									label: "Frontal Sinus?",
-									scope: "#/properties/PnsFrontal",
-								},
-								{
-									type: "Group",
+									type: "VerticalLayout",
 									label: "",
-									rule: {
-										effect: "HIDE",
-										condition: {
+									elements: [
+										// frontal
+										{
+											type: "Control",
+											label: "Frontal Sinus?",
 											scope: "#/properties/PnsFrontal",
-											schema: {
-												const: false,
-											},
 										},
-									},
-									elements: [
 										{
-											type: "HorizontalLayout",
+											type: "Group",
 											label: "",
+											rule: {
+												effect: "HIDE",
+												condition: {
+													scope: "#/properties/PnsFrontal",
+													schema: {
+														const: false,
+													},
+												},
+											},
 											elements: [
 												{
-													type: "VerticalLayout",
+													type: "HorizontalLayout",
 													label: "",
 													elements: [
 														{
-															type: "Control",
-															label: "Right Sinus?",
-															scope: "#/properties/PnsFrontalRight",
-														},
-														{
-															type: "Group",
+															type: "VerticalLayout",
 															label: "",
-															rule: {
-																effect: "HIDE",
-																condition: {
+															elements: [
+																{
+																	type: "Control",
+																	label: "Right Sinus?",
 																	scope: "#/properties/PnsFrontalRight",
-																	schema: {
-																		const: false,
-																	},
 																},
-															},
-															elements: [
 																{
-																	type: "VerticalLayout",
+																	type: "Group",
 																	label: "",
+																	rule: {
+																		effect: "HIDE",
+																		condition: {
+																			scope: "#/properties/PnsFrontalRight",
+																			schema: {
+																				const: false,
+																			},
+																		},
+																	},
 																	elements: [
 																		{
-																			type: "Control",
-																			label: "Pneumatization",
-																			scope: "#/properties/PnsFrontalRightPneumatization",
-																		},
-																		{
-																			type: "Group",
+																			type: "VerticalLayout",
 																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																			elements: [
+																				{
+																					type: "Control",
+																					label: "Pneumatization",
 																					scope: "#/properties/PnsFrontalRightPneumatization",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsFrontalRightPneumatization",
+																							schema: {
+																								const: false,
+																							},
+																						},
+																					},
 																					elements: [
 																						{
-																							type: "Control",
+																							type: "VerticalLayout",
 																							label: "",
-																							scope: "#/properties/PnsFrontalRightPneumatizationtype",
-																							options: {
-																								format: "radio",
-																							},
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsFrontalRightPneumatizationtype",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+																							],
 																						},
 																					],
 																				},
-																			],
-																		},
 
-																		{
-																			type: "Control",
-																			label: "Musocal Thicking",
-																			scope: "#/properties/PnsFrontalRightMusocalThicking",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																				{
+																					type: "Control",
+																					label: "Musocal Thicking",
 																					scope: "#/properties/PnsFrontalRightMusocalThicking",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
-																					elements: [
-																						{
-																							type: "Control",
-																							label: "",
-																							scope: "#/properties/PnsFrontalRightMusocalThickingType",
-																							options: {
-																								format: "radio",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsFrontalRightMusocalThicking",
+																							schema: {
+																								const: false,
 																							},
 																						},
-
+																					},
+																					elements: [
 																						{
-																							type: "Control",
-																							label: "Hyperdense Contents",
-																							scope: "#/properties/PnsFrontalRightHyperdense",
+																							type: "VerticalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsFrontalRightMusocalThickingType",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+
+																								{
+																									type: "Control",
+																									label: "Hyperdense Contents",
+																									scope: "#/properties/PnsFrontalRightHyperdense",
+																								},
+																							],
 																						},
 																					],
 																				},
-																			],
-																		},
 
-																		{
-																			type: "Control",
-																			label: "Air-Fluid levels",
-																			scope: "#/properties/PnsFrontalRightAirFluid",
-																		},
+																				{
+																					type: "Control",
+																					label: "Air-Fluid levels",
+																					scope: "#/properties/PnsFrontalRightAirFluid",
+																				},
 
-																		{
-																			type: "Control",
-																			label: "Fronto-Ethmoid recess",
-																			scope: "#/properties/PnsFrontalRightFrontoEthmoid",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																				{
+																					type: "Control",
+																					label: "Fronto-Ethmoid recess",
 																					scope: "#/properties/PnsFrontalRightFrontoEthmoid",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
-																					elements: [
-																						{
-																							type: "Control",
-																							label: "",
-																							scope: "#/properties/PnsFrontalRightFrontoEthmoidType",
-																							options: {
-																								format: "radio",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsFrontalRightFrontoEthmoid",
+																							schema: {
+																								const: false,
 																							},
 																						},
+																					},
+																					elements: [
+																						{
+																							type: "VerticalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsFrontalRightFrontoEthmoidType",
+																									options: {
+																										format: "radio",
+																									},
+																								},
 
+																							],
+																						},
 																					],
 																				},
+																				{
+																					type: "Control",
+																					label: "Bony Erosions",
+																					scope: "#/properties/PnsFrontalRightBonyErosions",
+																				},
+
 																			],
 																		},
-																		{
-																			type: "Control",
-																			label: "Bony Erosions",
-																			scope: "#/properties/PnsFrontalRightBonyErosions",
-																		},
-
 																	],
 																},
 															],
 														},
-													],
-												},
-												{
-													type: "VerticalLayout",
-													label: "",
-													elements: [
-
 														{
-															type: "Control",
-															label: "Left Sinus?",
-															scope: "#/properties/PnsFrontalLeft",
-														},
-														{
-															type: "Group",
+															type: "VerticalLayout",
 															label: "",
-															rule: {
-																effect: "HIDE",
-																condition: {
+															elements: [
+
+																{
+																	type: "Control",
+																	label: "Left Sinus?",
 																	scope: "#/properties/PnsFrontalLeft",
-																	schema: {
-																		const: false,
-																	},
 																},
-															},
-															elements: [
 																{
-																	type: "VerticalLayout",
+																	type: "Group",
 																	label: "",
+																	rule: {
+																		effect: "HIDE",
+																		condition: {
+																			scope: "#/properties/PnsFrontalLeft",
+																			schema: {
+																				const: false,
+																			},
+																		},
+																	},
 																	elements: [
 																		{
-																			type: "Control",
-																			label: "Pneumatization",
-																			scope: "#/properties/PnsFrontalLeftPneumatization",
-																		},
-																		{
-																			type: "Group",
+																			type: "VerticalLayout",
 																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																			elements: [
+																				{
+																					type: "Control",
+																					label: "Pneumatization",
 																					scope: "#/properties/PnsFrontalLeftPneumatization",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsFrontalLeftPneumatization",
+																							schema: {
+																								const: false,
+																							},
+																						},
+																					},
 																					elements: [
 																						{
-																							type: "Control",
+																							type: "VerticalLayout",
 																							label: "",
-																							scope: "#/properties/PnsFrontalLeftPneumatizationtype",
-																							options: {
-																								format: "radio",
-																							},
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsFrontalLeftPneumatizationtype",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+																							],
 																						},
 																					],
 																				},
-																			],
-																		},
 
-																		{
-																			type: "Control",
-																			label: "Musocal Thicking",
-																			scope: "#/properties/PnsFrontalLeftMusocalThicking",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																				{
+																					type: "Control",
+																					label: "Musocal Thicking",
 																					scope: "#/properties/PnsFrontalLeftMusocalThicking",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
-																					elements: [
-																						{
-																							type: "Control",
-																							label: "",
-																							scope: "#/properties/PnsFrontalLeftMusocalThickingType",
-																							options: {
-																								format: "radio",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsFrontalLeftMusocalThicking",
+																							schema: {
+																								const: false,
 																							},
 																						},
-
+																					},
+																					elements: [
 																						{
-																							type: "Control",
-																							label: "Hyperdense Contents",
-																							scope: "#/properties/PnsFrontalLeftHyperdense",
+																							type: "VerticalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsFrontalLeftMusocalThickingType",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+
+																								{
+																									type: "Control",
+																									label: "Hyperdense Contents",
+																									scope: "#/properties/PnsFrontalLeftHyperdense",
+																								},
+																							],
 																						},
 																					],
 																				},
-																			],
-																		},
 
-																		{
-																			type: "Control",
-																			label: "Air-Fluid levels",
-																			scope: "#/properties/PnsFrontalLeftAirFluid",
-																		},
+																				{
+																					type: "Control",
+																					label: "Air-Fluid levels",
+																					scope: "#/properties/PnsFrontalLeftAirFluid",
+																				},
 
-																		{
-																			type: "Control",
-																			label: "Fronto-Ethmoid recess",
-																			scope: "#/properties/PnsFrontalLeftFrontoEthmoid",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																				{
+																					type: "Control",
+																					label: "Fronto-Ethmoid recess",
 																					scope: "#/properties/PnsFrontalLeftFrontoEthmoid",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
-																					elements: [
-																						{
-																							type: "Control",
-																							label: "",
-																							scope: "#/properties/PnsFrontalLeftFrontoEthmoidType",
-																							options: {
-																								format: "radio",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsFrontalLeftFrontoEthmoid",
+																							schema: {
+																								const: false,
 																							},
 																						},
+																					},
+																					elements: [
+																						{
+																							type: "VerticalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsFrontalLeftFrontoEthmoidType",
+																									options: {
+																										format: "radio",
+																									},
+																								},
 
+																							],
+																						},
 																					],
 																				},
+																				{
+																					type: "Control",
+																					label: "Bony Erosions",
+																					scope: "#/properties/PnsFrontalLeftBonyErosions",
+																				},
+
 																			],
 																		},
-																		{
-																			type: "Control",
-																			label: "Bony Erosions",
-																			scope: "#/properties/PnsFrontalLeftBonyErosions",
-																		},
-
 																	],
 																},
 															],
@@ -998,346 +1005,346 @@ const uischema = {
 												},
 											],
 										},
-									],
-								},
-								// maxillary sinus
-								{
-									type: "Control",
-									label: "Maxillary Sinus?",
-									scope: "#/properties/PnsMaxillary",
-								},
-								{
-									type: "Group",
-									label: "",
-									rule: {
-										effect: "HIDE",
-										condition: {
+										// maxillary sinus
+										{
+											type: "Control",
+											label: "Maxillary Sinus?",
 											scope: "#/properties/PnsMaxillary",
-											schema: {
-												const: false,
-											},
 										},
-									},
-									elements: [
 										{
-											type: "HorizontalLayout",
+											type: "Group",
 											label: "",
+											rule: {
+												effect: "HIDE",
+												condition: {
+													scope: "#/properties/PnsMaxillary",
+													schema: {
+														const: false,
+													},
+												},
+											},
 											elements: [
 												{
-													type: "VerticalLayout",
+													type: "HorizontalLayout",
 													label: "",
 													elements: [
 														{
-															type: "Control",
-															label: "Right Sinus?",
-															scope: "#/properties/PnsMaxillaryRight",
-														},
-														{
-															type: "Group",
+															type: "VerticalLayout",
 															label: "",
-															rule: {
-																effect: "HIDE",
-																condition: {
+															elements: [
+																{
+																	type: "Control",
+																	label: "Right Sinus?",
 																	scope: "#/properties/PnsMaxillaryRight",
-																	schema: {
-																		const: false,
-																	},
 																},
-															},
-															elements: [
 																{
-																	type: "VerticalLayout",
+																	type: "Group",
 																	label: "",
+																	rule: {
+																		effect: "HIDE",
+																		condition: {
+																			scope: "#/properties/PnsMaxillaryRight",
+																			schema: {
+																				const: false,
+																			},
+																		},
+																	},
 																	elements: [
 																		{
-																			type: "Control",
-																			label: "Pneumatization",
-																			scope: "#/properties/PnsMaxillaryRightPneumatization",
-																		},
-																		{
-																			type: "Group",
+																			type: "VerticalLayout",
 																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																			elements: [
+																				{
+																					type: "Control",
+																					label: "Pneumatization",
 																					scope: "#/properties/PnsMaxillaryRightPneumatization",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsMaxillaryRightPneumatization",
+																							schema: {
+																								const: false,
+																							},
+																						},
+																					},
 																					elements: [
 																						{
-																							type: "Control",
+																							type: "VerticalLayout",
 																							label: "",
-																							scope: "#/properties/PnsmaxillaryRightPneumatizationtype",
-																							options: {
-																								format: "radio",
-																							},
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsmaxillaryRightPneumatizationtype",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+																							],
 																						},
 																					],
 																				},
-																			],
-																		},
 
-																		{
-																			type: "Control",
-																			label: "Musocal Thicking",
-																			scope: "#/properties/PnsMaxillaryRightMusocalThicking",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																				{
+																					type: "Control",
+																					label: "Musocal Thicking",
 																					scope: "#/properties/PnsMaxillaryRightMusocalThicking",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
-																					elements: [
-																						{
-																							type: "Control",
-																							label: "",
-																							scope: "#/properties/PnsMaxillaryRightMusocalThickingType",
-																							options: {
-																								format: "radio",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsMaxillaryRightMusocalThicking",
+																							schema: {
+																								const: false,
 																							},
 																						},
-
+																					},
+																					elements: [
 																						{
-																							type: "Control",
-																							label: "Hyperdense Contents",
-																							scope: "#/properties/PnsMaxillaryRightHyperdense",
+																							type: "VerticalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsMaxillaryRightMusocalThickingType",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+
+																								{
+																									type: "Control",
+																									label: "Hyperdense Contents",
+																									scope: "#/properties/PnsMaxillaryRightHyperdense",
+																								},
+																							],
 																						},
 																					],
 																				},
-																			],
-																		},
 
-																		{
-																			type: "Control",
-																			label: "Air-Fluid levels",
-																			scope: "#/properties/PnsMaxillaryRightAirFluid",
-																		},
+																				{
+																					type: "Control",
+																					label: "Air-Fluid levels",
+																					scope: "#/properties/PnsMaxillaryRightAirFluid",
+																				},
 
-																		{
-																			type: "Control",
-																			label: "Osteomeatal unit",
-																			scope: "#/properties/PnsMaxillaryRightOsteomeatalUnit",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																				{
+																					type: "Control",
+																					label: "Osteomeatal unit",
 																					scope: "#/properties/PnsMaxillaryRightOsteomeatalUnit",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
-																					elements: [
-																						{
-																							type: "Control",
-																							label: "",
-																							scope: "#/properties/PnsMaxillaryRightOsteomeatalUnitType",
-																							options: {
-																								format: "radio",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsMaxillaryRightOsteomeatalUnit",
+																							schema: {
+																								const: false,
 																							},
 																						},
+																					},
+																					elements: [
+																						{
+																							type: "VerticalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsMaxillaryRightOsteomeatalUnitType",
+																									options: {
+																										format: "radio",
+																									},
+																								},
 
+																							],
+																						},
 																					],
 																				},
+																				{
+																					type: "Control",
+																					label: "Bony Erosions",
+																					scope: "#/properties/PnsMaxillaryRightBonyErosions",
+																				},
+																				{
+																					type: "Control",
+																					label: "Accessory ostia",
+																					scope: "#/properties/PnsMaxillaryRightAccessoryOstia",
+																				},
+
 																			],
 																		},
-																		{
-																			type: "Control",
-																			label: "Bony Erosions",
-																			scope: "#/properties/PnsMaxillaryRightBonyErosions",
-																		},
-																		{
-																			type: "Control",
-																			label: "Accessory ostia",
-																			scope: "#/properties/PnsMaxillaryRightAccessoryOstia",
-																		},
-
 																	],
 																},
 															],
 														},
-													],
-												},
-												{
-													type: "VerticalLayout",
-													label: "",
-													elements: [
-
 														{
-															type: "Control",
-															label: "Left Sinus?",
-															scope: "#/properties/PnsMaxillaryLeft",
-														},
-														{
-															type: "Group",
+															type: "VerticalLayout",
 															label: "",
-															rule: {
-																effect: "HIDE",
-																condition: {
+															elements: [
+
+																{
+																	type: "Control",
+																	label: "Left Sinus?",
 																	scope: "#/properties/PnsMaxillaryLeft",
-																	schema: {
-																		const: false,
-																	},
 																},
-															},
-															elements: [
 																{
-																	type: "VerticalLayout",
+																	type: "Group",
 																	label: "",
+																	rule: {
+																		effect: "HIDE",
+																		condition: {
+																			scope: "#/properties/PnsMaxillaryLeft",
+																			schema: {
+																				const: false,
+																			},
+																		},
+																	},
 																	elements: [
 																		{
-																			type: "Control",
-																			label: "Pneumatization",
-																			scope: "#/properties/PnsMaxillaryLeftPneumatization",
-																		},
-																		{
-																			type: "Group",
+																			type: "VerticalLayout",
 																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																			elements: [
+																				{
+																					type: "Control",
+																					label: "Pneumatization",
 																					scope: "#/properties/PnsMaxillaryLeftPneumatization",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsMaxillaryLeftPneumatization",
+																							schema: {
+																								const: false,
+																							},
+																						},
+																					},
 																					elements: [
 																						{
-																							type: "Control",
+																							type: "VerticalLayout",
 																							label: "",
-																							scope: "#/properties/PnsmaxillaryLeftPneumatizationtype",
-																							options: {
-																								format: "radio",
-																							},
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsmaxillaryLeftPneumatizationtype",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+																							],
 																						},
 																					],
 																				},
-																			],
-																		},
 
-																		{
-																			type: "Control",
-																			label: "Musocal Thicking",
-																			scope: "#/properties/PnsMaxillaryLeftMusocalThicking",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																				{
+																					type: "Control",
+																					label: "Musocal Thicking",
 																					scope: "#/properties/PnsMaxillaryLeftMusocalThicking",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
-																					elements: [
-																						{
-																							type: "Control",
-																							label: "",
-																							scope: "#/properties/PnsMaxillaryLeftMusocalThickingType",
-																							options: {
-																								format: "radio",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsMaxillaryLeftMusocalThicking",
+																							schema: {
+																								const: false,
 																							},
 																						},
-
+																					},
+																					elements: [
 																						{
-																							type: "Control",
-																							label: "Hyperdense Contents",
-																							scope: "#/properties/PnsMaxillaryLeftHyperdense",
+																							type: "VerticalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsMaxillaryLeftMusocalThickingType",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+
+																								{
+																									type: "Control",
+																									label: "Hyperdense Contents",
+																									scope: "#/properties/PnsMaxillaryLeftHyperdense",
+																								},
+																							],
 																						},
 																					],
 																				},
-																			],
-																		},
 
-																		{
-																			type: "Control",
-																			label: "Air-Fluid levels",
-																			scope: "#/properties/PnsMaxillaryLeftAirFluid",
-																		},
+																				{
+																					type: "Control",
+																					label: "Air-Fluid levels",
+																					scope: "#/properties/PnsMaxillaryLeftAirFluid",
+																				},
 
-																		{
-																			type: "Control",
-																			label: "Osteomeatal unit",
-																			scope: "#/properties/PnsMaxillaryLeftOsteomeatalUnit",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																				{
+																					type: "Control",
+																					label: "Osteomeatal unit",
 																					scope: "#/properties/PnsMaxillaryLeftOsteomeatalUnit",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
-																					elements: [
-																						{
-																							type: "Control",
-																							label: "",
-																							scope: "#/properties/PnsMaxillaryLeftOsteomeatalUnitType",
-																							options: {
-																								format: "radio",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsMaxillaryLeftOsteomeatalUnit",
+																							schema: {
+																								const: false,
 																							},
 																						},
+																					},
+																					elements: [
+																						{
+																							type: "VerticalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsMaxillaryLeftOsteomeatalUnitType",
+																									options: {
+																										format: "radio",
+																									},
+																								},
 
+																							],
+																						},
 																					],
 																				},
+																				{
+																					type: "Control",
+																					label: "Bony Erosions",
+																					scope: "#/properties/PnsMaxillaryLeftBonyErosions",
+																				},
+																				{
+																					type: "Control",
+																					label: "Accessory ostia",
+																					scope: "#/properties/PnsMaxillaryLeftAccessoryOstia",
+																				},
+
 																			],
 																		},
-																		{
-																			type: "Control",
-																			label: "Bony Erosions",
-																			scope: "#/properties/PnsMaxillaryLeftBonyErosions",
-																		},
-																		{
-																			type: "Control",
-																			label: "Accessory ostia",
-																			scope: "#/properties/PnsMaxillaryLeftAccessoryOstia",
-																		},
-
 																	],
 																},
 															],
@@ -1346,201 +1353,72 @@ const uischema = {
 												},
 											],
 										},
-									],
-								},
-								// Ehtmoidal sinus
-								{
-									type: "Control",
-									label: "Ethmoidal Sinus?",
-									scope: "#/properties/PnsEthmoidal",
-								},
-								{
-									type: "Group",
-									label: "",
-									rule: {
-										effect: "HIDE",
-										condition: {
+										// Ehtmoidal sinus
+										{
+											type: "Control",
+											label: "Ethmoidal Sinus?",
 											scope: "#/properties/PnsEthmoidal",
-											schema: {
-												const: false,
-											},
 										},
-									},
-									elements: [
 										{
-											type: "HorizontalLayout",
+											type: "Group",
 											label: "",
+											rule: {
+												effect: "HIDE",
+												condition: {
+													scope: "#/properties/PnsEthmoidal",
+													schema: {
+														const: false,
+													},
+												},
+											},
 											elements: [
 												{
-													type: "VerticalLayout",
+													type: "HorizontalLayout",
 													label: "",
 													elements: [
 														{
-															type: "Control",
-															label: "Right Sinus?",
-															scope: "#/properties/PnsEthmoidalRight",
-														},
-														{
-															type: "Group",
+															type: "VerticalLayout",
 															label: "",
-															rule: {
-																effect: "HIDE",
-																condition: {
-																	scope: "#/properties/PnsEthmoidalRight",
-																	schema: {
-																		const: false,
-																	},
-																},
-															},
 															elements: [
 																{
-																	type: "VerticalLayout",
+																	type: "Control",
+																	label: "Right Sinus?",
+																	scope: "#/properties/PnsEthmoidalRight",
+																},
+																{
+																	type: "Group",
 																	label: "",
+																	rule: {
+																		effect: "HIDE",
+																		condition: {
+																			scope: "#/properties/PnsEthmoidalRight",
+																			schema: {
+																				const: false,
+																			},
+																		},
+																	},
 																	elements: [
 																		{
-																			type: "Control",
-																			label: "Pneumatization",
-																			scope: "#/properties/PnsEthmoidalRightPneumatization",
-																		},
-																		{
-																			type: "Group",
+																			type: "VerticalLayout",
 																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																			elements: [
+																				{
+																					type: "Control",
+																					label: "Pneumatization",
 																					scope: "#/properties/PnsEthmoidalRightPneumatization",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
-																					elements: [
-																						{
-																							type: "Control",
-																							label: "",
-																							scope: "#/properties/PnsEthmoidalRightPneumatizationtype",
-																							options: {
-																								format: "radio",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsEthmoidalRightPneumatization",
+																							schema: {
+																								const: false,
 																							},
 																						},
-																					],
-																				},
-																			],
-																		},
-
-																		{
-																			type: "Control",
-																			label: "Musocal Thicking",
-																			scope: "#/properties/PnsEthmoidalRightMusocalThicking",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
-																					scope: "#/properties/PnsEthmoidalRightMusocalThicking",
-																					schema: {
-																						const: false,
 																					},
-																				},
-																			},
-																			elements: [
-																				{
-																					type: "VerticalLayout",
-																					label: "",
-																					elements: [
-																						{
-																							type: "Control",
-																							label: "",
-																							scope: "#/properties/PnsEthmoidalRightMusocalThickingType",
-																							options: {
-																								format: "radio",
-																							},
-																						},
-
-																						{
-																							type: "Control",
-																							label: "Hyperdense Contents",
-																							scope: "#/properties/PnsEhtmoidalRightHyperdense",
-																						},
-																					],
-																				},
-																			],
-																		},
-
-																		{
-																			type: "Control",
-																			label: "Air-Fluid levels",
-																			scope: "#/properties/PnsEhtmoidalRightAirFluid",
-																		},
-
-																		{
-																			type: "Control",
-																			label: "Bony Erosions",
-																			scope: "#/properties/PnsEthmoidalRightBonyErosions",
-																		},
-
-																		{
-																			type: "Control",
-																			label: "Saptae",
-																			scope: "#/properties/PnsEthmoidalRightSeptae",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
-																					scope: "#/properties/PnsEthmoidalRightSeptae",
-																					schema: {
-																						const: false,
-																					},
-																				},
-																			},
-																			elements: [
-																				{
-																					type: "HorizontalLayout",
-																					label: "",
-																					elements: [
-																						{
-																							type: "Control",
-																							label: "",
-																							scope: "#/properties/PnsEthmoidalRightSeptaeType",
-																							options: {
-																								format: "radio",
-																							},
-																						},
-																					],
-																				},
-																			],
-																		},
-
-																		{
-																			type: "Control",
-																			label: "Variants",
-																			scope: "#/properties/PnsEhtmoidalRightVarient",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
-																					scope: "#/properties/PnsEhtmoidalRightVarient",
-																					schema: {
-																						const: false,
-																					},
-																				},
-																			},
-																			elements: [
-																				{
-																					type: "HorizontalLayout",
-																					label: "",
 																					elements: [
 																						{
 																							type: "VerticalLayout",
@@ -1548,201 +1426,34 @@ const uischema = {
 																							elements: [
 																								{
 																									type: "Control",
-																									label: "Haller cells",
-																									scope: "#/properties/PnsEhtmoidalRightVarientHaller",
-																								},
-																								{
-																									type: "Control",
-																									label: "Onodi cells",
-																									scope: "#/properties/PnsEhtmoidalRightVarientOnodi",
+																									label: "",
+																									scope: "#/properties/PnsEthmoidalRightPneumatizationtype",
+																									options: {
+																										format: "radio",
+																									},
 																								},
 																							],
 																						},
 																					],
 																				},
-																			],
-																		},
 
-
-
-
-																	],
-																},
-															],
-														},
-													],
-												},
-												{
-													type: "VerticalLayout",
-													label: "",
-													elements: [
-
-														{
-															type: "Control",
-															label: "Left Sinus?",
-															scope: "#/properties/PnsEthmoidalLeft",
-														},
-														{
-															type: "Group",
-															label: "",
-															rule: {
-																effect: "HIDE",
-																condition: {
-																	scope: "#/properties/PnsEthmoidalLeft",
-																	schema: {
-																		const: false,
-																	},
-																},
-															},
-															elements: [
-																{
-																	type: "VerticalLayout",
-																	label: "",
-																	elements: [
-																		{
-																			type: "Control",
-																			label: "Pneumatization",
-																			scope: "#/properties/PnsEthmoidalLeftPneumatization",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
-																					scope: "#/properties/PnsEthmoidalLeftPneumatization",
-																					schema: {
-																						const: false,
-																					},
-																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Control",
+																					label: "Musocal Thicking",
+																					scope: "#/properties/PnsEthmoidalRightMusocalThicking",
+																				},
+																				{
+																					type: "Group",
 																					label: "",
-																					elements: [
-																						{
-																							type: "Control",
-																							label: "",
-																							scope: "#/properties/PnsEthmoidalLeftPneumatizationtype",
-																							options: {
-																								format: "radio",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsEthmoidalRightMusocalThicking",
+																							schema: {
+																								const: false,
 																							},
 																						},
-																					],
-																				},
-																			],
-																		},
-
-																		{
-																			type: "Control",
-																			label: "Musocal Thicking",
-																			scope: "#/properties/PnsEthmoidalLeftMusocalThicking",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
-																					scope: "#/properties/PnsEthmoidalLeftMusocalThicking",
-																					schema: {
-																						const: false,
 																					},
-																				},
-																			},
-																			elements: [
-																				{
-																					type: "VerticalLayout",
-																					label: "",
-																					elements: [
-																						{
-																							type: "Control",
-																							label: "",
-																							scope: "#/properties/PnsEthmoidalLeftMusocalThickingType",
-																							options: {
-																								format: "radio",
-																							},
-																						},
-
-																						{
-																							type: "Control",
-																							label: "Hyperdense Contents",
-																							scope: "#/properties/PnsEhtmoidalLeftHyperdense",
-																						},
-																					],
-																				},
-																			],
-																		},
-
-																		{
-																			type: "Control",
-																			label: "Air-Fluid levels",
-																			scope: "#/properties/PnsEhtmoidalLeftAirFluid",
-																		},
-
-																		{
-																			type: "Control",
-																			label: "Bony Erosions",
-																			scope: "#/properties/PnsEthmoidalLeftBonyErosions",
-																		},
-
-																		{
-																			type: "Control",
-																			label: "Saptae",
-																			scope: "#/properties/PnsEthmoidalLeftSeptae",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
-																					scope: "#/properties/PnsEthmoidalLeftSeptae",
-																					schema: {
-																						const: false,
-																					},
-																				},
-																			},
-																			elements: [
-																				{
-																					type: "HorizontalLayout",
-																					label: "",
-																					elements: [
-																						{
-																							type: "Control",
-																							label: "",
-																							scope: "#/properties/PnsEthmoidalLeftSeptaeType",
-																							options: {
-																								format: "radio",
-																							},
-																						},
-																					],
-																				},
-																			],
-																		},
-
-																		{
-																			type: "Control",
-																			label: "Variants",
-																			scope: "#/properties/PnsEhtmoidalLeftVarient",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
-																					scope: "#/properties/PnsEhtmoidalLeftVarient",
-																					schema: {
-																						const: false,
-																					},
-																				},
-																			},
-																			elements: [
-																				{
-																					type: "HorizontalLayout",
-																					label: "",
 																					elements: [
 																						{
 																							type: "VerticalLayout",
@@ -1750,13 +1461,309 @@ const uischema = {
 																							elements: [
 																								{
 																									type: "Control",
-																									label: "Haller cells",
-																									scope: "#/properties/PnsEhtmoidalLeftVarientHaller",
+																									label: "",
+																									scope: "#/properties/PnsEthmoidalRightMusocalThickingType",
+																									options: {
+																										format: "radio",
+																									},
 																								},
+
 																								{
 																									type: "Control",
-																									label: "Onodi cells",
-																									scope: "#/properties/PnsEhtmoidalLeftVarientOnodi",
+																									label: "Hyperdense Contents",
+																									scope: "#/properties/PnsEhtmoidalRightHyperdense",
+																								},
+																							],
+																						},
+																					],
+																				},
+
+																				{
+																					type: "Control",
+																					label: "Air-Fluid levels",
+																					scope: "#/properties/PnsEhtmoidalRightAirFluid",
+																				},
+
+																				{
+																					type: "Control",
+																					label: "Bony Erosions",
+																					scope: "#/properties/PnsEthmoidalRightBonyErosions",
+																				},
+
+																				{
+																					type: "Control",
+																					label: "Saptae",
+																					scope: "#/properties/PnsEthmoidalRightSeptae",
+																				},
+																				{
+																					type: "Group",
+																					label: "",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsEthmoidalRightSeptae",
+																							schema: {
+																								const: false,
+																							},
+																						},
+																					},
+																					elements: [
+																						{
+																							type: "HorizontalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsEthmoidalRightSeptaeType",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+																							],
+																						},
+																					],
+																				},
+
+																				{
+																					type: "Control",
+																					label: "Variants",
+																					scope: "#/properties/PnsEhtmoidalRightVarient",
+																				},
+																				{
+																					type: "Group",
+																					label: "",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsEhtmoidalRightVarient",
+																							schema: {
+																								const: false,
+																							},
+																						},
+																					},
+																					elements: [
+																						{
+																							type: "HorizontalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "VerticalLayout",
+																									label: "",
+																									elements: [
+																										{
+																											type: "Control",
+																											label: "Haller cells",
+																											scope: "#/properties/PnsEhtmoidalRightVarientHaller",
+																										},
+																										{
+																											type: "Control",
+																											label: "Onodi cells",
+																											scope: "#/properties/PnsEhtmoidalRightVarientOnodi",
+																										},
+																									],
+																								},
+																							],
+																						},
+																					],
+																				},
+
+
+
+
+																			],
+																		},
+																	],
+																},
+															],
+														},
+														{
+															type: "VerticalLayout",
+															label: "",
+															elements: [
+
+																{
+																	type: "Control",
+																	label: "Left Sinus?",
+																	scope: "#/properties/PnsEthmoidalLeft",
+																},
+																{
+																	type: "Group",
+																	label: "",
+																	rule: {
+																		effect: "HIDE",
+																		condition: {
+																			scope: "#/properties/PnsEthmoidalLeft",
+																			schema: {
+																				const: false,
+																			},
+																		},
+																	},
+																	elements: [
+																		{
+																			type: "VerticalLayout",
+																			label: "",
+																			elements: [
+																				{
+																					type: "Control",
+																					label: "Pneumatization",
+																					scope: "#/properties/PnsEthmoidalLeftPneumatization",
+																				},
+																				{
+																					type: "Group",
+																					label: "",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsEthmoidalLeftPneumatization",
+																							schema: {
+																								const: false,
+																							},
+																						},
+																					},
+																					elements: [
+																						{
+																							type: "VerticalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsEthmoidalLeftPneumatizationtype",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+																							],
+																						},
+																					],
+																				},
+
+																				{
+																					type: "Control",
+																					label: "Musocal Thicking",
+																					scope: "#/properties/PnsEthmoidalLeftMusocalThicking",
+																				},
+																				{
+																					type: "Group",
+																					label: "",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsEthmoidalLeftMusocalThicking",
+																							schema: {
+																								const: false,
+																							},
+																						},
+																					},
+																					elements: [
+																						{
+																							type: "VerticalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsEthmoidalLeftMusocalThickingType",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+
+																								{
+																									type: "Control",
+																									label: "Hyperdense Contents",
+																									scope: "#/properties/PnsEhtmoidalLeftHyperdense",
+																								},
+																							],
+																						},
+																					],
+																				},
+
+																				{
+																					type: "Control",
+																					label: "Air-Fluid levels",
+																					scope: "#/properties/PnsEhtmoidalLeftAirFluid",
+																				},
+
+																				{
+																					type: "Control",
+																					label: "Bony Erosions",
+																					scope: "#/properties/PnsEthmoidalLeftBonyErosions",
+																				},
+
+																				{
+																					type: "Control",
+																					label: "Saptae",
+																					scope: "#/properties/PnsEthmoidalLeftSeptae",
+																				},
+																				{
+																					type: "Group",
+																					label: "",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsEthmoidalLeftSeptae",
+																							schema: {
+																								const: false,
+																							},
+																						},
+																					},
+																					elements: [
+																						{
+																							type: "HorizontalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsEthmoidalLeftSeptaeType",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+																							],
+																						},
+																					],
+																				},
+
+																				{
+																					type: "Control",
+																					label: "Variants",
+																					scope: "#/properties/PnsEhtmoidalLeftVarient",
+																				},
+																				{
+																					type: "Group",
+																					label: "",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsEhtmoidalLeftVarient",
+																							schema: {
+																								const: false,
+																							},
+																						},
+																					},
+																					elements: [
+																						{
+																							type: "HorizontalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "VerticalLayout",
+																									label: "",
+																									elements: [
+																										{
+																											type: "Control",
+																											label: "Haller cells",
+																											scope: "#/properties/PnsEhtmoidalLeftVarientHaller",
+																										},
+																										{
+																											type: "Control",
+																											label: "Onodi cells",
+																											scope: "#/properties/PnsEhtmoidalLeftVarientOnodi",
+																										},
+																									],
 																								},
 																							],
 																						},
@@ -1772,333 +1779,333 @@ const uischema = {
 												},
 											],
 										},
-									],
-								},
-								// Sphenoid Sinuses
-								{
-									type: "Control",
-									label: "Sphenoid Sinus?",
-									scope: "#/properties/PnsSphenoid",
-								},
-								{
-									type: "Group",
-									label: "",
-									rule: {
-										effect: "HIDE",
-										condition: {
-											scope: "#/properties/PnsSphenoid",
-											schema: {
-												const: false,
-											},
-										},
-									},
-									elements: [
+										// Sphenoid Sinuses
 										{
-											type: "HorizontalLayout",
+											type: "Control",
+											label: "Sphenoid Sinus?",
+											scope: "#/properties/PnsSphenoid",
+										},
+										{
+											type: "Group",
 											label: "",
+											rule: {
+												effect: "HIDE",
+												condition: {
+													scope: "#/properties/PnsSphenoid",
+													schema: {
+														const: false,
+													},
+												},
+											},
 											elements: [
 												{
-													type: "VerticalLayout",
+													type: "HorizontalLayout",
 													label: "",
 													elements: [
 														{
-															type: "Control",
-															label: "Right Sinus?",
-															scope: "#/properties/PnsSphenoidRight",
-														},
-														{
-															type: "Group",
+															type: "VerticalLayout",
 															label: "",
-															rule: {
-																effect: "HIDE",
-																condition: {
-																	scope: "#/properties/PnsSphenoidRight",
-																	schema: {
-																		const: false,
-																	},
-																},
-															},
 															elements: [
 																{
-																	type: "VerticalLayout",
+																	type: "Control",
+																	label: "Right Sinus?",
+																	scope: "#/properties/PnsSphenoidRight",
+																},
+																{
+																	type: "Group",
 																	label: "",
+																	rule: {
+																		effect: "HIDE",
+																		condition: {
+																			scope: "#/properties/PnsSphenoidRight",
+																			schema: {
+																				const: false,
+																			},
+																		},
+																	},
 																	elements: [
 																		{
-																			type: "Control",
-																			label: "Pneumatization",
-																			scope: "#/properties/PnsSphenoidRightPneumatization",
-																		},
-																		{
-																			type: "Group",
+																			type: "VerticalLayout",
 																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																			elements: [
+																				{
+																					type: "Control",
+																					label: "Pneumatization",
 																					scope: "#/properties/PnsSphenoidRightPneumatization",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsSphenoidRightPneumatization",
+																							schema: {
+																								const: false,
+																							},
+																						},
+																					},
 																					elements: [
 																						{
-																							type: "Control",
+																							type: "VerticalLayout",
 																							label: "",
-																							scope: "#/properties/PnsSphenoidRightPneumatizationtype",
-																							options: {
-																								format: "radio",
-																							},
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsSphenoidRightPneumatizationtype",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+																							],
 																						},
 																					],
 																				},
-																			],
-																		},
 
-																		{
-																			type: "Control",
-																			label: "Musocal Thicking",
-																			scope: "#/properties/PnsSphenoidRightMusocalThicking",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																				{
+																					type: "Control",
+																					label: "Musocal Thicking",
 																					scope: "#/properties/PnsSphenoidRightMusocalThicking",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
-																					elements: [
-																						{
-																							type: "Control",
-																							label: "",
-																							scope: "#/properties/PnsSphenoidRightMusocalThickingType",
-																							options: {
-																								format: "radio",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsSphenoidRightMusocalThicking",
+																							schema: {
+																								const: false,
 																							},
 																						},
-
+																					},
+																					elements: [
 																						{
-																							type: "Control",
-																							label: "Hyperdense Contents",
-																							scope: "#/properties/PnsSphenoidRightHyperdense",
+																							type: "VerticalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsSphenoidRightMusocalThickingType",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+
+																								{
+																									type: "Control",
+																									label: "Hyperdense Contents",
+																									scope: "#/properties/PnsSphenoidRightHyperdense",
+																								},
+																							],
 																						},
 																					],
 																				},
-																			],
-																		},
 
-																		{
-																			type: "Control",
-																			label: "Air-Fluid levels",
-																			scope: "#/properties/PnsSphenoidRightAirFluid",
-																		},
+																				{
+																					type: "Control",
+																					label: "Air-Fluid levels",
+																					scope: "#/properties/PnsSphenoidRightAirFluid",
+																				},
 
-																		{
-																			type: "Control",
-																			label: "Sphenoid-ethmoid recess",
-																			scope: "#/properties/PnsSphenoidRightEthmoid",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																				{
+																					type: "Control",
+																					label: "Sphenoid-ethmoid recess",
 																					scope: "#/properties/PnsSphenoidRightEthmoid",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "HorizontalLayout",
+																					type: "Group",
 																					label: "",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsSphenoidRightEthmoid",
+																							schema: {
+																								const: false,
+																							},
+																						},
+																					},
 																					elements: [
 																						{
-																							type: "Control",
+																							type: "HorizontalLayout",
 																							label: "",
-																							scope: "#/properties/PnsSphenoidRightEthmoidType",
-																							options: {
-																								format: "radio",
-																							},
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsSphenoidRightEthmoidType",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+																							],
 																						},
 																					],
 																				},
-																			],
-																		},
 
-																		{
-																			type: "Control",
-																			label: "Bony Erosions",
-																			scope: "#/properties/PnsMaxillaryRightBonyErosions",
+																				{
+																					type: "Control",
+																					label: "Bony Erosions",
+																					scope: "#/properties/PnsMaxillaryRightBonyErosions",
+																				},
+																			],
 																		},
 																	],
 																},
 															],
 														},
-													],
-												},
-												{
-													type: "VerticalLayout",
-													label: "",
-													elements: [
-
 														{
-															type: "Control",
-															label: "Left Sinus?",
-															scope: "#/properties/PnsSphenoidLeft",
-														},
-														{
-															type: "Group",
+															type: "VerticalLayout",
 															label: "",
-															rule: {
-																effect: "HIDE",
-																condition: {
-																	scope: "#/properties/PnsSphenoidLeft",
-																	schema: {
-																		const: false,
-																	},
-																},
-															},
 															elements: [
+
 																{
-																	type: "VerticalLayout",
+																	type: "Control",
+																	label: "Left Sinus?",
+																	scope: "#/properties/PnsSphenoidLeft",
+																},
+																{
+																	type: "Group",
 																	label: "",
+																	rule: {
+																		effect: "HIDE",
+																		condition: {
+																			scope: "#/properties/PnsSphenoidLeft",
+																			schema: {
+																				const: false,
+																			},
+																		},
+																	},
 																	elements: [
 																		{
-																			type: "Control",
-																			label: "Pneumatization",
-																			scope: "#/properties/PnsSphenoidLeftPneumatization",
-																		},
-																		{
-																			type: "Group",
+																			type: "VerticalLayout",
 																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																			elements: [
+																				{
+																					type: "Control",
+																					label: "Pneumatization",
 																					scope: "#/properties/PnsSphenoidLeftPneumatization",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsSphenoidLeftPneumatization",
+																							schema: {
+																								const: false,
+																							},
+																						},
+																					},
 																					elements: [
 																						{
-																							type: "Control",
+																							type: "VerticalLayout",
 																							label: "",
-																							scope: "#/properties/PnsSphenoidLeftPneumatizationtype",
-																							options: {
-																								format: "radio",
-																							},
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsSphenoidLeftPneumatizationtype",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+																							],
 																						},
 																					],
 																				},
-																			],
-																		},
 
-																		{
-																			type: "Control",
-																			label: "Musocal Thicking",
-																			scope: "#/properties/PnsSphenoidLeftMusocalThicking",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																				{
+																					type: "Control",
+																					label: "Musocal Thicking",
 																					scope: "#/properties/PnsSphenoidLeftMusocalThicking",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "VerticalLayout",
+																					type: "Group",
 																					label: "",
-																					elements: [
-																						{
-																							type: "Control",
-																							label: "",
-																							scope: "#/properties/PnsSphenoidLeftMusocalThickingType",
-																							options: {
-																								format: "radio",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsSphenoidLeftMusocalThicking",
+																							schema: {
+																								const: false,
 																							},
 																						},
-
+																					},
+																					elements: [
 																						{
-																							type: "Control",
-																							label: "Hyperdense Contents",
-																							scope: "#/properties/PnsSphenoidLeftHyperdense",
+																							type: "VerticalLayout",
+																							label: "",
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsSphenoidLeftMusocalThickingType",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+
+																								{
+																									type: "Control",
+																									label: "Hyperdense Contents",
+																									scope: "#/properties/PnsSphenoidLeftHyperdense",
+																								},
+																							],
 																						},
 																					],
 																				},
-																			],
-																		},
 
-																		{
-																			type: "Control",
-																			label: "Air-Fluid levels",
-																			scope: "#/properties/PnsSphenoidLeftAirFluid",
-																		},
+																				{
+																					type: "Control",
+																					label: "Air-Fluid levels",
+																					scope: "#/properties/PnsSphenoidLeftAirFluid",
+																				},
 
-																		{
-																			type: "Control",
-																			label: "Sphenoid-ethmoid recess",
-																			scope: "#/properties/PnsSphenoidLeftEthmoid",
-																		},
-																		{
-																			type: "Group",
-																			label: "",
-																			rule: {
-																				effect: "HIDE",
-																				condition: {
+																				{
+																					type: "Control",
+																					label: "Sphenoid-ethmoid recess",
 																					scope: "#/properties/PnsSphenoidLeftEthmoid",
-																					schema: {
-																						const: false,
-																					},
 																				},
-																			},
-																			elements: [
 																				{
-																					type: "HorizontalLayout",
+																					type: "Group",
 																					label: "",
+																					rule: {
+																						effect: "HIDE",
+																						condition: {
+																							scope: "#/properties/PnsSphenoidLeftEthmoid",
+																							schema: {
+																								const: false,
+																							},
+																						},
+																					},
 																					elements: [
 																						{
-																							type: "Control",
+																							type: "HorizontalLayout",
 																							label: "",
-																							scope: "#/properties/PnsSphenoidLeftEthmoidType",
-																							options: {
-																								format: "radio",
-																							},
+																							elements: [
+																								{
+																									type: "Control",
+																									label: "",
+																									scope: "#/properties/PnsSphenoidLeftEthmoidType",
+																									options: {
+																										format: "radio",
+																									},
+																								},
+																							],
 																						},
 																					],
 																				},
-																			],
-																		},
 
-																		{
-																			type: "Control",
-																			label: "Bony Erosions",
-																			scope: "#/properties/PnsMaxillaryLeftBonyErosions",
+																				{
+																					type: "Control",
+																					label: "Bony Erosions",
+																					scope: "#/properties/PnsMaxillaryLeftBonyErosions",
+																				},
+																			],
 																		},
 																	],
 																},
@@ -2116,9 +2123,10 @@ const uischema = {
 				},
 				// nasal cavity**
 
+
 				{
 					type: "Control",
-					label: "Nasal Cavity?",
+					label: "Nasal Cavity",
 					scope: "#/properties/NasalCavity",
 				},
 				{
@@ -2228,7 +2236,7 @@ const uischema = {
 													elements: [
 														{
 															type: "Control",
-															label: "Right?",
+															label: "Right",
 															scope: "#/properties/TurbinatesNasalRight",
 														},
 														{
@@ -2250,7 +2258,7 @@ const uischema = {
 																	elements: [
 																		{
 																			type: "Control",
-																			label: "Middle Turbinate?",
+																			label: "Middle Turbinate",
 																			scope: "#/properties/TurbinatesNasalRightMiddle",
 																		},
 																		{
@@ -2323,7 +2331,7 @@ const uischema = {
 
 																		{
 																			type: "Control",
-																			label: "Inferior turbinate?",
+																			label: "Inferior turbinate",
 																			scope: "#/properties/TurbinatesNasalRightInferior",
 																		},
 																		{
@@ -2364,7 +2372,7 @@ const uischema = {
 													elements: [
 														{
 															type: "Control",
-															label: "Left?",
+															label: "Left",
 															scope: "#/properties/TurbinatesNasalLeft",
 														},
 														{
@@ -2386,7 +2394,7 @@ const uischema = {
 																	elements: [
 																		{
 																			type: "Control",
-																			label: "Middle Turbinate?",
+																			label: "Middle Turbinate",
 																			scope: "#/properties/TurbinatesNasalLeftMiddle",
 																		},
 																		{
@@ -2459,7 +2467,7 @@ const uischema = {
 
 																		{
 																			type: "Control",
-																			label: "Inferior turbinate?",
+																			label: "Inferior turbinate",
 																			scope: "#/properties/TurbinatesNasalLeftInferior",
 																		},
 																		{
@@ -3035,7 +3043,7 @@ const uischema = {
 														{
 															type: "Control",
 															label: "Left",
-															scope: "#/properties/MiscellaneousMastoidLeft",
+															scope: "#/properties/MiscellaneousPosteriorLeft",
 														},
 														{
 															type: "Group",

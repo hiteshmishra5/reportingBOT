@@ -770,7 +770,6 @@ class PnsAbnormal extends Component {
           report += "<p>" + "<b>" + text.OsteomaText1.replace("{1}", arr.join(', ')).replace("{2}", frmData.MiscellaneousOsteomaLeftText) + '</b>' + "</p>";
           impression.push("<p>" + "<b>" + text.OsteomaText1.replace("{1}", arr.join(', ')).replace("{2}", frmData.MiscellaneousOsteomaLeftText) + '</b>' + "</p>");
         }
-
       }
       if (frmData.MiscellaneousMucocele) {
         if (frmData.MiscellaneousMucoceleRight) {
@@ -809,8 +808,6 @@ class PnsAbnormal extends Component {
         }
       }
     }
-
-
 
     // Frontal
     if (!frmData.PnsFrontalRightAirFluid && !frmData.PnsFrontalLeftAirFluid
@@ -855,7 +852,6 @@ class PnsAbnormal extends Component {
       }
     }
 
-
     if (!frmData.TurbinatesNasalRightInferior && frmData.TurbinatesNasalLeftInferior && !frmData.Normalsinus) {
       report += "<p>" + "Inferior turbinate is normal on right side." + "</p>";
     }
@@ -871,19 +867,6 @@ class PnsAbnormal extends Component {
       report += "<p>" + "Posterior choana is normal on both sides." + "</p>";
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     report +=
       this.pageBreak() +
       this.getImpression(impression, totalCovidPoints) +
@@ -892,9 +875,6 @@ class PnsAbnormal extends Component {
       this.props.generateReport(report);
     });
   }
-
-
-
 
   pageBreak() {
     return '<div class="page-break ck-widget ck-widget_selected" contenteditable="false" draggable="true"></div>';

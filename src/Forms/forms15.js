@@ -21,8 +21,7 @@ const _schema = {
       enum: ['AP', 'LATERAL', 'SKYLINE', 'AP/LATERAL'],
     },
     KneeNormal: {
-      type: "string",
-      enum: ['X-Ray Normal'],
+      type: "boolean",
     },
     KneeNormalL: {
       type: "boolean",
@@ -485,29 +484,28 @@ const uischema = {
                   },
                 },
 
+
                 {
-                  type: "Control",
-                  label: "Normal X-Ray?",
-                  scope: "#/properties/KneeNormal",
-                  options: {
-                    format: "radio",
-                  },
-                },
-        
-                {
-                  type: "Group",
+                  type: "VerticalLayout",
                   label: "",
-                  rule: {
-                    effect: "HIDE",
-                    condition: {
-                      scope: "#/properties/KneeNormal",
-                      schema: { enum: ["clear", "", undefined] },
-                    },
-                  },
                   elements: [
                     {
-                      type: "HorizontalLayout",
+                      type: "Control",
+                      label: "Normal X-Ray?",
+                      scope: "#/properties/KneeNormal",
+                    },
+                    {
+                      type: "Group",
                       label: "",
+                      rule: {
+                        effect: "HIDE",
+                        condition: {
+                          scope: "#/properties/KneeNormal",
+                          schema: {
+                            const: false,
+                          },
+                        },
+                      },
                       elements: [
                         {
                           type: "HorizontalLayout",
@@ -529,8 +527,6 @@ const uischema = {
                     },
                   ],
                 },
-
-
               ],
             },
           ],
@@ -568,8 +564,6 @@ const uischema = {
                       type: "VerticalLayout",
                       label: "",
                       elements: [
-
-
                         {
                           type: "HorizontalLayout",
                           label: "",
@@ -601,7 +595,7 @@ const uischema = {
                                       type: "VerticalLayout",
                                       label: "",
                                       elements: [
-                                         
+
                                         {
                                           type: "Control",
                                           label: "Medial Joint?",
@@ -682,767 +676,773 @@ const uischema = {
 
                         // Fracture********************
                         {
-                          type: "Control",
-                          label: "Fracture?",
-                          scope: "#/properties/LeftFracture",
-                        },
-                        {
-                          type: "Group",
+                          type: "HorizontalLayout",
                           label: "",
-                          rule: {
-                            effect: "HIDE",
-                            condition: {
-                              scope: "#/properties/LeftFracture",
-                              schema: {
-                                const: false,
-                              },
-                            },
-                          },
                           elements: [
                             {
-                              type: "VerticalLayout",
+                              type: "Control",
+                              label: "Fracture?",
+                              scope: "#/properties/LeftFracture",
+                            },
+                            {
+                              type: "Group",
                               label: "",
+                              rule: {
+                                effect: "HIDE",
+                                condition: {
+                                  scope: "#/properties/LeftFracture",
+                                  schema: {
+                                    const: false,
+                                  },
+                                },
+                              },
                               elements: [
                                 {
-                                  type: "Control",
-                                  label: "Tibia?",
-                                  scope: "#/properties/LeftTibia",
-                                },
-                                {
-                                  type: "Group",
+                                  type: "VerticalLayout",
                                   label: "",
-                                  rule: {
-                                    effect: "HIDE",
-                                    condition: {
+                                  elements: [
+                                    {
+                                      type: "Control",
+                                      label: "Tibia?",
                                       scope: "#/properties/LeftTibia",
-                                      schema: {
-                                        const: false,
-                                      },
                                     },
-                                  },
-                                  elements: [
                                     {
-                                      type: "VerticalLayout",
+                                      type: "Group",
                                       label: "",
+                                      rule: {
+                                        effect: "HIDE",
+                                        condition: {
+                                          scope: "#/properties/LeftTibia",
+                                          schema: {
+                                            const: false,
+                                          },
+                                        },
+                                      },
                                       elements: [
                                         {
-                                          type: "Control",
-                                          label: "Linear Undisplaced Fracture?",
-                                          scope: "#/properties/LeftLinearUndisplacedFracture",
+                                          type: "VerticalLayout",
+                                          label: "",
+                                          elements: [
+                                            {
+                                              type: "Control",
+                                              label: "Linear Undisplaced Fracture?",
+                                              scope: "#/properties/LeftLinearUndisplacedFracture",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/LeftLinearUndisplacedFracture",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Plateau",
+                                            //           scope: "#/properties/LeftLinearMedialPlateau1",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Plateau",
+                                            //           scope: "#/properties/LeftLinearLateralPlateau1",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Intercondylar Eminence",
+                                            //           scope: "#/properties/LeftLinearoIntercondylarEminence1",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Diaphysis",
+                                            //           scope: "#/properties/LeftLinearProximalDiaphysis1",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Linear Displaced Fracture?",
+                                              scope: "#/properties/LeftLineardisplacedFracture",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/LeftLineardisplacedFracture",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Plateau",
+                                            //           scope: "#/properties/LeftLinearMedialPlateau2",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Plateau",
+                                            //           scope: "#/properties/LeftLinearLateralPlateau2",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Intercondylar Eminence",
+                                            //           scope: "#/properties/LeftLinearoIntercondylarEminence2",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Diaphysis",
+                                            //           scope: "#/properties/LeftLinearProximalDiaphysis2",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Undisplaced Fracture?",
+                                              scope: "#/properties/LeftComminutedUndisplacedFracture",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/LeftComminutedUndisplacedFracture",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Plateau",
+                                            //           scope: "#/properties/LeftLinearMedialPlateau3",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Plateau",
+                                            //           scope: "#/properties/LeftLinearLateralPlateau3",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Intercondylar Eminence",
+                                            //           scope: "#/properties/LeftLinearoIntercondylarEminence3",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Diaphysis",
+                                            //           scope: "#/properties/LeftLinearProximalDiaphysis3",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Displaced Fracture?",
+                                              scope: "#/properties/LeftComminuteddisplacedFracture",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/LeftComminuteddisplacedFracture",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Plateau",
+                                            //           scope: "#/properties/LeftLinearMedialPlateau4",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Plateau",
+                                            //           scope: "#/properties/LeftLinearLateralPlateau4",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Intercondylar Eminence",
+                                            //           scope: "#/properties/LeftLinearoIntercondylarEminence4",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Diaphysis",
+                                            //           scope: "#/properties/LeftLinearProximalDiaphysis4",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Depressed Fracture?",
+                                              scope: "#/properties/LeftComminutedDepressedFracture",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/LeftComminutedDepressedFracture",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Plateau",
+                                            //           scope: "#/properties/LeftLinearMedialPlateau5",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Plateau",
+                                            //           scope: "#/properties/LeftLinearLateralPlateau5",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Intercondylar Eminence",
+                                            //           scope: "#/properties/LeftLinearoIntercondylarEminence5",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Diaphysis",
+                                            //           scope: "#/properties/LeftLinearProximalDiaphysis5",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                          ],
                                         },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/LeftLinearUndisplacedFracture",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Plateau",
-                                        //           scope: "#/properties/LeftLinearMedialPlateau1",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Plateau",
-                                        //           scope: "#/properties/LeftLinearLateralPlateau1",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Intercondylar Eminence",
-                                        //           scope: "#/properties/LeftLinearoIntercondylarEminence1",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Diaphysis",
-                                        //           scope: "#/properties/LeftLinearProximalDiaphysis1",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Linear Displaced Fracture?",
-                                          scope: "#/properties/LeftLineardisplacedFracture",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/LeftLineardisplacedFracture",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Plateau",
-                                        //           scope: "#/properties/LeftLinearMedialPlateau2",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Plateau",
-                                        //           scope: "#/properties/LeftLinearLateralPlateau2",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Intercondylar Eminence",
-                                        //           scope: "#/properties/LeftLinearoIntercondylarEminence2",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Diaphysis",
-                                        //           scope: "#/properties/LeftLinearProximalDiaphysis2",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Undisplaced Fracture?",
-                                          scope: "#/properties/LeftComminutedUndisplacedFracture",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/LeftComminutedUndisplacedFracture",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Plateau",
-                                        //           scope: "#/properties/LeftLinearMedialPlateau3",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Plateau",
-                                        //           scope: "#/properties/LeftLinearLateralPlateau3",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Intercondylar Eminence",
-                                        //           scope: "#/properties/LeftLinearoIntercondylarEminence3",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Diaphysis",
-                                        //           scope: "#/properties/LeftLinearProximalDiaphysis3",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Displaced Fracture?",
-                                          scope: "#/properties/LeftComminuteddisplacedFracture",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/LeftComminuteddisplacedFracture",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Plateau",
-                                        //           scope: "#/properties/LeftLinearMedialPlateau4",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Plateau",
-                                        //           scope: "#/properties/LeftLinearLateralPlateau4",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Intercondylar Eminence",
-                                        //           scope: "#/properties/LeftLinearoIntercondylarEminence4",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Diaphysis",
-                                        //           scope: "#/properties/LeftLinearProximalDiaphysis4",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Depressed Fracture?",
-                                          scope: "#/properties/LeftComminutedDepressedFracture",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/LeftComminutedDepressedFracture",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Plateau",
-                                        //           scope: "#/properties/LeftLinearMedialPlateau5",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Plateau",
-                                        //           scope: "#/properties/LeftLinearLateralPlateau5",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Intercondylar Eminence",
-                                        //           scope: "#/properties/LeftLinearoIntercondylarEminence5",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Diaphysis",
-                                        //           scope: "#/properties/LeftLinearProximalDiaphysis5",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
                                       ],
                                     },
-                                  ],
-                                },
-                                {
-                                  type: "Control",
-                                  label: "Fibula?",
-                                  scope: "#/properties/LeftFibula",
-                                },
-                                {
-                                  type: "Group",
-                                  label: "",
-                                  rule: {
-                                    effect: "HIDE",
-                                    condition: {
+                                    {
+                                      type: "Control",
+                                      label: "Fibula?",
                                       scope: "#/properties/LeftFibula",
-                                      schema: {
-                                        const: false,
-                                      },
                                     },
-                                  },
-                                  elements: [
                                     {
-                                      type: "VerticalLayout",
+                                      type: "Group",
                                       label: "",
+                                      rule: {
+                                        effect: "HIDE",
+                                        condition: {
+                                          scope: "#/properties/LeftFibula",
+                                          schema: {
+                                            const: false,
+                                          },
+                                        },
+                                      },
                                       elements: [
                                         {
-                                          type: "Control",
-                                          label: "Linear Undisplaced Fracture?",
-                                          scope: "#/properties/LeftLinearUndisplacedFracture1",
+                                          type: "VerticalLayout",
+                                          label: "",
+                                          elements: [
+                                            {
+                                              type: "Control",
+                                              label: "Linear Undisplaced Fracture?",
+                                              scope: "#/properties/LeftLinearUndisplacedFracture1",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/LeftLinearUndisplacedFracture1",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Head Of Fibula?",
+                                            //           scope: "#/properties/LeftHeadOfFibula",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Shaft Of Fibula?",
+                                            //           scope: "#/properties/LeftProximalShaftOfFibula",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Linear Displaced Fracture?",
+                                              scope: "#/properties/LeftLineardisplacedFracture1",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/LeftLineardisplacedFracture1",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Head Of Fibula?",
+                                            //           scope: "#/properties/LeftHeadOfFibula1",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Shaft Of Fibula?",
+                                            //           scope: "#/properties/LeftProximalShaftOfFibula1",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Undisplaced Fracture?",
+                                              scope: "#/properties/LeftComminutedUndisplacedFracture1",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/LeftComminutedUndisplacedFracture1",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Head Of Fibula?",
+                                            //           scope: "#/properties/LeftHeadOfFibula2",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Shaft Of Fibula?",
+                                            //           scope: "#/properties/LeftProximalShaftOfFibula2",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Displaced Fracture?",
+                                              scope: "#/properties/LeftComminuteddisplacedFracture1",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/LeftComminuteddisplacedFracture1",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Head Of Fibula?",
+                                            //           scope: "#/properties/LeftHeadOfFibula3",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Shaft Of Fibula?",
+                                            //           scope: "#/properties/LeftProximalShaftOfFibula3",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Depressed Fracture?",
+                                              scope: "#/properties/LeftComminutedDepressedFracture1",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/LeftComminutedDepressedFracture1",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Head Of Fibula?",
+                                            //           scope: "#/properties/LeftHeadOfFibula4",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Shaft Of Fibula?",
+                                            //           scope: "#/properties/LeftProximalShaftOfFibula4",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                          ],
                                         },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/LeftLinearUndisplacedFracture1",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Head Of Fibula?",
-                                        //           scope: "#/properties/LeftHeadOfFibula",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Shaft Of Fibula?",
-                                        //           scope: "#/properties/LeftProximalShaftOfFibula",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Linear Displaced Fracture?",
-                                          scope: "#/properties/LeftLineardisplacedFracture1",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/LeftLineardisplacedFracture1",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Head Of Fibula?",
-                                        //           scope: "#/properties/LeftHeadOfFibula1",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Shaft Of Fibula?",
-                                        //           scope: "#/properties/LeftProximalShaftOfFibula1",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Undisplaced Fracture?",
-                                          scope: "#/properties/LeftComminutedUndisplacedFracture1",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/LeftComminutedUndisplacedFracture1",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Head Of Fibula?",
-                                        //           scope: "#/properties/LeftHeadOfFibula2",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Shaft Of Fibula?",
-                                        //           scope: "#/properties/LeftProximalShaftOfFibula2",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Displaced Fracture?",
-                                          scope: "#/properties/LeftComminuteddisplacedFracture1",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/LeftComminuteddisplacedFracture1",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Head Of Fibula?",
-                                        //           scope: "#/properties/LeftHeadOfFibula3",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Shaft Of Fibula?",
-                                        //           scope: "#/properties/LeftProximalShaftOfFibula3",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Depressed Fracture?",
-                                          scope: "#/properties/LeftComminutedDepressedFracture1",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/LeftComminutedDepressedFracture1",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Head Of Fibula?",
-                                        //           scope: "#/properties/LeftHeadOfFibula4",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Shaft Of Fibula?",
-                                        //           scope: "#/properties/LeftProximalShaftOfFibula4",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
                                       ],
                                     },
-                                  ],
-                                },
-                                {
-                                  type: "Control",
-                                  label: "Lower Third of Femur?",
-                                  scope: "#/properties/LeftLowerThirdofFemur",
-                                },
-                                {
-                                  type: "Group",
-                                  label: "",
-                                  rule: {
-                                    effect: "HIDE",
-                                    condition: {
+                                    {
+                                      type: "Control",
+                                      label: "Lower Third of Femur?",
                                       scope: "#/properties/LeftLowerThirdofFemur",
-                                      schema: {
-                                        const: false,
-                                      },
                                     },
-                                  },
-                                  elements: [
                                     {
-                                      type: "VerticalLayout",
+                                      type: "Group",
                                       label: "",
+                                      rule: {
+                                        effect: "HIDE",
+                                        condition: {
+                                          scope: "#/properties/LeftLowerThirdofFemur",
+                                          schema: {
+                                            const: false,
+                                          },
+                                        },
+                                      },
                                       elements: [
                                         {
-                                          type: "Control",
-                                          label: "Linear Undisplaced Fracture?",
-                                          scope: "#/properties/LeftLinearUndisplacedFracture2",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/LeftLinearUndisplacedFracture2",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Condyle",
-                                        //           scope: "#/properties/LeftLinearMedialCondyle",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Condyle",
-                                        //           scope: "#/properties/LeftLinearoLateralCondyle",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Distal Shaft of Femur",
-                                        //           scope: "#/properties/LeftLinearoDistalShaftofFemur",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
+                                          type: "VerticalLayout",
+                                          label: "",
+                                          elements: [
+                                            {
+                                              type: "Control",
+                                              label: "Linear Undisplaced Fracture?",
+                                              scope: "#/properties/LeftLinearUndisplacedFracture2",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/LeftLinearUndisplacedFracture2",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Condyle",
+                                            //           scope: "#/properties/LeftLinearMedialCondyle",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Condyle",
+                                            //           scope: "#/properties/LeftLinearoLateralCondyle",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Distal Shaft of Femur",
+                                            //           scope: "#/properties/LeftLinearoDistalShaftofFemur",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
 
-                                        {
-                                          type: "Control",
-                                          label: "Linear Displaced Fracture?",
-                                          scope: "#/properties/LeftLineardisplacedFracture2",
+                                            {
+                                              type: "Control",
+                                              label: "Linear Displaced Fracture?",
+                                              scope: "#/properties/LeftLineardisplacedFracture2",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/LeftLineardisplacedFracture2",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Condyle",
+                                            //           scope: "#/properties/LeftLinearMedialCondyle1",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Condyle",
+                                            //           scope: "#/properties/LeftLinearoLateralCondyle1",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Distal Shaft of Femur",
+                                            //           scope: "#/properties/LeftLinearoDistalShaftofFemur1",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Undisplaced Fracture?",
+                                              scope: "#/properties/LeftComminutedUndisplacedFracture2",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/LeftComminutedUndisplacedFracture2",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Condyle",
+                                            //           scope: "#/properties/LeftLinearMedialCondyle2",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Condyle",
+                                            //           scope: "#/properties/LeftLinearoLateralCondyle2",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Distal Shaft of Femur",
+                                            //           scope: "#/properties/LeftLinearoDistalShaftofFemur2",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Displaced Fracture?",
+                                              scope: "#/properties/LeftComminuteddisplacedFracture2",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/LeftComminuteddisplacedFracture2",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Condyle",
+                                            //           scope: "#/properties/LeftLinearMedialCondyle3",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Condyle",
+                                            //           scope: "#/properties/LeftLinearoLateralCondyle3",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Distal Shaft of Femur",
+                                            //           scope: "#/properties/LeftLinearoDistalShaftofFemur3",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Depressed Fracture?",
+                                              scope: "#/properties/LeftComminutedDepressedFracture2",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/LeftComminutedDepressedFracture2",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Condyle",
+                                            //           scope: "#/properties/LeftLinearMedialCondyle4",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Condyle",
+                                            //           scope: "#/properties/LeftLinearoLateralCondyle4",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Distal Shaft of Femur",
+                                            //           scope: "#/properties/LeftLinearoDistalShaftofFemur4",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                          ],
                                         },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/LeftLineardisplacedFracture2",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Condyle",
-                                        //           scope: "#/properties/LeftLinearMedialCondyle1",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Condyle",
-                                        //           scope: "#/properties/LeftLinearoLateralCondyle1",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Distal Shaft of Femur",
-                                        //           scope: "#/properties/LeftLinearoDistalShaftofFemur1",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Undisplaced Fracture?",
-                                          scope: "#/properties/LeftComminutedUndisplacedFracture2",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/LeftComminutedUndisplacedFracture2",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Condyle",
-                                        //           scope: "#/properties/LeftLinearMedialCondyle2",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Condyle",
-                                        //           scope: "#/properties/LeftLinearoLateralCondyle2",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Distal Shaft of Femur",
-                                        //           scope: "#/properties/LeftLinearoDistalShaftofFemur2",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Displaced Fracture?",
-                                          scope: "#/properties/LeftComminuteddisplacedFracture2",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/LeftComminuteddisplacedFracture2",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Condyle",
-                                        //           scope: "#/properties/LeftLinearMedialCondyle3",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Condyle",
-                                        //           scope: "#/properties/LeftLinearoLateralCondyle3",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Distal Shaft of Femur",
-                                        //           scope: "#/properties/LeftLinearoDistalShaftofFemur3",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Depressed Fracture?",
-                                          scope: "#/properties/LeftComminutedDepressedFracture2",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/LeftComminutedDepressedFracture2",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Condyle",
-                                        //           scope: "#/properties/LeftLinearMedialCondyle4",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Condyle",
-                                        //           scope: "#/properties/LeftLinearoLateralCondyle4",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Distal Shaft of Femur",
-                                        //           scope: "#/properties/LeftLinearoDistalShaftofFemur4",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
                                       ],
                                     },
-                                  ],
-                                },
-                                {
-                                  type: "Control",
-                                  label: "Patella?",
-                                  scope: "#/properties/LeftPatella",
-                                },
-                                {
-                                  type: "Control",
-                                  label: "Orthopaedic Implants?",
-                                  scope: "#/properties/LeftOrthopaedicImplants",
-                                },
-                                {
-                                  type: "Group",
-                                  label: "",
-                                  rule: {
-                                    effect: "HIDE",
-                                    condition: {
-                                      scope: "#/properties/LeftOrthopaedicImplants",
-                                      schema: {
-                                        const: false,
-                                      },
-                                    },
-                                  },
-                                  elements: [
                                     {
-                                      type: "VerticalLayout",
+                                      type: "Control",
+                                      label: "Patella?",
+                                      scope: "#/properties/LeftPatella",
+                                    },
+                                    {
+                                      type: "Control",
+                                      label: "Orthopaedic Implants?",
+                                      scope: "#/properties/LeftOrthopaedicImplants",
+                                    },
+                                    {
+                                      type: "Group",
                                       label: "",
+                                      rule: {
+                                        effect: "HIDE",
+                                        condition: {
+                                          scope: "#/properties/LeftOrthopaedicImplants",
+                                          schema: {
+                                            const: false,
+                                          },
+                                        },
+                                      },
                                       elements: [
                                         {
-                                          type: "Control",
-                                          label: "Tibia?",
-                                          scope: "#/properties/LeftOrthopaedicTibia",
-                                        },
-                                        {
-                                          type: "Control",
-                                          label: "Femur?",
-                                          scope: "#/properties/LeftOrthopaedicFemur",
-                                        },
-                                        {
-                                          type: "Control",
-                                          label: "Fibula?",
-                                          scope: "#/properties/LeftOrthopaedicFibula",
-                                        },
-                                        {
-                                          type: "Control",
-                                          label: "Patella?",
-                                          scope: "#/properties/LeftOrthopaedicPlateau",
+                                          type: "VerticalLayout",
+                                          label: "",
+                                          elements: [
+                                            {
+                                              type: "Control",
+                                              label: "Tibia?",
+                                              scope: "#/properties/LeftOrthopaedicTibia",
+                                            },
+                                            {
+                                              type: "Control",
+                                              label: "Femur?",
+                                              scope: "#/properties/LeftOrthopaedicFemur",
+                                            },
+                                            {
+                                              type: "Control",
+                                              label: "Fibula?",
+                                              scope: "#/properties/LeftOrthopaedicFibula",
+                                            },
+                                            {
+                                              type: "Control",
+                                              label: "Patella?",
+                                              scope: "#/properties/LeftOrthopaedicPlateau",
+                                            },
+                                          ],
                                         },
                                       ],
                                     },
@@ -1520,7 +1520,7 @@ const uischema = {
                                       type: "VerticalLayout",
                                       label: "",
                                       elements: [
-                                        
+
                                         {
                                           type: "Control",
                                           label: "Medial Joint?",
@@ -1602,767 +1602,773 @@ const uischema = {
                         // Fracture********************
                         // Right Fracture*********************
                         {
-                          type: "Control",
-                          label: "Fracture?",
-                          scope: "#/properties/RightFracture",
-                        },
-                        {
-                          type: "Group",
+                          type: "HorizontalLayout",
                           label: "",
-                          rule: {
-                            effect: "HIDE",
-                            condition: {
-                              scope: "#/properties/RightFracture",
-                              schema: {
-                                const: false,
-                              },
-                            },
-                          },
                           elements: [
                             {
-                              type: "VerticalLayout",
+                              type: "Control",
+                              label: "Fracture?",
+                              scope: "#/properties/RightFracture",
+                            },
+                            {
+                              type: "Group",
                               label: "",
+                              rule: {
+                                effect: "HIDE",
+                                condition: {
+                                  scope: "#/properties/RightFracture",
+                                  schema: {
+                                    const: false,
+                                  },
+                                },
+                              },
                               elements: [
                                 {
-                                  type: "Control",
-                                  label: "Tibia?",
-                                  scope: "#/properties/RightTibia",
-                                },
-                                {
-                                  type: "Group",
+                                  type: "VerticalLayout",
                                   label: "",
-                                  rule: {
-                                    effect: "HIDE",
-                                    condition: {
+                                  elements: [
+                                    {
+                                      type: "Control",
+                                      label: "Tibia?",
                                       scope: "#/properties/RightTibia",
-                                      schema: {
-                                        const: false,
-                                      },
                                     },
-                                  },
-                                  elements: [
                                     {
-                                      type: "VerticalLayout",
+                                      type: "Group",
                                       label: "",
+                                      rule: {
+                                        effect: "HIDE",
+                                        condition: {
+                                          scope: "#/properties/RightTibia",
+                                          schema: {
+                                            const: false,
+                                          },
+                                        },
+                                      },
                                       elements: [
                                         {
-                                          type: "Control",
-                                          label: "Linear Undisplaced Fracture?",
-                                          scope: "#/properties/RightLinearUndisplacedFracture",
+                                          type: "VerticalLayout",
+                                          label: "",
+                                          elements: [
+                                            {
+                                              type: "Control",
+                                              label: "Linear Undisplaced Fracture?",
+                                              scope: "#/properties/RightLinearUndisplacedFracture",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/RightLinearUndisplacedFracture",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Plateau",
+                                            //           scope: "#/properties/RightLinearMedialPlateau1",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Plateau",
+                                            //           scope: "#/properties/RightLinearLateralPlateau1",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Intercondylar Eminence",
+                                            //           scope: "#/properties/RightLinearoIntercondylarEminence1",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Diaphysis",
+                                            //           scope: "#/properties/RightLinearProximalDiaphysis1",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Linear Displaced Fracture?",
+                                              scope: "#/properties/RightLineardisplacedFracture",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/RightLineardisplacedFracture",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Plateau",
+                                            //           scope: "#/properties/RightLinearMedialPlateau2",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Plateau",
+                                            //           scope: "#/properties/RightLinearLateralPlateau2",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Intercondylar Eminence",
+                                            //           scope: "#/properties/RightLinearoIntercondylarEminence2",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Diaphysis",
+                                            //           scope: "#/properties/RightLinearProximalDiaphysis2",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Undisplaced Fracture?",
+                                              scope: "#/properties/RightComminutedUndisplacedFracture",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/RightComminutedUndisplacedFracture",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Plateau",
+                                            //           scope: "#/properties/RightLinearMedialPlateau3",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Plateau",
+                                            //           scope: "#/properties/RightLinearLateralPlateau3",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Intercondylar Eminence",
+                                            //           scope: "#/properties/RightLinearoIntercondylarEminence3",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Diaphysis",
+                                            //           scope: "#/properties/RightLinearProximalDiaphysis3",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Displaced Fracture?",
+                                              scope: "#/properties/RightComminuteddisplacedFracture",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/RightComminuteddisplacedFracture",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Plateau",
+                                            //           scope: "#/properties/RightLinearMedialPlateau4",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Plateau",
+                                            //           scope: "#/properties/RightLinearLateralPlateau4",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Intercondylar Eminence",
+                                            //           scope: "#/properties/RightLinearoIntercondylarEminence4",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Diaphysis",
+                                            //           scope: "#/properties/RightLinearProximalDiaphysis4",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Depressed Fracture?",
+                                              scope: "#/properties/RightComminutedDepressedFracture",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/RightComminutedDepressedFracture",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Plateau",
+                                            //           scope: "#/properties/RightLinearMedialPlateau5",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Plateau",
+                                            //           scope: "#/properties/RightLinearLateralPlateau5",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Intercondylar Eminence",
+                                            //           scope: "#/properties/RightLinearoIntercondylarEminence5",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Diaphysis",
+                                            //           scope: "#/properties/RightLinearProximalDiaphysis5",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                          ],
                                         },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/RightLinearUndisplacedFracture",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Plateau",
-                                        //           scope: "#/properties/RightLinearMedialPlateau1",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Plateau",
-                                        //           scope: "#/properties/RightLinearLateralPlateau1",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Intercondylar Eminence",
-                                        //           scope: "#/properties/RightLinearoIntercondylarEminence1",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Diaphysis",
-                                        //           scope: "#/properties/RightLinearProximalDiaphysis1",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Linear Displaced Fracture?",
-                                          scope: "#/properties/RightLineardisplacedFracture",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/RightLineardisplacedFracture",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Plateau",
-                                        //           scope: "#/properties/RightLinearMedialPlateau2",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Plateau",
-                                        //           scope: "#/properties/RightLinearLateralPlateau2",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Intercondylar Eminence",
-                                        //           scope: "#/properties/RightLinearoIntercondylarEminence2",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Diaphysis",
-                                        //           scope: "#/properties/RightLinearProximalDiaphysis2",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Undisplaced Fracture?",
-                                          scope: "#/properties/RightComminutedUndisplacedFracture",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/RightComminutedUndisplacedFracture",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Plateau",
-                                        //           scope: "#/properties/RightLinearMedialPlateau3",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Plateau",
-                                        //           scope: "#/properties/RightLinearLateralPlateau3",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Intercondylar Eminence",
-                                        //           scope: "#/properties/RightLinearoIntercondylarEminence3",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Diaphysis",
-                                        //           scope: "#/properties/RightLinearProximalDiaphysis3",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Displaced Fracture?",
-                                          scope: "#/properties/RightComminuteddisplacedFracture",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/RightComminuteddisplacedFracture",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Plateau",
-                                        //           scope: "#/properties/RightLinearMedialPlateau4",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Plateau",
-                                        //           scope: "#/properties/RightLinearLateralPlateau4",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Intercondylar Eminence",
-                                        //           scope: "#/properties/RightLinearoIntercondylarEminence4",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Diaphysis",
-                                        //           scope: "#/properties/RightLinearProximalDiaphysis4",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Depressed Fracture?",
-                                          scope: "#/properties/RightComminutedDepressedFracture",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/RightComminutedDepressedFracture",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Plateau",
-                                        //           scope: "#/properties/RightLinearMedialPlateau5",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Plateau",
-                                        //           scope: "#/properties/RightLinearLateralPlateau5",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Intercondylar Eminence",
-                                        //           scope: "#/properties/RightLinearoIntercondylarEminence5",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Diaphysis",
-                                        //           scope: "#/properties/RightLinearProximalDiaphysis5",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
                                       ],
                                     },
-                                  ],
-                                },
-                                {
-                                  type: "Control",
-                                  label: "Fibula?",
-                                  scope: "#/properties/RightFibula",
-                                },
-                                {
-                                  type: "Group",
-                                  label: "",
-                                  rule: {
-                                    effect: "HIDE",
-                                    condition: {
+                                    {
+                                      type: "Control",
+                                      label: "Fibula?",
                                       scope: "#/properties/RightFibula",
-                                      schema: {
-                                        const: false,
-                                      },
                                     },
-                                  },
-                                  elements: [
                                     {
-                                      type: "VerticalLayout",
+                                      type: "Group",
                                       label: "",
+                                      rule: {
+                                        effect: "HIDE",
+                                        condition: {
+                                          scope: "#/properties/RightFibula",
+                                          schema: {
+                                            const: false,
+                                          },
+                                        },
+                                      },
                                       elements: [
                                         {
-                                          type: "Control",
-                                          label: "Linear Undisplaced Fracture?",
-                                          scope: "#/properties/RightLinearUndisplacedFracture1",
+                                          type: "VerticalLayout",
+                                          label: "",
+                                          elements: [
+                                            {
+                                              type: "Control",
+                                              label: "Linear Undisplaced Fracture?",
+                                              scope: "#/properties/RightLinearUndisplacedFracture1",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/RightLinearUndisplacedFracture1",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Head Of Fibula?",
+                                            //           scope: "#/properties/RightHeadOfFibula",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Shaft Of Fibula?",
+                                            //           scope: "#/properties/RightProximalShaftOfFibula",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Linear Displaced Fracture?",
+                                              scope: "#/properties/RightLineardisplacedFracture1",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/RightLineardisplacedFracture1",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Head Of Fibula?",
+                                            //           scope: "#/properties/RightHeadOfFibula1",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Shaft Of Fibula?",
+                                            //           scope: "#/properties/RightProximalShaftOfFibula1",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Unisplaced Fracture?",
+                                              scope: "#/properties/RightComminutedUndisplacedFracture1",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/RightComminutedUndisplacedFracture1",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Head Of Fibula?",
+                                            //           scope: "#/properties/RightHeadOfFibula2",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Shaft Of Fibula?",
+                                            //           scope: "#/properties/RightProximalShaftOfFibula2",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Displaced Fracture?",
+                                              scope: "#/properties/RightComminuteddisplacedFracture1",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/RightComminuteddisplacedFracture1",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Head Of Fibula?",
+                                            //           scope: "#/properties/RightHeadOfFibula3",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Shaft Of Fibula?",
+                                            //           scope: "#/properties/RightProximalShaftOfFibula3",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Depressed Fracture?",
+                                              scope: "#/properties/RightComminutedDepressedFracture1",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/RightComminutedDepressedFracture1",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Head Of Fibula?",
+                                            //           scope: "#/properties/RightHeadOfFibula4",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Proximal Shaft Of Fibula?",
+                                            //           scope: "#/properties/RightProximalShaftOfFibula4",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                          ],
                                         },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/RightLinearUndisplacedFracture1",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Head Of Fibula?",
-                                        //           scope: "#/properties/RightHeadOfFibula",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Shaft Of Fibula?",
-                                        //           scope: "#/properties/RightProximalShaftOfFibula",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Linear Displaced Fracture?",
-                                          scope: "#/properties/RightLineardisplacedFracture1",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/RightLineardisplacedFracture1",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Head Of Fibula?",
-                                        //           scope: "#/properties/RightHeadOfFibula1",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Shaft Of Fibula?",
-                                        //           scope: "#/properties/RightProximalShaftOfFibula1",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Unisplaced Fracture?",
-                                          scope: "#/properties/RightComminutedUndisplacedFracture1",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/RightComminutedUndisplacedFracture1",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Head Of Fibula?",
-                                        //           scope: "#/properties/RightHeadOfFibula2",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Shaft Of Fibula?",
-                                        //           scope: "#/properties/RightProximalShaftOfFibula2",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Displaced Fracture?",
-                                          scope: "#/properties/RightComminuteddisplacedFracture1",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/RightComminuteddisplacedFracture1",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Head Of Fibula?",
-                                        //           scope: "#/properties/RightHeadOfFibula3",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Shaft Of Fibula?",
-                                        //           scope: "#/properties/RightProximalShaftOfFibula3",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Depressed Fracture?",
-                                          scope: "#/properties/RightComminutedDepressedFracture1",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/RightComminutedDepressedFracture1",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Head Of Fibula?",
-                                        //           scope: "#/properties/RightHeadOfFibula4",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Proximal Shaft Of Fibula?",
-                                        //           scope: "#/properties/RightProximalShaftOfFibula4",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
                                       ],
                                     },
-                                  ],
-                                },
-                                {
-                                  type: "Control",
-                                  label: "Lower Third of Femur?",
-                                  scope: "#/properties/RightLowerThirdofFemur",
-                                },
-                                {
-                                  type: "Group",
-                                  label: "",
-                                  rule: {
-                                    effect: "HIDE",
-                                    condition: {
+                                    {
+                                      type: "Control",
+                                      label: "Lower Third of Femur?",
                                       scope: "#/properties/RightLowerThirdofFemur",
-                                      schema: {
-                                        const: false,
-                                      },
                                     },
-                                  },
-                                  elements: [
                                     {
-                                      type: "VerticalLayout",
+                                      type: "Group",
                                       label: "",
+                                      rule: {
+                                        effect: "HIDE",
+                                        condition: {
+                                          scope: "#/properties/RightLowerThirdofFemur",
+                                          schema: {
+                                            const: false,
+                                          },
+                                        },
+                                      },
                                       elements: [
                                         {
-                                          type: "Control",
-                                          label: "Linear Undisplaced Fracture?",
-                                          scope: "#/properties/RightLinearUndisplacedFracture2",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/RightLinearUndisplacedFracture2",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Condyle",
-                                        //           scope: "#/properties/RightLinearMedialCondyle",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Condyle",
-                                        //           scope: "#/properties/RightLinearoLateralCondyle",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Distal Shaft of Femur",
-                                        //           scope: "#/properties/RightLinearoDistalShaftofFemur",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
+                                          type: "VerticalLayout",
+                                          label: "",
+                                          elements: [
+                                            {
+                                              type: "Control",
+                                              label: "Linear Undisplaced Fracture?",
+                                              scope: "#/properties/RightLinearUndisplacedFracture2",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/RightLinearUndisplacedFracture2",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Condyle",
+                                            //           scope: "#/properties/RightLinearMedialCondyle",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Condyle",
+                                            //           scope: "#/properties/RightLinearoLateralCondyle",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Distal Shaft of Femur",
+                                            //           scope: "#/properties/RightLinearoDistalShaftofFemur",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
 
-                                        {
-                                          type: "Control",
-                                          label: "Linear Displaced Fracture?",
-                                          scope: "#/properties/RightLineardisplacedFracture2",
+                                            {
+                                              type: "Control",
+                                              label: "Linear Displaced Fracture?",
+                                              scope: "#/properties/RightLineardisplacedFracture2",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/RightLineardisplacedFracture2",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Condyle",
+                                            //           scope: "#/properties/RightLinearMedialCondyle1",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Condyle",
+                                            //           scope: "#/properties/RightLinearoLateralCondyle1",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Distal Shaft of Femur",
+                                            //           scope: "#/properties/RightLinearoDistalShaftofFemur1",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Undisplaced Fracture?",
+                                              scope: "#/properties/RightComminutedUndisplacedFracture2",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/RightComminutedUndisplacedFracture2",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Condyle",
+                                            //           scope: "#/properties/RightLinearMedialCondyle2",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Condyle",
+                                            //           scope: "#/properties/RightLinearoLateralCondyle2",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Distal Shaft of Femur",
+                                            //           scope: "#/properties/RightLinearoDistalShaftofFemur2",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Displaced Fracture?",
+                                              scope: "#/properties/RightComminuteddisplacedFracture2",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/RightComminuteddisplacedFracture2",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Condyle",
+                                            //           scope: "#/properties/RightLinearMedialCondyle3",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Condyle",
+                                            //           scope: "#/properties/RightLinearoLateralCondyle3",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Distal Shaft of Femur",
+                                            //           scope: "#/properties/RightLinearoDistalShaftofFemur3",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                            {
+                                              type: "Control",
+                                              label: "Comminuted Depressed Fracture?",
+                                              scope: "#/properties/RightComminutedDepressedFracture2",
+                                            },
+                                            // {
+                                            //   type: "Group",
+                                            //   label: "",
+                                            //   rule: {
+                                            //     effect: "HIDE",
+                                            //     condition: {
+                                            //       scope: "#/properties/RightComminutedDepressedFracture2",
+                                            //       schema: {
+                                            //         const: false,
+                                            //       },
+                                            //     },
+                                            //   },
+                                            //   elements: [
+                                            //     {
+                                            //       type: "VerticalLayout",
+                                            //       label: "",
+                                            //       elements: [
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Medial Condyle",
+                                            //           scope: "#/properties/RightLinearMedialCondyle4",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Lateral Condyle",
+                                            //           scope: "#/properties/RightLinearoLateralCondyle4",
+                                            //         },
+                                            //         {
+                                            //           type: "Control",
+                                            //           label: "Distal Shaft of Femur",
+                                            //           scope: "#/properties/RightLinearoDistalShaftofFemur4",
+                                            //         },
+                                            //       ],
+                                            //     },
+                                            //   ],
+                                            // },
+                                          ],
                                         },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/RightLineardisplacedFracture2",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Condyle",
-                                        //           scope: "#/properties/RightLinearMedialCondyle1",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Condyle",
-                                        //           scope: "#/properties/RightLinearoLateralCondyle1",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Distal Shaft of Femur",
-                                        //           scope: "#/properties/RightLinearoDistalShaftofFemur1",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Undisplaced Fracture?",
-                                          scope: "#/properties/RightComminutedUndisplacedFracture2",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/RightComminutedUndisplacedFracture2",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Condyle",
-                                        //           scope: "#/properties/RightLinearMedialCondyle2",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Condyle",
-                                        //           scope: "#/properties/RightLinearoLateralCondyle2",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Distal Shaft of Femur",
-                                        //           scope: "#/properties/RightLinearoDistalShaftofFemur2",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Displaced Fracture?",
-                                          scope: "#/properties/RightComminuteddisplacedFracture2",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/RightComminuteddisplacedFracture2",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Condyle",
-                                        //           scope: "#/properties/RightLinearMedialCondyle3",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Condyle",
-                                        //           scope: "#/properties/RightLinearoLateralCondyle3",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Distal Shaft of Femur",
-                                        //           scope: "#/properties/RightLinearoDistalShaftofFemur3",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
-                                        {
-                                          type: "Control",
-                                          label: "Comminuted Depressed Fracture?",
-                                          scope: "#/properties/RightComminutedDepressedFracture2",
-                                        },
-                                        // {
-                                        //   type: "Group",
-                                        //   label: "",
-                                        //   rule: {
-                                        //     effect: "HIDE",
-                                        //     condition: {
-                                        //       scope: "#/properties/RightComminutedDepressedFracture2",
-                                        //       schema: {
-                                        //         const: false,
-                                        //       },
-                                        //     },
-                                        //   },
-                                        //   elements: [
-                                        //     {
-                                        //       type: "VerticalLayout",
-                                        //       label: "",
-                                        //       elements: [
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Medial Condyle",
-                                        //           scope: "#/properties/RightLinearMedialCondyle4",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Lateral Condyle",
-                                        //           scope: "#/properties/RightLinearoLateralCondyle4",
-                                        //         },
-                                        //         {
-                                        //           type: "Control",
-                                        //           label: "Distal Shaft of Femur",
-                                        //           scope: "#/properties/RightLinearoDistalShaftofFemur4",
-                                        //         },
-                                        //       ],
-                                        //     },
-                                        //   ],
-                                        // },
                                       ],
                                     },
-                                  ],
-                                },
-                                {
-                                  type: "Control",
-                                  label: "Patella?",
-                                  scope: "#/properties/RightPatella",
-                                },
-                                {
-                                  type: "Control",
-                                  label: "Orthopaedic Implants?",
-                                  scope: "#/properties/RightOrthopaedicImplants",
-                                },
-                                {
-                                  type: "Group",
-                                  label: "",
-                                  rule: {
-                                    effect: "HIDE",
-                                    condition: {
-                                      scope: "#/properties/RightOrthopaedicImplants",
-                                      schema: {
-                                        const: false,
-                                      },
-                                    },
-                                  },
-                                  elements: [
                                     {
-                                      type: "VerticalLayout",
+                                      type: "Control",
+                                      label: "Patella?",
+                                      scope: "#/properties/RightPatella",
+                                    },
+                                    {
+                                      type: "Control",
+                                      label: "Orthopaedic Implants?",
+                                      scope: "#/properties/RightOrthopaedicImplants",
+                                    },
+                                    {
+                                      type: "Group",
                                       label: "",
+                                      rule: {
+                                        effect: "HIDE",
+                                        condition: {
+                                          scope: "#/properties/RightOrthopaedicImplants",
+                                          schema: {
+                                            const: false,
+                                          },
+                                        },
+                                      },
                                       elements: [
                                         {
-                                          type: "Control",
-                                          label: "Tibia?",
-                                          scope: "#/properties/RightOrthopaedicTibia",
-                                        },
-                                        {
-                                          type: "Control",
-                                          label: "Femur?",
-                                          scope: "#/properties/RightOrthopaedicFemur",
-                                        },
-                                        {
-                                          type: "Control",
-                                          label: "Fibula?",
-                                          scope: "#/properties/RightOrthopaedicFibula",
-                                        },
-                                        {
-                                          type: "Control",
-                                          label: "Patella?",
-                                          scope: "#/properties/RightOrthopaedicPlateau",
+                                          type: "VerticalLayout",
+                                          label: "",
+                                          elements: [
+                                            {
+                                              type: "Control",
+                                              label: "Tibia?",
+                                              scope: "#/properties/RightOrthopaedicTibia",
+                                            },
+                                            {
+                                              type: "Control",
+                                              label: "Femur?",
+                                              scope: "#/properties/RightOrthopaedicFemur",
+                                            },
+                                            {
+                                              type: "Control",
+                                              label: "Fibula?",
+                                              scope: "#/properties/RightOrthopaedicFibula",
+                                            },
+                                            {
+                                              type: "Control",
+                                              label: "Patella?",
+                                              scope: "#/properties/RightOrthopaedicPlateau",
+                                            },
+                                          ],
                                         },
                                       ],
                                     },

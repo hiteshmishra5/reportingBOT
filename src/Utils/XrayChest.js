@@ -111,7 +111,7 @@ class XrayChest extends Component {
       || frmData.pneumothorax || frmData.cardiacSilhouette || frmData.bonyThoracicCage
       || frmData.tracheaAndMediastinalStructures || frmData.DomesOfDiaphragm || frmData.etLine || frmData.cvpLine
       || frmData.tracheostomy || frmData.NGtube || frmData.info || frmData.SoftTissue) && !(frmData.XrayTypes === 'PA' || frmData.XrayTypes === 'LATERAL' || frmData.XrayTypes === 'AP/PA')) {
-      report += "<p class='text-center'>" + "<strong style='color: blue;'>" + "<u>" + "X-RAY - CHEST AP VIEW" + "</u>" + "</strong>" + "</p>";
+      report += "<p style={{'text-center'}}>" + "<strong>" + "<u>" + "X-RAY - CHEST AP VIEW" + "</u>" + "</strong>" + "</p>";
       report += "<h5>" + "<strong>" + "<u>" + "OBSERVATIONS:" + "</u>" + "</strong>" + "</h5>";
     }
 

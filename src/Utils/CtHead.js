@@ -67,12 +67,12 @@ class CtHead extends Component {
         report += "<p>" + "<b>" + "<u>" + "TECHNIQUE:" + "</u>" + "</b>" + " Serial axial sections of brain were made from base of skull to the vertex without intravenous contrast. (Base 5mm, Cerebrum 5mm)." + "<b>" + "<br><br>OBSERVATION:" + "<br><br>• Ventricular system, sulci and basal cisterns appear prominent." + "</b>" + "<br><br>• No evidence of contusion, edema or intracranial hemorrhage is visualized.<br><br>•	No evidence of fracture.<br><br>•	The gray white differentiation is maintained.<br><br>•	The cerebellum and brainstem appear normal.<br><br>•	Cerebello pontine angles and internal auditory meatus appear normal.<br><br>•	The sella and parasellar regions are normal.<br><br>•	The basal ganglia, thalami and capsular tracts appear normal.<br><br>•	The bones of skull and pericranial soft tissue appear normal.<br><br>•	Visualized paranasal sinuses appear normal." + "<b>" + "<br><br>IMPRESSION:<br><br>Age related cerebral atrophy." + "</b>" + "</p>";
       }
       if (frmData.Atrophytype === 'Age Advanced Cerebral Atrophy') {
-        report += "<p>" + "<b>" + "<u>" + "TECHNIQUE:" + "</u>" + "</b>" + " Serial axial sections of brain were made from base of skull to the vertex without intravenous contrast. (Base 5mm, Cerebrum 5mm)." + "<b>" + "<br><br>OBSERVATION:"  + "<br><br>• Ventricular system, sulci and basal cisterns appear prominent." + "</b>" + "<br><br>•	No evidence of contusion, edema or intracranial hemorrhage is visualized.<br><br>•	No evidence of fracture.<br><br>•	The gray white differentiation is maintained.<br><br>•	The cerebellum and brainstem appear normal.<br><br>•	Cerebello pontine angles and internal auditory meatus appear normal.<br><br>•	The sella and parasellar regions are normal.<br><br>•	The basal ganglia, thalami and capsular tracts appear normal.<br><br>•	The bones of skull and pericranial soft tissue appear normal.<br><br>•	Visualized paranasal sinuses appear normal" + "<b>" + "<br><br>IMPRESSION:<br><br>Age advanced cerebral atrophy." + "</b>" + "</p>"
+        report += "<p>" + "<b>" + "<u>" + "TECHNIQUE:" + "</u>" + "</b>" + " Serial axial sections of brain were made from base of skull to the vertex without intravenous contrast. (Base 5mm, Cerebrum 5mm)." + "<b>" + "<br><br>OBSERVATION:" + "<br><br>• Ventricular system, sulci and basal cisterns appear prominent." + "</b>" + "<br><br>•	No evidence of contusion, edema or intracranial hemorrhage is visualized.<br><br>•	No evidence of fracture.<br><br>•	The gray white differentiation is maintained.<br><br>•	The cerebellum and brainstem appear normal.<br><br>•	Cerebello pontine angles and internal auditory meatus appear normal.<br><br>•	The sella and parasellar regions are normal.<br><br>•	The basal ganglia, thalami and capsular tracts appear normal.<br><br>•	The bones of skull and pericranial soft tissue appear normal.<br><br>•	Visualized paranasal sinuses appear normal" + "<b>" + "<br><br>IMPRESSION:<br><br>Age advanced cerebral atrophy." + "</b>" + "</p>"
       }
     }
 
     if (frmData.ChronicIschemic) {
-      report += "<p>" + "<b>" + "<u>" + "TECHNIQUE:" + "</u>" + "</b>" + " Serial axial sections of brain were made from base of skull to the vertex without intravenous contrast. (Base 5mm, Cerebrum 5mm)." + "<b>" + "<br><br>OBSERVATION:<br><br>"  + "• Ill-defined hypodensities seen in bilateral fronto-parietal white matter." + '</b>' + "</b>" + "<br><br>•	No evidence of contusion, edema or intracranial hemorrhage is visualized.<br><br>•	No evidence of fracture.<br><br>•	The cerebellum and brainstem appear normal.<br><br>•	Cerebello pontine angles and internal auditory meatus appear normal.<br><br>•	The sella and parasellar regions are normal.<br><br>•	The basal ganglia, thalami and capsular tracts appear normal.<br><br>•	The bones of skull and pericranial soft tissue appear normal.<br><br>•	Visualized paranasal sinuses appear normal" + "<b>" + "<br><br>IMPRESSION:<br><br>Chronic small vessel ischemic changes." + "</b>" + "</p>"
+      report += "<p>" + "<b>" + "<u>" + "TECHNIQUE:" + "</u>" + "</b>" + " Serial axial sections of brain were made from base of skull to the vertex without intravenous contrast. (Base 5mm, Cerebrum 5mm)." + "<b>" + "<br><br>OBSERVATION:<br><br>" + "• Ill-defined hypodensities seen in bilateral fronto-parietal white matter." + '</b>' + "</b>" + "<br><br>•	No evidence of contusion, edema or intracranial hemorrhage is visualized.<br><br>•	No evidence of fracture.<br><br>•	The cerebellum and brainstem appear normal.<br><br>•	Cerebello pontine angles and internal auditory meatus appear normal.<br><br>•	The sella and parasellar regions are normal.<br><br>•	The basal ganglia, thalami and capsular tracts appear normal.<br><br>•	The bones of skull and pericranial soft tissue appear normal.<br><br>•	Visualized paranasal sinuses appear normal" + "<b>" + "<br><br>IMPRESSION:<br><br>Chronic small vessel ischemic changes." + "</b>" + "</p>"
     }
 
     if (frmData.Infarct) {
@@ -214,15 +214,7 @@ class CtHead extends Component {
           }
         }
       }
-
-
     }
-
-
-
-
-
-
 
     report +=
       this.pageBreak() +

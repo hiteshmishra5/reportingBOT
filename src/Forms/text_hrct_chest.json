@@ -337,7 +337,9 @@
     "OsteomaText1": "Osteoma seen in left {1} sinus measuring {2}mm.",
 
     "MucoceleText": "Mucocele seen in right {1} sinus measuring {2}mm.",
-    "MucoceleText1": "Mucocele seen in left {1} sinus measuring {2}mm."
+    "MucoceleText1": "Mucocele seen in left {1} sinus measuring {2}mm.",
+
+    "XrayTypeText": "X-RAY {1} KNEE {2} VIEW"
 
 
 

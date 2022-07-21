@@ -4,7 +4,7 @@ import PopUp from "../PopUps/PopUpXrayKnee";
 
 import text from "../Forms/text_hrct_chest.json";
 import { data } from "jquery";
-import { FlashOnRounded, InvertColorsOff } from "@material-ui/icons";
+import { ArrowDropUpSharp, FlashOnRounded, InvertColorsOff } from "@material-ui/icons";
 
 class XrayKnee extends Component {
   constructor(props) {
@@ -22,6 +22,7 @@ class XrayKnee extends Component {
         //XrayTypes: false,
         NormalLeft: false,
         //NormalRight: false,
+        KneeNormal: false,
         LeftKnee: false,
         RightKnee: false,
         DegenerativeDeformity: false,
@@ -103,123 +104,150 @@ class XrayKnee extends Component {
     let totalCovidPoints = 0;
 
 
-    // LEFT*************
-    if (frmData.XrayType === 'AP' && (frmData.LeftDegenerative || frmData.LeftFracture)
-      && !(frmData.NormalRight || frmData.RightDegenerative || frmData.RightFracture)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY LEFT KNEE AP VIEW" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'LATERAL' && (frmData.LeftDegenerative || frmData.LeftFracture)
-      && !(frmData.NormalRight || frmData.RightDegenerative || frmData.RightFracture)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY LEFT KNEE LATREAL VIEW" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'SKYLINE' && (frmData.LeftDegenerative || frmData.LeftFracture)
-      && !(frmData.NormalRight || frmData.RightDegenerative || frmData.RightFracture)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY LEFT KNEE SKYLINE VIEW" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'AP/LATERAL' && (frmData.LeftDegenerative || frmData.LeftFracture)
-      && !(frmData.NormalRight || frmData.RightDegenerative || frmData.RightFracture)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY LEFT KNEE AP/LATERAL VIEW" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
+  //   // LEFT*************
+  //   if (frmData.XrayType === 'AP' && (frmData.LeftDegenerative || frmData.LeftFracture)
+  //     && !(frmData.NormalRight || frmData.RightDegenerative || frmData.RightFracture)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY LEFT KNEE AP VIEW" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'LATERAL' && (frmData.LeftDegenerative || frmData.LeftFracture)
+  //     && !(frmData.NormalRight || frmData.RightDegenerative || frmData.RightFracture)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY LEFT KNEE LATREAL VIEW" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'SKYLINE' && (frmData.LeftDegenerative || frmData.LeftFracture)
+  //     && !(frmData.NormalRight || frmData.RightDegenerative || frmData.RightFracture)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY LEFT KNEE SKYLINE VIEW" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'AP/LATERAL' && (frmData.LeftDegenerative || frmData.LeftFracture)
+  //     && !(frmData.NormalRight || frmData.RightDegenerative || frmData.RightFracture)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY LEFT KNEE AP/LATERAL VIEW" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
 
-    // RIGHT*************
-    if (frmData.XrayType === 'AP' && (frmData.RightDegenerative || frmData.RightFracture)
-      && !(frmData.NormalLeft || frmData.LeftDegenerative || frmData.LeftFracture)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY RIGHT KNEE AP VIEW" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'LATERAL' && (frmData.RightDegenerative || frmData.RightFracture)
-      && !(frmData.NormalLeft || frmData.LeftDegenerative || frmData.LeftFracture)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY RIGHT KNEE LATERAL VIEW" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'SKYLINE' && (frmData.RightDegenerative || frmData.RightFracture)
-      && !(frmData.NormalLeft || frmData.LeftDegenerative || frmData.LeftFracture)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY RIGHT KNEE SKYLINE VIEW" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'AP/LATERAL' && (frmData.RightDegenerative || frmData.RightFracture)
-    && !(frmData.NormalLeft || frmData.LeftDegenerative || frmData.LeftFracture)) {
-    report += "<h5>" + "<strong>" + "<u>" + "X-RAY RIGHT KNEE AP/LATERAL VIEW" + "</u>" + "</strong>" + "</h5>";
-    report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-  }
+  //   // RIGHT*************
+  //   if (frmData.XrayType === 'AP' && (frmData.RightDegenerative || frmData.RightFracture)
+  //     && !(frmData.NormalLeft || frmData.LeftDegenerative || frmData.LeftFracture)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY RIGHT KNEE AP VIEW" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'LATERAL' && (frmData.RightDegenerative || frmData.RightFracture)
+  //     && !(frmData.NormalLeft || frmData.LeftDegenerative || frmData.LeftFracture)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY RIGHT KNEE LATERAL VIEW" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'SKYLINE' && (frmData.RightDegenerative || frmData.RightFracture)
+  //     && !(frmData.NormalLeft || frmData.LeftDegenerative || frmData.LeftFracture)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY RIGHT KNEE SKYLINE VIEW" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'AP/LATERAL' && (frmData.RightDegenerative || frmData.RightFracture)
+  //   && !(frmData.NormalLeft || frmData.LeftDegenerative || frmData.LeftFracture)) {
+  //   report += "<h5>" + "<strong>" + "<u>" + "X-RAY RIGHT KNEE AP/LATERAL VIEW" + "</u>" + "</strong>" + "</h5>";
+  //   report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  // }
 
-    // BOTH*************
-    if (frmData.XrayType === 'AP' && (frmData.RightDegenerative || frmData.RightFracture)
-      && (frmData.NormalLeft || frmData.LeftDegenerative || frmData.LeftFracture)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY BOTH KNEES AP VIEWS" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'LATERAL' && (frmData.RightDegenerative || frmData.FractureR)
-      && (frmData.NormalLeft || frmData.LeftDegenerative || frmData.LeftFracture)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY BOTH KNEES LATERAL VIEWS" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'SKYLINE' && (frmData.RightDegenerative || frmData.FractureR)
-      && (frmData.NormalLeft || frmData.LeftDegenerative || frmData.LeftFracture)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY BOTH KNEES SKYLINE VIEWS" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'AP/LATERAL' && (frmData.RightDegenerative || frmData.FractureR)
-      && (frmData.NormalLeft || frmData.LeftDegenerative || frmData.LeftFracture)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY BOTH KNEES AP/LATERAL VIEWS" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
+  //   // BOTH*************
+  //   if (frmData.XrayType === 'AP' && (frmData.RightDegenerative || frmData.RightFracture)
+  //     && (frmData.NormalLeft || frmData.LeftDegenerative || frmData.LeftFracture)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY BOTH KNEES AP VIEWS" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'LATERAL' && (frmData.RightDegenerative || frmData.FractureR)
+  //     && (frmData.NormalLeft || frmData.LeftDegenerative || frmData.LeftFracture)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY BOTH KNEES LATERAL VIEWS" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'SKYLINE' && (frmData.RightDegenerative || frmData.FractureR)
+  //     && (frmData.NormalLeft || frmData.LeftDegenerative || frmData.LeftFracture)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY BOTH KNEES SKYLINE VIEWS" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'AP/LATERAL' && (frmData.RightDegenerative || frmData.FractureR)
+  //     && (frmData.NormalLeft || frmData.LeftDegenerative || frmData.LeftFracture)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY BOTH KNEES AP/LATERAL VIEWS" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
 
 
-    // NORMAL LEFT**
-    if (frmData.XrayType === 'AP' && (frmData.KneeNormal && frmData.KneeNormalL && !frmData.KneeNormalR)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY LEFT KNEE AP VIEW" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'LATERAL' && (frmData.KneeNormal && frmData.KneeNormalL && !frmData.KneeNormalR)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY LEFT KNEE LATERAL VIEW" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'SKYLINE' && (frmData.KneeNormal && frmData.KneeNormalL && !frmData.KneeNormalR)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY LEFT KNEE SKYLINE VIEW" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'AP/LATERAL' && (frmData.KneeNormal && frmData.KneeNormalL && !frmData.KneeNormalR)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY LEFT KNEE AP/LATERAL VIEW" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    // NORMAL RIGHT***
-    if (frmData.XrayType === 'AP' && (frmData.KneeNormal && frmData.KneeNormalR && !frmData.KneeNormalL)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY RIGHT KNEE AP VIEW" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'LATERAL' && (frmData.KneeNormal && frmData.KneeNormalR && !frmData.KneeNormalL)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY RIGHT KNEE LATERAL VIEW" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'SKYLINE' && (frmData.KneeNormal && frmData.KneeNormalR && !frmData.KneeNormalL)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY RIGHT KNEE SKYLINE VIEW" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'AP/LATERAL' && (frmData.KneeNormal && frmData.KneeNormalR && !frmData.KneeNormalL)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY RIGHT KNEE AP/LATERAL VIEW" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    // BOTH**
-    if (frmData.XrayType === 'AP' && (frmData.KneeNormal && frmData.KneeNormalR && frmData.KneeNormalL)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY BILATERAL KNEE AP VIEWS" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'LATERAL' && (frmData.KneeNormal && frmData.KneeNormalR && frmData.KneeNormalL)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY BILATERAL KNEE LATERAL VIEWS" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'SKYLINE' && (frmData.KneeNormal && frmData.KneeNormalR && frmData.KneeNormalL)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY BILATERAL KNEE SKYLINE VIEWS" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
-    }
-    if (frmData.XrayType === 'AP/LATERAL' && (frmData.KneeNormal && frmData.KneeNormalR && frmData.KneeNormalL)) {
-      report += "<h5>" + "<strong>" + "<u>" + "X-RAY BILATERAL KNEE AP/LATERAL VIEWS" + "</u>" + "</strong>" + "</h5>";
-      report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   // NORMAL LEFT**
+  //   if (frmData.XrayType === 'AP' && (frmData.KneeNormal && frmData.KneeNormalL && !frmData.KneeNormalR)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY LEFT KNEE AP VIEW" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'LATERAL' && (frmData.KneeNormal && frmData.KneeNormalL && !frmData.KneeNormalR)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY LEFT KNEE LATERAL VIEW" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'SKYLINE' && (frmData.KneeNormal && frmData.KneeNormalL && !frmData.KneeNormalR)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY LEFT KNEE SKYLINE VIEW" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'AP/LATERAL' && (frmData.KneeNormal && frmData.KneeNormalL && !frmData.KneeNormalR)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY LEFT KNEE AP/LATERAL VIEW" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   // NORMAL RIGHT***
+  //   if (frmData.XrayType === 'AP' && (frmData.KneeNormal && frmData.KneeNormalR && !frmData.KneeNormalL)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY RIGHT KNEE AP VIEW" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'LATERAL' && (frmData.KneeNormal && frmData.KneeNormalR && !frmData.KneeNormalL)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY RIGHT KNEE LATERAL VIEW" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'SKYLINE' && (frmData.KneeNormal && frmData.KneeNormalR && !frmData.KneeNormalL)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY RIGHT KNEE SKYLINE VIEW" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'AP/LATERAL' && (frmData.KneeNormal && frmData.KneeNormalR && !frmData.KneeNormalL)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY RIGHT KNEE AP/LATERAL VIEW" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   // BOTH**
+  //   if (frmData.XrayType === 'AP' && (frmData.KneeNormal && frmData.KneeNormalR && frmData.KneeNormalL)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY BILATERAL KNEE AP VIEWS" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'LATERAL' && (frmData.KneeNormal && frmData.KneeNormalR && frmData.KneeNormalL)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY BILATERAL KNEE LATERAL VIEWS" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'SKYLINE' && (frmData.KneeNormal && frmData.KneeNormalR && frmData.KneeNormalL)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY BILATERAL KNEE SKYLINE VIEWS" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+  //   if (frmData.XrayType === 'AP/LATERAL' && (frmData.KneeNormal && frmData.KneeNormalR && frmData.KneeNormalL)) {
+  //     report += "<h5>" + "<strong>" + "<u>" + "X-RAY BILATERAL KNEE AP/LATERAL VIEWS" + "</u>" + "</strong>" + "</h5>";
+  //     report += "<h5>" + "<strong>" + "<u>" + "OBSERVATION:" + "</u>" + "</strong>" + "</h5>";
+  //   }
+
+
+    if(frmData.XrayType){
+      if(frmData.KneeNormal){
+        let arr = []
+        if(frmData.KneeNormalL && !frmData.KneeNormalR){
+          arr.push('LEFT')
+        }
+        if(frmData.KneeNormalR && !frmData.KneeNormalL){
+          arr.push("RIGHT")
+        }
+        if(frmData.KneeNormalL && frmData.KneeNormalR){
+          arr.push("BILATERAL")
+        }
+        report += "<h5>" + "<strong>" + "<u>" + text.XrayTypeText.replace("{1}", frmData.XrayType).replace("{2}", arr.join('')) + "</u>" + "</strong>" + "</h5>";
+      }
+      else{
+        let arr = []
+        if(frmData.LeftKnee){
+          arr.push('LEFT')
+        }
+        if(frmData.RightKnee){
+          arr.push("RIGHT")
+        }
+        report += "<h5>" + "<strong>" + "<u>" + text.XrayTypeText.replace("{1}", frmData.XrayType).replace("{2}", arr.join('')) + "</u>" + "</strong>" + "</h5>";
+      }
     }
 
 
@@ -512,7 +540,7 @@ class XrayKnee extends Component {
     }
 
     if (frmData.KneeNormalL || frmData.KneeNormalR) { 
-      report += "<p>" + "Knee joint appears normal.<br><br>Lower end of the Femur, Patella and Upper ends of the Tibia and Fibula appear normal.<br><br>Alignment is normal.<br><br>No obvious abnormality is seen in the soft tissues." + "</p>";
+      report += "<p>" + "Knee joint appears normal.<br><br>Lower end of the femur, patella and upper ends of the tibia and fibula appear normal.<br><br>Alignment is normal.<br><br>No obvious abnormality is seen in the soft tissues." + "</p>";
     }
 
 
